@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PublicScenes/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 9b85b4cd801d112438d23a53dfdf2da3
   - enabled: 1
-    path: Assets/DangNguyen/DangScene/Level1.unity
+    path: Assets/Scenes/Level1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/DangNguyen/DangScene/Level2.unity
+    path: Assets/Scenes/Level2.unity
     guid: 72e7390b418b1794eb82df83ab1a353a
   - enabled: 1
-    path: Assets/DangNguyen/DangScene/Level3.unity
+    path: Assets/Scenes/Level3.unity
     guid: 98a0dbcdfa0982548b6d4e8983c800ec
   m_configObjects: {}
