@@ -284,6 +284,9 @@ public class DN_GameManager : MonoBehaviour {
         OHome = false;
         TriangleHome = false;
         Death = false;
+        DN_MainMenuMannager.PC = false;
+        DN_MainMenuMannager.Ps4 = false;
+        DN_MainMenuMannager.Xbox = false;
     }
     public void PreviousScene()
     { 

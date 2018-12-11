@@ -28,6 +28,10 @@ public class DN_PlayerMovement : MonoBehaviour {
     private bool O4;
     private bool Square4;
     private bool Triangle4;
+    private bool B1;
+    private bool A1;
+    private bool XB1;
+    private bool Y1;
     public bool P1;
     public bool P2;
     public bool P3;
@@ -56,7 +60,7 @@ public class DN_PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(SoloController)
+        if(SoloController && DN_MainMenuMannager.Ps4)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -112,7 +116,54 @@ public class DN_PlayerMovement : MonoBehaviour {
                 X1 = true;
             }
         }
-        if(SoloKeyBoard)
+        if (SoloController && DN_MainMenuMannager.Xbox)
+        {
+            if (Input.GetAxis("Xbox Solo P1 Press B") != 0)
+            {
+                Marker1[0].SetActive(true);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(false);
+                B1 = true;
+                XB1 = false;
+                Y1 = false;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox Solo P1 Press X") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(true);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(false);
+                B1 = false;
+                XB1 = true;
+                Y1 = false;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox Solo P1 Press Y") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(true);
+                Marker4[0].SetActive(false);
+                B1 = false;
+                XB1 = false;
+                Y1 = true;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox Solo P1 Press A") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(true);
+                B1 = false;
+                XB1 = false;
+                Y1 = false;
+                A1 = true;
+            }
+        }
+            if (SoloKeyBoard)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -167,7 +218,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 X1 = true;
             }
         }
-        if(DualController)
+        if(DualController && DN_MainMenuMannager.Ps4)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -360,7 +411,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
             }
         }
-        if(ThreeController)
+        if(ThreeController && DN_MainMenuMannager.Ps4)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -503,7 +554,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 X3 = true;
             }
         }
-        if (FourController)
+        if (FourController && DN_MainMenuMannager.Ps4)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -1035,7 +1086,7 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (P1)
             {
-                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Square1)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Square1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
                     {
@@ -1050,7 +1101,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && Square1)
+                if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && Square1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.DOWN)
@@ -1065,7 +1116,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.back;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && Square1)
+                if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.LEFT)
@@ -1080,9 +1131,67 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.left;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && Square1)
+                if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && Square1 && DN_MainMenuMannager.Ps4)
                 {
 
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && XB1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 1 && StopBot == false && XB1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 1 && StopLeft == false && XB1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 1 && StopRight == false && XB1 && DN_MainMenuMannager.Xbox)
+                {
                     if (dir != DIRECTION.RIGHT)
                     {
                         buttonCooldown = cooldownforbutton;
@@ -1100,7 +1209,7 @@ public class DN_PlayerMovement : MonoBehaviour {
             }
             if (P2)
             {
-                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && O1)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && O1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
                     {
@@ -1115,7 +1224,21 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && O1)
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && O1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.DOWN)
@@ -1130,7 +1253,22 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.back;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && O1)
+                if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 1 && StopBot == false && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && O1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.LEFT)
@@ -1145,7 +1283,21 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.left;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && O1)
+                if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 1 && StopLeft == false && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+                }
+                    if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && O1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.RIGHT)
@@ -1162,10 +1314,26 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
-            }
+                if (Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 1 && StopRight == false && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                }
             if(P3)
             {
-                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Triangle1)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Triangle1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
                     {
@@ -1180,7 +1348,22 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && Triangle1)
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+
+                    if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && Triangle1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.DOWN)
@@ -1195,7 +1378,21 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.back;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && Triangle1)
+                if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 1 && StopBot == false && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && Triangle1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.LEFT)
@@ -1210,7 +1407,21 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.left;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && Triangle1)
+                if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 1 && StopLeft == false && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+                }
+                    if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && Triangle1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.RIGHT)
@@ -1227,10 +1438,26 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
-            }
+                if (Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 1 && StopRight == false && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                }
             if (P4)
             {
-                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && X1)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && X1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
                     {
@@ -1245,7 +1472,21 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && X1)
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                    if (Input.GetAxis("Solo P1 Press Down Arrow") == 1 && StopBot == false && X1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.DOWN)
@@ -1260,7 +1501,21 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.back;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && X1)
+                if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 1 && StopBot == false && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && X1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.LEFT)
@@ -1275,7 +1530,21 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.left;
                     }
                 }
-                if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && X1)
+                if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 1 && StopLeft == false && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+                }
+                    if (Input.GetAxis("Solo P1 Press Right Arrow") == 1 && StopRight == false && X1 && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.RIGHT)
@@ -1292,7 +1561,23 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
-            }
+                if (Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 1 && StopRight == false && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                }
         }
     }
     private void TwoPlayerMove1()

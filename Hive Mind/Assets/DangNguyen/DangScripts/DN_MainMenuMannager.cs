@@ -68,6 +68,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
         Ps4Controller.SetActive(false);
         XboxController.SetActive(false);
         backButton.SetActive(false);
+        Ps4 = false;
+        Xbox = false;
+        PC = false;
     }
     public void PlayerOne()
     {
