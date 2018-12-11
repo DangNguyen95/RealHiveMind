@@ -1610,10 +1610,6 @@ Prefab:
       propertyPath: Marker4.Array.data[3]
       value: 
       objectReference: {fileID: 1309028216}
-    - target: {fileID: 1364379134777160, guid: b109433fb54a26d4e817f8edb8e60b6a, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b109433fb54a26d4e817f8edb8e60b6a, type: 2}
   m_IsPrefabParent: 0
@@ -4677,6 +4673,8 @@ MonoBehaviour:
   KeyboardPFI:
   - {fileID: 999338687}
   ControllerPFI:
+  - {fileID: 1691502062}
+  XboxControllerPFI:
   - {fileID: 1691502062}
   Player1PS4PFI:
   - {fileID: 1411953564}

@@ -19,8 +19,12 @@ public class DN_GameManager : MonoBehaviour {
     public GameObject OrangeImage;
     public GameObject BlueImage;
     public GameObject GreenImage;
+    public GameObject PS4ControllerInstructionScreen;
+    public GameObject KeyboardInstructionScreen;
+    public GameObject XboxControllerInstructionScreen;
     public GameObject[] KeyboardPFI;
     public GameObject[] ControllerPFI;
+    public GameObject[] XboxControllerPFI;
     public GameObject[] Player1PS4PFI;
     public GameObject[] Player1KeyboardPFI;
     public GameObject[] Player2PS4PFI;
@@ -44,12 +48,30 @@ public class DN_GameManager : MonoBehaviour {
                 {
                     KeyboardPFI[i].SetActive(false);
                 }
-                for (int i = 0; i < ControllerPFI.Length; i++)
+                if (DN_MainMenuMannager.Ps4)
                 {
-                    ControllerPFI[i].SetActive(true);
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(false);
+                    }
+                }
+                if (DN_MainMenuMannager.Xbox)
+                {
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(false);
+                    }
                 }
             }
-                RedImage.SetActive(true);
+            RedImage.SetActive(true);
             OrangeImage.SetActive(false);
             BlueImage.SetActive(false);
             GreenImage.SetActive(false);
@@ -86,9 +108,27 @@ public class DN_GameManager : MonoBehaviour {
                 {
                     KeyboardPFI[i].SetActive(true);
                 }
-                for (int i = 0; i < ControllerPFI.Length; i++)
+                if (DN_MainMenuMannager.Ps4)
                 {
-                    ControllerPFI[i].SetActive(false);
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(false);
+                    }
+                }
+                if (DN_MainMenuMannager.Xbox)
+                {
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(false);
+                    }
                 }
             }
             for (int i = 0; i < Player1KeyboardPFI.Length; i++)
@@ -124,9 +164,27 @@ public class DN_GameManager : MonoBehaviour {
                 {
                     KeyboardPFI[i].SetActive(false);
                 }
-                for (int i = 0; i < ControllerPFI.Length; i++)
+                if (DN_MainMenuMannager.Ps4)
                 {
-                    ControllerPFI[i].SetActive(true);
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(false);
+                    }
+                }
+                if (DN_MainMenuMannager.Xbox)
+                {
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(false);
+                    }
                 }
             }
             for (int i = 0; i < Player1KeyboardPFI.Length; i++)
@@ -162,9 +220,27 @@ public class DN_GameManager : MonoBehaviour {
                 {
                     KeyboardPFI[i].SetActive(false);
                 }
-                for (int i = 0; i < ControllerPFI.Length; i++)
+                if (DN_MainMenuMannager.Ps4)
                 {
-                    ControllerPFI[i].SetActive(true);
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(false);
+                    }
+                }
+                if (DN_MainMenuMannager.Xbox)
+                {
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(false);
+                    }
                 }
             }
             for (int i = 0; i < Player1KeyboardPFI.Length; i++)
@@ -200,9 +276,28 @@ public class DN_GameManager : MonoBehaviour {
                 {
                     KeyboardPFI[i].SetActive(false);
                 }
-                for (int i = 0; i < ControllerPFI.Length; i++)
+                if (DN_MainMenuMannager.Ps4)
                 {
-                    ControllerPFI[i].SetActive(true);
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(false);
+                    }
+
+                }
+                if (DN_MainMenuMannager.Xbox)
+                {
+                    for (int i = 0; i < XboxControllerPFI.Length; i++)
+                    {
+                        XboxControllerPFI[i].SetActive(true);
+                    }
+                    for (int i = 0; i < ControllerPFI.Length; i++)
+                    {
+                        ControllerPFI[i].SetActive(false);
+                    }
                 }
             }
             for (int i = 0; i < Player1KeyboardPFI.Length; i++)

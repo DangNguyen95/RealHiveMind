@@ -48,6 +48,7 @@ public class DN_PlayerMovement : MonoBehaviour {
     public static bool FourController;
     public GameObject[] KeyboardKey;
     public GameObject[] PS4Buttons;
+    public GameObject[] XboxButtons;
     // Use this for initialization
     void Start () {
          //SoloController = true;
@@ -69,6 +70,10 @@ public class DN_PlayerMovement : MonoBehaviour {
             for (int i = 0; i < PS4Buttons.Length; i++)
             {
                 PS4Buttons[i].SetActive(true);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
             }
 
             if (Input.GetAxis("Solo P1 Press Circle") != 0)
@@ -118,6 +123,19 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if (SoloController && DN_MainMenuMannager.Xbox)
         {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(true);
+            }
+
             if (Input.GetAxis("Xbox Solo P1 Press B") != 0)
             {
                 Marker1[0].SetActive(true);
@@ -173,6 +191,10 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 PS4Buttons[i].SetActive(false);
             }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
+            }
             if (Input.GetKey(KeyCode.A))
             {
                 Marker1[0].SetActive(true);
@@ -227,6 +249,10 @@ public class DN_PlayerMovement : MonoBehaviour {
             for (int i = 0; i < PS4Buttons.Length; i++)
             {
                 PS4Buttons[i].SetActive(true);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
             }
             if (UsbExtender)
             {
@@ -421,6 +447,10 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 PS4Buttons[i].SetActive(true);
             }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
+            }
             if (Input.GetAxis("P1 Press Circle") != 0)
             {
                 Marker1[0].SetActive(true);
@@ -563,6 +593,10 @@ public class DN_PlayerMovement : MonoBehaviour {
             for (int i = 0; i < PS4Buttons.Length; i++)
             {
                 PS4Buttons[i].SetActive(true);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
             }
             if (Input.GetAxis("P1 Press Circle") != 0)
             {
