@@ -7339,6 +7339,89 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 430707131}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &433586125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 433586126}
+  - component: {fileID: 433586128}
+  - component: {fileID: 433586127}
+  m_Layer: 5
+  m_Name: ObjectiveForControllerXbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &433586126
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433586125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.093590096, y: 0.093590096, z: 0.093590096}
+  m_Children: []
+  m_Father: {fileID: 1074103730}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
+  m_SizeDelta: {x: 1068.5, y: 1068.5}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &433586127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433586125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 87
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 110
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Level 1: The begining
+
+
+    Objective: move the X, Y, A, and B box to the green escape box.
+
+
+    Avoid: fire cube.
+
+
+    by: Dang Nguyen'
+--- !u!222 &433586128
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433586125}
 --- !u!1 &437168908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9716,7 +9799,7 @@ MonoBehaviour:
   - {fileID: 195486009}
   - {fileID: 1462465173}
   - {fileID: 1296058272}
-  - {fileID: 655507278}
+  - {fileID: 433586125}
   Player1PS4PFI:
   - {fileID: 1293767728}
   Player1KeyboardPFI:
@@ -14217,7 +14300,7 @@ RectTransform:
   m_Children:
   - {fileID: 1553060389}
   m_Father: {fileID: 1074103730}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -16119,6 +16202,7 @@ RectTransform:
   m_Children:
   - {fileID: 1994078897}
   - {fileID: 655507281}
+  - {fileID: 433586126}
   - {fileID: 920883306}
   m_Father: {fileID: 1527119281}
   m_RootOrder: 2

@@ -19,9 +19,9 @@ public class DN_GameManager : MonoBehaviour {
     public GameObject OrangeImage;
     public GameObject BlueImage;
     public GameObject GreenImage;
-    public GameObject PS4ControllerInstructionScreen;
-    public GameObject KeyboardInstructionScreen;
-    public GameObject XboxControllerInstructionScreen;
+    //public GameObject PS4ControllerInstructionScreen;
+    //public GameObject KeyboardInstructionScreen;
+    //public GameObject XboxControllerInstructionScreen;
     public GameObject[] KeyboardPFI;
     public GameObject[] ControllerPFI;
     public GameObject[] XboxControllerPFI;

@@ -11,6 +11,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject KeyBoard;
     public GameObject Ps4Controller;
     public GameObject XboxController;
+    public GameObject Ps4ControllerSolo;
+    public GameObject XboxControllerSolo;
     public static bool Ps4;
     public static bool Xbox;
     public static bool PC;
@@ -64,6 +66,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
         DN_PlayerMovement.ThreeController = false;
         DN_PlayerMovement.FourController = false;
         DN_PlayerMovement.SoloKeyBoard = false;
+        Ps4ControllerSolo.SetActive(false);
+        XboxControllerSolo.SetActive(false);
         KeyBoard.SetActive(false);
         Ps4Controller.SetActive(false);
         XboxController.SetActive(false);
@@ -83,8 +87,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
             PlayerActivate[i].SetActive(false);
         }
         KeyBoard.SetActive(true);
-        Ps4Controller.SetActive(true);
-        XboxController.SetActive(true);
+        Ps4ControllerSolo.SetActive(true);
+        XboxControllerSolo.SetActive(true);
     }
     public void PlayerTwo()
     {
@@ -157,6 +161,22 @@ public class DN_MainMenuMannager : MonoBehaviour {
         DN_PlayerMovement.SoloController = false;
         DN_PlayerMovement.UsbExtender = false;
         DN_PlayerMovement.SoloKeyBoard = true;
+        SceneManager.LoadScene(1);
+    }
+    public void GameBeginPs4()
+    {
+        Ps4 = true;
+        DN_PlayerMovement.SoloController = true;
+        DN_PlayerMovement.UsbExtender = false;
+        DN_PlayerMovement.SoloKeyBoard = false;
+        SceneManager.LoadScene(1);
+    }
+    public void GameBeginXbox()
+    {
+        Xbox = true;
+        DN_PlayerMovement.SoloController = true;
+        DN_PlayerMovement.UsbExtender = false;
+        DN_PlayerMovement.SoloKeyBoard = false;
         SceneManager.LoadScene(1);
     }
     public void YesUsbExtender()
