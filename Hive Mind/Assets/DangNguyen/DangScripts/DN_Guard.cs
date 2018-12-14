@@ -380,88 +380,172 @@ public class DN_Guard : MonoBehaviour {
     }
     void ThreePlayerMove()
     {
-        if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false)
+        if (DN_MainMenuMannager.Ps4)
         {
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.forward;
+            if (DN_PlayerMovement.UsbExtender)
+            {
+                if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false)
+                {
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.forward;
 
+                }
+                else if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false)
+                {
+
+
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.back;
+
+
+                }
+                else if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false)
+                {
+
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.left;
+
+
+                }
+                else if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false)
+                {
+
+
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.right;
+
+
+                }
+            }
         }
-        else if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false)
+        if(DN_MainMenuMannager.Xbox)
         {
+            if (DN_PlayerMovement.UsbExtender)
+            {
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false)
+                {
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.forward;
 
+                }
+                else if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && StopLeft == false)
+                {
 
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.back;
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.left;
+                }
+                else if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false)
+                {
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.back;
+                }
+                else if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false)
+                {
 
-
-        }
-        else if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false)
-        {
-
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.left;
-
-
-        }
-        else if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false)
-        {
-
-
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.right;
-
-
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.right;
+                }
+            }
         }
     }
     void FourPlayerMove()
     {
-        if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false)
+        if (DN_MainMenuMannager.Ps4)
         {
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.forward;
+            if (DN_PlayerMovement.UsbExtender)
+            {
+                if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false)
+                {
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.forward;
 
+                }
+                else if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false)
+                {
+
+
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.back;
+
+
+                }
+                else if (Input.GetAxis("P4 Press Left Arrow") == 1 && StopLeft == false)
+                {
+
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.left;
+
+
+                }
+                else if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false)
+                {
+
+
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.right;
+                }
+            }
         }
-        else if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false)
+        if (DN_MainMenuMannager.Xbox)
         {
+            if (DN_PlayerMovement.UsbExtender)
+            {
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false)
+                {
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.forward;
 
+                }
+                else if (Input.GetAxis("Xbox P4 Press Left Dpad") == 1 && StopLeft == false)
+                {
 
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.back;
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.left;
+                }
+                else if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false)
+                {
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.back;
+                }
+                else if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false)
+                {
 
-
-        }
-        else if (Input.GetAxis("P3 Press Left Arrow") == 1 && StopLeft == false)
-        {
-
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.left;
-
-
-        }
-        else if (Input.GetAxis("P4 Press Right Arrow") == 1 && StopRight == false)
-        {
-
-
-            buttonCooldown = cooldownforbutton;
-            canMove = false;
-            moving = true;
-            pos += Vector3.right;
-
-
+                    buttonCooldown = cooldownforbutton;
+                    canMove = false;
+                    moving = true;
+                    pos += Vector3.right;
+                }
+            }
         }
     }
 }

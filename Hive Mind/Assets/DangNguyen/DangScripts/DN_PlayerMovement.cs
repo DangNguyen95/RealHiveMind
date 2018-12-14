@@ -793,6 +793,153 @@ public class DN_PlayerMovement : MonoBehaviour {
                 X3 = true;
             }
         }
+        if(ThreeController && DN_MainMenuMannager.Xbox)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(true);
+            }
+            if (Input.GetAxis("Xbox P1 Press B") != 0)
+            {
+                Marker1[0].SetActive(true);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(false);
+                B1 = true;
+                XB1 = false;
+                Y1 = false;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox P1 Press X") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(true);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(false);
+                B1 = false;
+                XB1 = true;
+                Y1 = false;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox P1 Press Y") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(true);
+                Marker4[0].SetActive(false);
+                B1 = false;
+                XB1 = false;
+                Y1 = true;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox P1 Press A") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(true);
+                B1 = false;
+                XB1 = false;
+                Y1 = false;
+                A1 = true;
+            }
+            if (Input.GetAxis("Xbox P2 Press B") != 0)
+            {
+                Marker1[1].SetActive(true);
+                Marker2[1].SetActive(false);
+                Marker3[1].SetActive(false);
+                Marker4[1].SetActive(false);
+                B2 = true;
+                XB2 = false;
+                Y2 = false;
+                A2 = false;
+            }
+            if (Input.GetAxis("Xbox P2 Press X") != 0)
+            {
+                Marker1[1].SetActive(false);
+                Marker2[1].SetActive(true);
+                Marker3[1].SetActive(false);
+                Marker4[1].SetActive(false);
+                B2 = false;
+                XB2 = true;
+                Y2 = false;
+                A2 = false;
+            }
+            if (Input.GetAxis("Xbox P2 Press Y") != 0)
+            {
+                Marker1[1].SetActive(false);
+                Marker2[1].SetActive(false);
+                Marker3[1].SetActive(true);
+                Marker4[1].SetActive(false);
+                B2 = false;
+                XB2 = false;
+                Y2 = true;
+                A2 = false;
+            }
+            if (Input.GetAxis("Xbox P2 Press A") != 0)
+            {
+                Marker1[1].SetActive(false);
+                Marker2[1].SetActive(false);
+                Marker3[1].SetActive(false);
+                Marker4[1].SetActive(true);
+                B2 = false;
+                XB2 = false;
+                Y2 = false;
+                A2 = true;
+            }
+            if (Input.GetAxis("Xbox P3 Press B") != 0)
+            {
+                Marker1[2].SetActive(true);
+                Marker2[2].SetActive(false);
+                Marker3[2].SetActive(false);
+                Marker4[2].SetActive(false);
+                B3 = true;
+                XB3 = false;
+                Y3 = false;
+                A3 = false;
+            }
+            if (Input.GetAxis("Xbox P3 Press X") != 0)
+            {
+                Marker1[2].SetActive(false);
+                Marker2[2].SetActive(true);
+                Marker3[2].SetActive(false);
+                Marker4[2].SetActive(false);
+                B3 = false;
+                XB3 = true;
+                Y3 = false;
+                A3 = false;
+            }
+            if (Input.GetAxis("Xbox P3 Press Y") != 0)
+            {
+                Marker1[2].SetActive(false);
+                Marker2[2].SetActive(false);
+                Marker3[2].SetActive(true);
+                Marker4[2].SetActive(false);
+                B3 = false;
+                XB3 = false;
+                Y3 = true;
+                A3 = false;
+            }
+            if (Input.GetAxis("Xbox P3 Press A") != 0)
+            {
+                Marker1[2].SetActive(false);
+                Marker2[2].SetActive(false);
+                Marker3[2].SetActive(false);
+                Marker4[2].SetActive(true);
+                B3 = false;
+                XB3 = false;
+                Y3 = false;
+                A3 = true;
+            }
+        }
         if (FourController && DN_MainMenuMannager.Ps4)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
@@ -982,6 +1129,197 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Square4 = false;
                 Triangle4 = false;
                 X4 = true;
+            }
+        }
+        if (FourController && DN_MainMenuMannager.Xbox)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(true);
+            }
+            if (Input.GetAxis("Xbox P1 Press B") != 0)
+            {
+                Marker1[0].SetActive(true);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(false);
+                B1 = true;
+                XB1 = false;
+                Y1 = false;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox P1 Press X") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(true);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(false);
+                B1 = false;
+                XB1 = true;
+                Y1 = false;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox P1 Press Y") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(true);
+                Marker4[0].SetActive(false);
+                B1 = false;
+                XB1 = false;
+                Y1 = true;
+                A1 = false;
+            }
+            if (Input.GetAxis("Xbox P1 Press A") != 0)
+            {
+                Marker1[0].SetActive(false);
+                Marker2[0].SetActive(false);
+                Marker3[0].SetActive(false);
+                Marker4[0].SetActive(true);
+                B1 = false;
+                XB1 = false;
+                Y1 = false;
+                A1 = true;
+            }
+            if (Input.GetAxis("Xbox P2 Press B") != 0)
+            {
+                Marker1[1].SetActive(true);
+                Marker2[1].SetActive(false);
+                Marker3[1].SetActive(false);
+                Marker4[1].SetActive(false);
+                B2 = true;
+                XB2 = false;
+                Y2 = false;
+                A2 = false;
+            }
+            if (Input.GetAxis("Xbox P2 Press X") != 0)
+            {
+                Marker1[1].SetActive(false);
+                Marker2[1].SetActive(true);
+                Marker3[1].SetActive(false);
+                Marker4[1].SetActive(false);
+                B2 = false;
+                XB2 = true;
+                Y2 = false;
+                A2 = false;
+            }
+            if (Input.GetAxis("Xbox P2 Press Y") != 0)
+            {
+                Marker1[1].SetActive(false);
+                Marker2[1].SetActive(false);
+                Marker3[1].SetActive(true);
+                Marker4[1].SetActive(false);
+                B2 = false;
+                XB2 = false;
+                Y2 = true;
+                A2 = false;
+            }
+            if (Input.GetAxis("Xbox P2 Press A") != 0)
+            {
+                Marker1[1].SetActive(false);
+                Marker2[1].SetActive(false);
+                Marker3[1].SetActive(false);
+                Marker4[1].SetActive(true);
+                B2 = false;
+                XB2 = false;
+                Y2 = false;
+                A2 = true;
+            }
+            if (Input.GetAxis("Xbox P3 Press B") != 0)
+            {
+                Marker1[2].SetActive(true);
+                Marker2[2].SetActive(false);
+                Marker3[2].SetActive(false);
+                Marker4[2].SetActive(false);
+                B3 = true;
+                XB3 = false;
+                Y3 = false;
+                A3 = false;
+            }
+            if (Input.GetAxis("Xbox P3 Press X") != 0)
+            {
+                Marker1[2].SetActive(false);
+                Marker2[2].SetActive(true);
+                Marker3[2].SetActive(false);
+                Marker4[2].SetActive(false);
+                B3 = false;
+                XB3 = true;
+                Y3 = false;
+                A3 = false;
+            }
+            if (Input.GetAxis("Xbox P3 Press Y") != 0)
+            {
+                Marker1[2].SetActive(false);
+                Marker2[2].SetActive(false);
+                Marker3[2].SetActive(true);
+                Marker4[2].SetActive(false);
+                B3 = false;
+                XB3 = false;
+                Y3 = true;
+                A3 = false;
+            }
+            if (Input.GetAxis("Xbox P3 Press A") != 0)
+            {
+                Marker1[2].SetActive(false);
+                Marker2[2].SetActive(false);
+                Marker3[2].SetActive(false);
+                Marker4[2].SetActive(true);
+                B3 = false;
+                XB3 = false;
+                Y3 = false;
+                A3 = true;
+            }
+            if (Input.GetAxis("Xbox P4 Press B") != 0)
+            {
+                Marker1[3].SetActive(true);
+                Marker2[3].SetActive(false);
+                Marker3[3].SetActive(false);
+                Marker4[3].SetActive(false);
+                B4 = true;
+                XB4 = false;
+                Y4 = false;
+                A4 = false;
+            }
+            if (Input.GetAxis("Xbox P4 Press X") != 0)
+            {
+                Marker1[3].SetActive(false);
+                Marker2[3].SetActive(true);
+                Marker3[3].SetActive(false);
+                Marker4[3].SetActive(false);
+                B4 = false;
+                XB4 = true;
+                Y4 = false;
+                A4 = false;
+            }
+            if (Input.GetAxis("Xbox P4 Press Y") != 0)
+            {
+                Marker1[3].SetActive(false);
+                Marker2[3].SetActive(false);
+                Marker3[3].SetActive(true);
+                Marker4[3].SetActive(false);
+                B4 = false;
+                XB4 = false;
+                Y4 = true;
+                A4 = false;
+            }
+            if (Input.GetAxis("Xbox P4 Press A") != 0)
+            {
+                Marker1[3].SetActive(false);
+                Marker2[3].SetActive(false);
+                Marker3[3].SetActive(false);
+                Marker4[3].SetActive(true);
+                B4 = false;
+                XB4 = false;
+                Y4 = false;
+                A4 = true;
             }
         }
         buttonCooldown--;
@@ -2930,6 +3268,65 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && XB1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && StopLeft == false && XB1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && XB2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && XB3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
             }
         }
     }
@@ -2987,6 +3384,65 @@ public class DN_PlayerMovement : MonoBehaviour {
                 else if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false && O3)
                 {
 
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && StopLeft == false && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && B2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && B3 && DN_MainMenuMannager.Xbox)
+                {
                     if (dir != DIRECTION.RIGHT)
                     {
                         buttonCooldown = cooldownforbutton;
@@ -3072,6 +3528,65 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && StopLeft == false && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && Y2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && Y3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
             }
         }
     }
@@ -3129,6 +3644,65 @@ public class DN_PlayerMovement : MonoBehaviour {
                 else if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false && X3)
                 {
 
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && StopLeft == false && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && A2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && A3 && DN_MainMenuMannager.Xbox)
+                {
                     if (dir != DIRECTION.RIGHT)
                     {
                         buttonCooldown = cooldownforbutton;
@@ -3215,7 +3789,67 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
-               
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && XB1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+              
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && XB2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && XB3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetAxis("Xbox P4 Press Left Dpad") == 1 && StopLeft == false && XB4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
+                }
+
             }
         }
     }
@@ -3288,6 +3922,66 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.right;
 
                     }
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && B2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && B3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetAxis("Xbox P4 Press Left Dpad") == 1 && StopLeft == false && B4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
                 }
             }
         }
@@ -3362,6 +4056,66 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && Y2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && Y3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetAxis("Xbox P4 Press Left Dpad") == 1 && StopLeft == false && Y4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
+                }
             }
         }
     }
@@ -3434,6 +4188,66 @@ public class DN_PlayerMovement : MonoBehaviour {
                         pos += Vector3.right;
 
                     }
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && StopBot == false && A2 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && StopRight == false && A3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
+
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetAxis("Xbox P4 Press Left Dpad") == 1 && StopLeft == false && A4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+
                 }
             }
         }
