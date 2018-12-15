@@ -138,15 +138,15 @@ RectTransform:
   m_GameObject: {fileID: 10608791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19741434, y: 0.19741464, z: 0.19741464}
+  m_LocalScale: {x: 0.10378416, y: 0.12584256, z: 0.12584256}
   m_Children: []
   m_Father: {fileID: 2033678140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00043869, y: -0.00039291}
-  m_SizeDelta: {x: 506.54, y: 506.54}
+  m_AnchoredPosition: {x: -0.00012112, y: -0.000043392}
+  m_SizeDelta: {x: 963.54, y: 691.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10608793
 MonoBehaviour:
@@ -169,7 +169,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 122
+    m_FontSize: 84
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -180,7 +180,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Made by Dang Nguyen
+  m_Text: '             Credit:
+
+    August lay
+
+    Christopher Donohue
+
+    Dan Bachini
+
+    Dang Nguyen
+
+    Noel Montalvo
+
+    Robby Coberly
+
+'
 --- !u!222 &10608794
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3783,7 +3797,7 @@ RectTransform:
   m_GameObject: {fileID: 2033678139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.0654883, y: 5.06548, z: 5.06548}
+  m_LocalScale: {x: 9.635382, y: 7.946438, z: 7.946438}
   m_Children:
   - {fileID: 10608792}
   m_Father: {fileID: 1840254153}
@@ -3791,8 +3805,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 51.8}
+  m_SizeDelta: {x: 100, y: 87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2033678141
 MonoBehaviour:
