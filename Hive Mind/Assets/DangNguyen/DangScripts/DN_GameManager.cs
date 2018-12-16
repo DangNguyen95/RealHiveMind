@@ -36,6 +36,7 @@ public class DN_GameManager : MonoBehaviour {
     void Start () {
         timescripts = Times.GetComponent<DN_Time>();
         Time.timeScale = 0;
+        DN_PlayerMovement.SoloKeyBoard = true;
 	}
 	
 	// Update is called once per frame
