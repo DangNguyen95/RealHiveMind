@@ -12234,7 +12234,7 @@ MonoBehaviour:
   Times: {fileID: 973323313}
   RestartSceneNumber: 1
   PreviousSceneNumber: 0
-  NextLevelNumber: 2
+  NextLevelNumber: 1
   RedImage: {fileID: 169404227}
   OrangeImage: {fileID: 1865691530}
   BlueImage: {fileID: 823565584}

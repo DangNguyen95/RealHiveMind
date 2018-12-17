@@ -32,11 +32,16 @@ public class DN_GameManager : MonoBehaviour {
     public GameObject[] Player4PS4PFI;
     public bool therePrison;
     public GameObject ObjectiveIndicator;
+    //These bool bellow are for testing purposes
+    public bool Keyboard;
     // Use this for initialization
     void Start () {
         timescripts = Times.GetComponent<DN_Time>();
         Time.timeScale = 0;
-        DN_PlayerMovement.SoloKeyBoard = true;
+        if (Keyboard)
+        {
+            DN_PlayerMovement.SoloKeyBoard = true;
+        }
 	}
 	
 	// Update is called once per frame
