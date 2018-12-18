@@ -2165,6 +2165,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1154411183}
+  - component: {fileID: 1154411184}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -2191,6 +2192,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1154411184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1154411182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5edb9e0b1c7104d9e8f5f82999604e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200100790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,7 +3418,7 @@ MonoBehaviour:
   - {fileID: 2068784262}
   therePrison: 1
   ObjectiveIndicator: {fileID: 273249950}
-  Keyboard: 0
+  Keyboard: 1
 --- !u!4 &1702007180
 Transform:
   m_ObjectHideFlags: 0

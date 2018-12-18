@@ -4258,5 +4258,21 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             DN_GameManager.Death = true;
         }
+        if (other.tag == "Guard1")
+        {
+            DN_GameManager.Death = true;
+        }
+        if (other.tag == "Guard2")
+        {
+            DN_GameManager.Death = true;
+        }
+        if (other.tag == "Guard3")
+        {
+            DN_GameManager.Death = true;
+        }
+        if (other.tag == "Guard4")
+        {
+            DN_GameManager.Death = true;
+        }
     }
 }

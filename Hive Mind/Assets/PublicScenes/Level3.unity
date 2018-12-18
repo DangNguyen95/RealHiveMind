@@ -5886,6 +5886,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1916174480}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 1
   RightDetection: 0
@@ -8221,6 +8225,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1916174480}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 0
   RightDetection: 0
@@ -8922,6 +8930,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1801648627}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 1
   RightDetection: 0
@@ -9624,6 +9636,7 @@ MonoBehaviour:
   - {fileID: 1147489006}
   therePrison: 1
   ObjectiveIndicator: {fileID: 1074103729}
+  Keyboard: 0
 --- !u!4 &574092665
 Transform:
   m_ObjectHideFlags: 0
@@ -10127,6 +10140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1916174480}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 0
   RightDetection: 1
@@ -15359,6 +15376,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1801648627}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 0
   RightDetection: 0
@@ -19984,6 +20005,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1916174480}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 1
   BotDetection: 0
   RightDetection: 0
@@ -22435,6 +22460,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1801648627}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 1
   BotDetection: 0
   RightDetection: 0
@@ -22909,6 +22938,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1790639231}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 0
   RightDetection: 0
@@ -23027,6 +23060,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1790639231}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 1
   RightDetection: 0
@@ -23415,6 +23452,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1790639231}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 0
   RightDetection: 1
@@ -23889,6 +23930,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1790639231}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 1
   BotDetection: 0
   RightDetection: 0
@@ -25367,6 +25412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d93967fb48d124caa36d24be314f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  buttonCooldown: 0
   cooldownforbutton: 0
   StopTop: 0
   StopRight: 0
@@ -25750,6 +25797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d93967fb48d124caa36d24be314f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  buttonCooldown: 0
   cooldownforbutton: 0
   StopTop: 0
   StopRight: 0
@@ -27922,6 +27971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d93967fb48d124caa36d24be314f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  buttonCooldown: 0
   cooldownforbutton: 0
   StopTop: 0
   StopRight: 0
@@ -28260,6 +28311,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guard: {fileID: 1801648627}
+  Guard1: 0
+  Guard2: 0
+  Guard3: 0
+  Guard4: 0
   TopDetection: 0
   BotDetection: 0
   RightDetection: 1

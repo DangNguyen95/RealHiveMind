@@ -10,6 +10,10 @@ TagManager:
   - X
   - O
   - Fire
+  - Guard1
+  - Guard2
+  - Guard3
+  - Guard4
   layers:
   - Default
   - TransparentFX
