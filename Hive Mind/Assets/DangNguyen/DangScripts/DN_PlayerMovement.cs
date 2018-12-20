@@ -61,6 +61,7 @@ public class DN_PlayerMovement : MonoBehaviour {
     public GameObject[] KeyboardKey;
     public GameObject[] PS4Buttons;
     public GameObject[] XboxButtons;
+
     // Use this for initialization
     void Start () {
          //SoloController = true;
@@ -1332,7 +1333,9 @@ public class DN_PlayerMovement : MonoBehaviour {
             }
             if (SoloKeyBoard)
             {
-                SoloKeyboardMove();
+               
+                    SoloKeyboardMove();
+                
             }
             if (DualController)
             {
@@ -1368,7 +1371,9 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
                 if (SoloKeyBoard)
                 {
-                    SoloKeyboardMove();
+                    
+                        SoloKeyboardMove();
+                    
                 }
                 if (DualController)
                 {
@@ -1397,6 +1402,7 @@ public class DN_PlayerMovement : MonoBehaviour {
 	}
     private void SoloKeyboardMove()
     {
+        
         if (buttonCooldown <= 0)
         {
             if (P1)

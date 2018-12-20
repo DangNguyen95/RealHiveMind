@@ -14,6 +14,8 @@ TagManager:
   - Guard2
   - Guard3
   - Guard4
+  - StopPointUpper
+  - StopPointUnder
   layers:
   - Default
   - TransparentFX
