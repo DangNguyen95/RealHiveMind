@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DN_SpaceShipControl : MonoBehaviour {
     public bool UpPad;
     public bool DownPad;
@@ -13,13 +13,30 @@ public class DN_SpaceShipControl : MonoBehaviour {
     public bool FixShip;
     public bool Grab;
     public float speed;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public float Currenthealth;
+    public float MaxHealth;
+    public Slider HealthBar;
+    public GameObject HealthSlider;
+    // Use this for initialization
+    void Start () {
+      //  Currenthealth = MaxHealth;
+        Currenthealth = 50;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        
+        HealthBar.value = Currenthealth;
+        if (Currenthealth >= MaxHealth)
+        {
+            Currenthealth = MaxHealth;
+        }
+        if (Currenthealth < 0)
+        {
+            Currenthealth = 0;
+            HealthSlider.GetComponent<Image>().color = new Color32(1, 0, 0, 1);
+
+        }
         //if(StopPointUp)
         //{
         //    MoveBox1.SetActive(false);
@@ -36,7 +53,7 @@ public class DN_SpaceShipControl : MonoBehaviour {
         //{
         //    MoveBox2.SetActive(true);
         //}
-		if(UpPad && StopPointDown == false)
+        if (UpPad && StopPointDown == false)
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
@@ -45,6 +62,10 @@ public class DN_SpaceShipControl : MonoBehaviour {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
 	}
+    public void Damage()
+    {
+        Currenthealth -= 1;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "StopPointUpper")
