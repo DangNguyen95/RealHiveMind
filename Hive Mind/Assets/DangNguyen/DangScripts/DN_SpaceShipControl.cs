@@ -17,15 +17,87 @@ public class DN_SpaceShipControl : MonoBehaviour {
     public float MaxHealth;
     public Slider HealthBar;
     public GameObject HealthSlider;
+    public float CurrentEnergy1;
+    public float MaxEnergy1;
+    public Slider EnergyhBar1;
+    public GameObject EngergySlider1;
+    public float CurrentEnergy2;
+    public float MaxEnergy2;
+    public Slider EnergyhBar2;
+    public GameObject EngergySlider2;
+    public float CurrentEnergy3;
+    public float MaxEnergy3;
+    public Slider EnergyhBar3;
+    public GameObject EngergySlider3;
+    public float CurrentEnergy4;
+    public float MaxEnergy4;
+    public Slider EnergyhBar4;
+    public GameObject EngergySlider4;
+    public bool Energy1Empty;
+    public bool Energy2Empty;
+    public bool Energy3Empty;
+    public bool Energy4Empty;
+    public bool RegenEnergy;
     // Use this for initialization
     void Start () {
       //  Currenthealth = MaxHealth;
-        Currenthealth = 50;
+       // Currenthealth = 50;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
+        EnergyhBar1.value = CurrentEnergy1;
+        if(CurrentEnergy1 >= MaxEnergy1)
+        {
+            Energy1Empty = false;
+            CurrentEnergy1 = MaxEnergy1;
+        }
+        if(CurrentEnergy1 <=0)
+        {
+            RegenEnergy = true;
+            Energy1Empty = true;
+            CurrentEnergy1 = 0;
+        }
+        EnergyhBar2.value = CurrentEnergy2;
+        if (CurrentEnergy2 >= MaxEnergy2)
+        {
+            Energy2Empty = false;
+            CurrentEnergy2 = MaxEnergy2;
+        }
+        if (CurrentEnergy2 <= 0)
+        {
+
+            Energy2Empty = true;
+            CurrentEnergy2 = 0;
+        }
+        EnergyhBar3.value = CurrentEnergy3;
+        if (CurrentEnergy3 >= MaxEnergy3)
+        {
+            Energy3Empty = false;
+            CurrentEnergy3 = MaxEnergy3;
+        }
+        if (CurrentEnergy3 <= 0)
+        {
+            Energy3Empty = true;
+            CurrentEnergy3 = 0;
+        }
+        EnergyhBar4.value = CurrentEnergy4;
+        if (CurrentEnergy4 >= MaxEnergy4)
+        {
+            RegenEnergy = false;
+            Energy4Empty = false;
+            CurrentEnergy4 = MaxEnergy4;
+        }
+        if (CurrentEnergy4 <= 0)
+        {
+            Energy4Empty = true;
+            CurrentEnergy4 = 0;
+        }
+        if(RegenEnergy)
+        {
+            IncreaseEnergy();
+        }
+
         HealthBar.value = Currenthealth;
         if (Currenthealth >= MaxHealth)
         {
@@ -65,6 +137,44 @@ public class DN_SpaceShipControl : MonoBehaviour {
     public void Damage()
     {
         Currenthealth -= 1;
+    }
+    public void IncreaseEnergy()
+    {
+        if(Energy1Empty && Energy2Empty && Energy3Empty && Energy4Empty)
+        {
+            CurrentEnergy1 += Time.deltaTime;
+        }
+        if(Energy1Empty == false && Energy2Empty && Energy3Empty && Energy4Empty)
+        {
+            CurrentEnergy2 += Time.deltaTime;
+        }
+        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty && Energy4Empty)
+        {
+            CurrentEnergy3 += Time.deltaTime;
+        }
+        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty)
+        {
+            CurrentEnergy4 += Time.deltaTime;
+        }
+    }
+    public void DecreaseEnergy()
+    {
+        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty == false)
+        {
+            CurrentEnergy4 -= Time.deltaTime;
+        }
+        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty)
+        {
+            CurrentEnergy3 -= Time.deltaTime;
+        }
+        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty && Energy4Empty)
+        {
+            CurrentEnergy2 -= Time.deltaTime;
+        }
+        if (Energy1Empty == false && Energy2Empty && Energy3Empty && Energy4Empty)
+        {
+            CurrentEnergy1 -= Time.deltaTime;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
