@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class DN_Time : MonoBehaviour {
     public Text TimeText;
     public float Timer;
+    public bool InfiniteTIme;
 	// Use this for initialization
 	void Start () {
         TimeText = GetComponent<Text>();
@@ -12,7 +13,10 @@ public class DN_Time : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Timer -= Time.deltaTime;
+        if (InfiniteTIme == false)
+        {
+            Timer -= Time.deltaTime;
+        }
         TimeText.text = Timer.ToString();
         if(Timer <= 0)
         {

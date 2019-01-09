@@ -57,7 +57,7 @@ public class DN_Shootbox : MonoBehaviour {
         }
         if (other.tag == "X")
         {
-            Shooting = true;
+            Shooting = false;
         }
     }
 }

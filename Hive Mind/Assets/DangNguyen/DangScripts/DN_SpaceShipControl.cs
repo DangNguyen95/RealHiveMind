@@ -33,15 +33,31 @@ public class DN_SpaceShipControl : MonoBehaviour {
     public float MaxEnergy4;
     public Slider EnergyhBar4;
     public GameObject EngergySlider4;
-    public bool Energy1Empty;
-    public bool Energy2Empty;
-    public bool Energy3Empty;
-    public bool Energy4Empty;
+    //public bool Energy1Empty;
+    //public bool Energy2Empty;
+    //public bool Energy3Empty;
+    //public bool Energy4Empty;
     public bool RegenEnergy;
+    public float EnergyReductionRate;
+    public float EnergyIncreaseRate;
+    public bool ForceEnergyIncrease;
+    public Image EnergyFill1;
+    public Image EnergyFill2;
+    public Image EnergyFill3;
+    public Image EnergyFill4;
     // Use this for initialization
     void Start () {
-      //  Currenthealth = MaxHealth;
-       // Currenthealth = 50;
+        //  Currenthealth = MaxHealth;
+        // Currenthealth = 50;
+        //EnergyFill1 = EnergyhBar1.GetComponent<Image>();
+        //EnergyFill2 = EnergyhBar2.GetComponent<Image>();
+        //EnergyFill3 = EnergyhBar3.GetComponent<Image>();
+        //EnergyFill4 = EnergyhBar4.GetComponent<Image>();
+
+        EngergySlider1.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
+        EngergySlider2.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
+        EngergySlider3.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
+        EngergySlider4.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
     }
 	
 	// Update is called once per frame
@@ -49,51 +65,64 @@ public class DN_SpaceShipControl : MonoBehaviour {
         EnergyhBar1.value = CurrentEnergy1;
         if(CurrentEnergy1 >= MaxEnergy1)
         {
-            Energy1Empty = false;
+           // Energy1Empty = false;
             CurrentEnergy1 = MaxEnergy1;
         }
-        if(CurrentEnergy1 <=0)
+   
+        if (CurrentEnergy1 <=0)
         {
             RegenEnergy = true;
-            Energy1Empty = true;
+            ForceEnergyIncrease = true;
+            //Energy1Empty = true;
             CurrentEnergy1 = 0;
+            EngergySlider1.GetComponent<Image>().color = new Color32(255, 0, 31, 255);
+            EngergySlider2.GetComponent<Image>().color = new Color32(255, 0, 31, 255);
+            EngergySlider3.GetComponent<Image>().color = new Color32(255, 0, 31, 255);
+            EngergySlider4.GetComponent<Image>().color = new Color32(255, 0, 31, 255);
         }
         EnergyhBar2.value = CurrentEnergy2;
         if (CurrentEnergy2 >= MaxEnergy2)
         {
-            Energy2Empty = false;
+           // Energy2Empty = false;
             CurrentEnergy2 = MaxEnergy2;
         }
         if (CurrentEnergy2 <= 0)
         {
 
-            Energy2Empty = true;
+           // Energy2Empty = true;
             CurrentEnergy2 = 0;
         }
+       
         EnergyhBar3.value = CurrentEnergy3;
         if (CurrentEnergy3 >= MaxEnergy3)
         {
-            Energy3Empty = false;
+           // Energy3Empty = false;
             CurrentEnergy3 = MaxEnergy3;
         }
         if (CurrentEnergy3 <= 0)
         {
-            Energy3Empty = true;
+           // Energy3Empty = true;
             CurrentEnergy3 = 0;
         }
+      
         EnergyhBar4.value = CurrentEnergy4;
         if (CurrentEnergy4 >= MaxEnergy4)
         {
             RegenEnergy = false;
-            Energy4Empty = false;
+          //  Energy4Empty = false;
             CurrentEnergy4 = MaxEnergy4;
+            EngergySlider1.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
+            EngergySlider2.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
+            EngergySlider3.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
+            EngergySlider4.GetComponent<Image>().color = new Color32(0, 232, 255, 255);
         }
         if (CurrentEnergy4 <= 0)
         {
-            Energy4Empty = true;
+           // Energy4Empty = true;
             CurrentEnergy4 = 0;
         }
-        if(RegenEnergy)
+     
+        if (RegenEnergy)
         {
             IncreaseEnergy();
         }
@@ -140,40 +169,100 @@ public class DN_SpaceShipControl : MonoBehaviour {
     }
     public void IncreaseEnergy()
     {
-        if(Energy1Empty && Energy2Empty && Energy3Empty && Energy4Empty)
+        if (ForceEnergyIncrease)
         {
-            CurrentEnergy1 += Time.deltaTime;
-        }
-        if(Energy1Empty == false && Energy2Empty && Energy3Empty && Energy4Empty)
+            if (CurrentEnergy1 < 100)
+            {
+                CurrentEnergy1 += Time.deltaTime * EnergyIncreaseRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 < 100 && CurrentEnergy3 <100 && CurrentEnergy4 <100)
+            {
+                CurrentEnergy2 += Time.deltaTime * EnergyIncreaseRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy3 < 100 && CurrentEnergy4 <100)
+            {
+                CurrentEnergy3 += Time.deltaTime * EnergyIncreaseRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy3 >= 100 && CurrentEnergy4 < 100)
+            {
+                CurrentEnergy4 += Time.deltaTime * EnergyIncreaseRate;
+            }
+         }
+        else
         {
-            CurrentEnergy2 += Time.deltaTime;
+            if (CurrentEnergy1 < 100)
+            {
+                CurrentEnergy1 += Time.deltaTime * EnergyIncreaseRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 < 100 && CurrentEnergy3 < 100 && CurrentEnergy4 < 100)
+            {
+                CurrentEnergy2 += Time.deltaTime * EnergyIncreaseRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy3 < 100 && CurrentEnergy4 < 100)
+            {
+                CurrentEnergy3 += Time.deltaTime * EnergyIncreaseRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy3 >= 100 && CurrentEnergy4 < 100)
+            {
+                CurrentEnergy4 += Time.deltaTime * EnergyIncreaseRate;
+            }
         }
-        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty && Energy4Empty)
-        {
-            CurrentEnergy3 += Time.deltaTime;
-        }
-        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty)
-        {
-            CurrentEnergy4 += Time.deltaTime;
-        }
-    }
+    //else
+    //{
+    //    if (Energy1Empty && Energy2Empty && Energy3Empty && Energy4Empty)
+    //    {
+    //        CurrentEnergy1 += Time.deltaTime * EnergyIncreaseRate;
+    //    }
+    //    if (Energy1Empty == false && Energy2Empty && Energy3Empty && Energy4Empty)
+    //    {
+    //        CurrentEnergy2 += Time.deltaTime * EnergyIncreaseRate;
+    //    }
+    //    if (Energy1Empty == false && Energy2Empty == false && Energy3Empty && Energy4Empty)
+    //    {
+    //        CurrentEnergy3 += Time.deltaTime * EnergyIncreaseRate;
+    //    }
+    //    if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty)
+    //    {
+    //        CurrentEnergy4 += Time.deltaTime * EnergyIncreaseRate;
+    //    }
+    //}
+}
     public void DecreaseEnergy()
     {
-        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty == false)
+        if (RegenEnergy == false)
         {
-            CurrentEnergy4 -= Time.deltaTime;
-        }
-        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty)
-        {
-            CurrentEnergy3 -= Time.deltaTime;
-        }
-        if (Energy1Empty == false && Energy2Empty == false && Energy3Empty && Energy4Empty)
-        {
-            CurrentEnergy2 -= Time.deltaTime;
-        }
-        if (Energy1Empty == false && Energy2Empty && Energy3Empty && Energy4Empty)
-        {
-            CurrentEnergy1 -= Time.deltaTime;
+            //if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty == false)
+            //{
+            //    CurrentEnergy4 -= Time.deltaTime * EnergyReductionRate;
+            //}
+            //if (Energy1Empty == false && Energy2Empty == false && Energy3Empty == false && Energy4Empty)
+            //{
+            //    CurrentEnergy3 -= Time.deltaTime * EnergyReductionRate;
+            //}
+            //if (Energy1Empty == false && Energy2Empty == false && Energy3Empty && Energy4Empty)
+            //{
+            //    CurrentEnergy2 -= Time.deltaTime * EnergyReductionRate;
+            //}
+            //if (Energy1Empty == false && Energy2Empty && Energy3Empty && Energy4Empty)
+            //{
+            //    CurrentEnergy1 -= Time.deltaTime * EnergyReductionRate;
+            //}
+            if ( CurrentEnergy2 <=0 && CurrentEnergy3 <=0 && CurrentEnergy4<=0)
+            {
+                CurrentEnergy1 -= Time.deltaTime * EnergyReductionRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy3 <=0 && CurrentEnergy4 <=0)
+            {
+                CurrentEnergy2 -= Time.deltaTime * EnergyReductionRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy4 <= 0)
+            {
+                CurrentEnergy3 -= Time.deltaTime * EnergyReductionRate;
+            }
+            if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy3 >= 100)
+            {
+                CurrentEnergy4 -= Time.deltaTime * EnergyReductionRate;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
