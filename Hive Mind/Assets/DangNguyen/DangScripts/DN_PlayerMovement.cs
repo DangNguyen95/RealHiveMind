@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum DIRECTION { UP, DOWN, LEFT, RIGHT }
 public class DN_PlayerMovement : MonoBehaviour {
-    private bool canMove = true, moving = false;
-    private int speed = 5, buttonCooldown = 0;
+    public bool canMove = true, moving = false;
+    public int speed = 5, buttonCooldown = 0;
     public int cooldownforbutton;
     private DIRECTION dir = DIRECTION.DOWN;
     private Vector3 pos;
+    public bool MovingDown;
+    public bool MovingUp;
+    public bool MovingLeft;
+    public bool MovingRight;
     public bool StopTop;
     public bool StopRight;
     public bool StopLeft;
@@ -210,6 +214,7 @@ public class DN_PlayerMovement : MonoBehaviour {
             }
             if (Input.GetKey(KeyCode.A))
             {
+                
                 Marker1[0].SetActive(true);
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
@@ -1372,7 +1377,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 if (SoloKeyBoard)
                 {
                     
-                        SoloKeyboardMove();
+                    SoloKeyboardMove();
                     
                 }
                 if (DualController)
@@ -1416,6 +1421,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        MovingUp = true;
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -1432,6 +1438,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        MovingDown = true;
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -1447,6 +1454,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        MovingLeft = true;
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -1462,7 +1470,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        MovingRight = true;
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;

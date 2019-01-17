@@ -16,6 +16,13 @@ TagManager:
   - Guard4
   - StopPointUpper
   - StopPointUnder
+  - YellowBlock
+  - YellowTiles
+  - XDetectBot
+  - XDetectRight
+  - XDetectLeft
+  - XDetectTop
+  - FakeWall
   layers:
   - Default
   - TransparentFX

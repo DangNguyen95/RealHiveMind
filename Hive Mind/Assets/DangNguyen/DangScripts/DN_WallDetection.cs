@@ -30,6 +30,10 @@ public class DN_WallDetection : MonoBehaviour {
             {
                 PlayerScript.StopTop = true;
             }
+            if (other.tag == "FakeWall")
+            {
+                PlayerScript.StopTop = true;
+            }
             if (o && other.tag == "Square")
             {
                 PlayerScript.StopTop = true;
@@ -83,6 +87,10 @@ public class DN_WallDetection : MonoBehaviour {
         if(BotDetection)
         {
             if (other.tag == "Wall")
+            {
+                PlayerScript.StopBot = true;
+            }
+            if (other.tag == "FakeWall")
             {
                 PlayerScript.StopBot = true;
             }
@@ -141,6 +149,10 @@ public class DN_WallDetection : MonoBehaviour {
             {
                 PlayerScript.StopRight = true;
             }
+            if (other.tag == "FakeWall")
+            {
+                PlayerScript.StopRight = true;
+            }
             if (o && other.tag == "Square")
             {
                 PlayerScript.StopRight = true;
@@ -193,6 +205,10 @@ public class DN_WallDetection : MonoBehaviour {
         if(LeftDetection)
         {
             if (other.tag == "Wall")
+            {
+                PlayerScript.StopLeft = true;
+            }
+            if (other.tag == "FakeWall")
             {
                 PlayerScript.StopLeft = true;
             }
@@ -254,6 +270,10 @@ public class DN_WallDetection : MonoBehaviour {
             {
                 PlayerScript.StopTop = false;
             }
+            if (other.tag == "FakeWall")
+            {
+                PlayerScript.StopTop = false;
+            }
             if (o && other.tag == "Square")
             {
                 PlayerScript.StopTop = false;
@@ -307,6 +327,10 @@ public class DN_WallDetection : MonoBehaviour {
         if (BotDetection)
         {
             if (other.tag == "Wall")
+            {
+                PlayerScript.StopBot = false;
+            }
+            if (other.tag == "FakeWall")
             {
                 PlayerScript.StopBot = false;
             }
@@ -365,6 +389,10 @@ public class DN_WallDetection : MonoBehaviour {
             {
                 PlayerScript.StopRight = false;
             }
+            if (other.tag == "FakeWall")
+            {
+                PlayerScript.StopRight = false;
+            }
             if (o && other.tag == "Square")
             {
                 PlayerScript.StopRight = false;
@@ -417,6 +445,10 @@ public class DN_WallDetection : MonoBehaviour {
         if (LeftDetection)
         {
             if (other.tag == "Wall")
+            {
+                PlayerScript.StopLeft = false;
+            }
+            if (other.tag == "FakeWall")
             {
                 PlayerScript.StopLeft = false;
             }
