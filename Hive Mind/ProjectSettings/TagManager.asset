@@ -23,6 +23,9 @@ TagManager:
   - XDetectLeft
   - XDetectTop
   - FakeWall
+  - PurpleBlock
+  - GreenBlock
+  - BlueBlock
   layers:
   - Default
   - TransparentFX

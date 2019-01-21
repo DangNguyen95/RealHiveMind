@@ -30,30 +30,30 @@ public class DN_MoveBlock : MonoBehaviour {
             if(UpTrigger)
             {
                 WallBot.SetActive(true);
-                WallTop.SetActive(false);
-                WallRight.SetActive(false);
-                WallLeft.SetActive(false);
+                //WallTop.SetActive(false);
+                //WallRight.SetActive(false);
+                //WallLeft.SetActive(false);
             }
             if (DownTrigger)
             {
-                WallBot.SetActive(false);
+                //WallBot.SetActive(false);
                 WallTop.SetActive(true);
-                WallRight.SetActive(false);
-                WallLeft.SetActive(false);
+                //WallRight.SetActive(false);
+                //WallLeft.SetActive(false);
             }
             if (RightTrigger)
             {
-                WallBot.SetActive(false);
-                WallTop.SetActive(false);
-                WallRight.SetActive(false);
+                //WallBot.SetActive(false);
+                //WallTop.SetActive(false);
+                //WallRight.SetActive(false);
                 WallLeft.SetActive(true);
             }
             if (LeftTrigger)
             {
-                WallBot.SetActive(false);
-                WallTop.SetActive(false);
+                //WallBot.SetActive(false);
+                //WallTop.SetActive(false);
                 WallRight.SetActive(true);
-                WallLeft.SetActive(false);
+                //WallLeft.SetActive(false);
             }
 
         }
@@ -65,30 +65,30 @@ public class DN_MoveBlock : MonoBehaviour {
             if (UpTrigger)
             {
                 WallBot.SetActive(true);
-                WallTop.SetActive(false);
-                WallRight.SetActive(false);
-                WallLeft.SetActive(false);
+                //WallTop.SetActive(false);
+                //WallRight.SetActive(false);
+                //WallLeft.SetActive(false);
             }
             if (DownTrigger)
             {
-                WallBot.SetActive(false);
+                //WallBot.SetActive(false);
                 WallTop.SetActive(true);
-                WallRight.SetActive(false);
-                WallLeft.SetActive(false);
+                //WallRight.SetActive(false);
+                //WallLeft.SetActive(false);
             }
             if (RightTrigger)
             {
-                WallBot.SetActive(false);
-                WallTop.SetActive(false);
-                WallRight.SetActive(false);
+                //WallBot.SetActive(false);
+                //WallTop.SetActive(false);
+                //WallRight.SetActive(false);
                 WallLeft.SetActive(true);
             }
             if (LeftTrigger)
             {
-                WallBot.SetActive(false);
-                WallTop.SetActive(false);
+                //WallBot.SetActive(false);
+                //WallTop.SetActive(false);
                 WallRight.SetActive(true);
-                WallLeft.SetActive(false);
+                //WallLeft.SetActive(false);
             }
 
         }
