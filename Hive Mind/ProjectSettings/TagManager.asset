@@ -26,6 +26,8 @@ TagManager:
   - PurpleBlock
   - GreenBlock
   - BlueBlock
+  - Guard
+  - GO
   layers:
   - Default
   - TransparentFX

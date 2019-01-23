@@ -26,6 +26,10 @@ public class DN_WallDetection : MonoBehaviour {
     {
         if (TopDetection)
         {
+            if(other.tag == "GO")
+            {
+                PlayerScript.StopTop = false;
+            }
             if (other.tag == "Wall")
             {
                 PlayerScript.StopTop = true;
@@ -86,6 +90,10 @@ public class DN_WallDetection : MonoBehaviour {
         }
         if(BotDetection)
         {
+            if (other.tag == "GO")
+            {
+                PlayerScript.StopBot = false;
+            }
             if (other.tag == "Wall")
             {
                 PlayerScript.StopBot = true;
@@ -145,6 +153,10 @@ public class DN_WallDetection : MonoBehaviour {
         }
         if(RightDetection)
         {
+            if (other.tag == "GO")
+            {
+                PlayerScript.StopRight = false;
+            }
             if (other.tag == "Wall")
             {
                 PlayerScript.StopRight = true;
@@ -204,6 +216,10 @@ public class DN_WallDetection : MonoBehaviour {
         }
         if(LeftDetection)
         {
+            if (other.tag == "GO")
+            {
+                PlayerScript.StopLeft = false;
+            }
             if (other.tag == "Wall")
             {
                 PlayerScript.StopLeft = true;
