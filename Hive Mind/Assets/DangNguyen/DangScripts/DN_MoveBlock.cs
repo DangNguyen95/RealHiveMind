@@ -11,22 +11,22 @@ public class DN_MoveBlock : MonoBehaviour {
     public GameObject WallBotGO;
     public GameObject WallLeftGO;
     public GameObject WallRightGO;
-    public GameObject TopO;
-    public GameObject BotO;
-    public GameObject LeftO;
-    public GameObject RightO;
-    public GameObject TopX;
-    public GameObject BotX;
-    public GameObject LeftX;
-    public GameObject RightX;
-    public GameObject TopSquare;
-    public GameObject BotSquare;
-    public GameObject LeftSquare;
-    public GameObject RightSquare;
-    public GameObject TopTriangle;
-    public GameObject BotTriangle;
-    public GameObject RightTriangle;
-    public GameObject LeftTriangle;
+    //public GameObject TopO;
+    //public GameObject BotO;
+    //public GameObject LeftO;
+    //public GameObject RightO;
+    //public GameObject TopX;
+    //public GameObject BotX;
+    //public GameObject LeftX;
+    //public GameObject RightX;
+    //public GameObject TopSquare;
+    //public GameObject BotSquare;
+    //public GameObject LeftSquare;
+    //public GameObject RightSquare;
+    //public GameObject TopTriangle;
+    //public GameObject BotTriangle;
+    //public GameObject RightTriangle;
+    //public GameObject LeftTriangle;
     public bool UpTrigger;
     public bool DownTrigger;
     public bool RightTrigger;
@@ -92,31 +92,42 @@ public class DN_MoveBlock : MonoBehaviour {
         {
             if (UpTrigger)
             {
-                TopO.SetActive(false);
-                BotO.SetActive(true);
-                RightO.SetActive(false);
-                LeftO.SetActive(false);
+                WallBot.SetActive(true);
+                WallBotGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(true);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
-            if(DownTrigger)
+
+            if (DownTrigger)
             {
-                TopO.SetActive(true);
-                BotO.SetActive(false);
-                RightO.SetActive(false);
-                LeftO.SetActive(false);
+                WallTop.SetActive(true);
+                WallTopGO.SetActive(false);
+                //TopX.SetActive(true);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
-            if(RightTrigger)
+
+            if (RightTrigger)
             {
-                TopO.SetActive(false);
-                BotO.SetActive(false);
-                RightO.SetActive(false);
-                LeftO.SetActive(true);
+                WallLeft.SetActive(true);
+                WallLeftGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(true);
             }
-            if(LeftTrigger)
+
+            if (LeftTrigger)
             {
-                TopO.SetActive(false);
-                BotO.SetActive(false);
-                RightO.SetActive(true);
-                LeftO.SetActive(false);
+                WallRight.SetActive(true);
+                WallRightGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(true);
+                //LeftX.SetActive(false);
             }
         }
         if(other.tag == "X")
@@ -210,31 +221,42 @@ public class DN_MoveBlock : MonoBehaviour {
         {
             if (UpTrigger)
             {
-                TopSquare.SetActive(true);
-                BotSquare.SetActive(false);
-                RightSquare.SetActive(false);
-                LeftSquare.SetActive(false);
+                WallBot.SetActive(true);
+                WallBotGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(true);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
+
             if (DownTrigger)
             {
-                TopSquare.SetActive(false);
-                BotSquare.SetActive(true);
-                RightSquare.SetActive(false);
-                LeftSquare.SetActive(false);
+                WallTop.SetActive(true);
+                WallTopGO.SetActive(false);
+                //TopX.SetActive(true);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
+
             if (RightTrigger)
             {
-                TopSquare.SetActive(false);
-                BotSquare.SetActive(false);
-                RightSquare.SetActive(true);
-                LeftSquare.SetActive(false);
+                WallLeft.SetActive(true);
+                WallLeftGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(true);
             }
+
             if (LeftTrigger)
             {
-                TopSquare.SetActive(false);
-                BotSquare.SetActive(false);
-                RightSquare.SetActive(false);
-                LeftSquare.SetActive(true);
+                WallRight.SetActive(true);
+                WallRightGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(true);
+                //LeftX.SetActive(false);
             }
         }
 
@@ -289,31 +311,42 @@ public class DN_MoveBlock : MonoBehaviour {
         {
             if (UpTrigger)
             {
-                TopO.SetActive(true);
-                BotO.SetActive(false);
-                RightO.SetActive(false);
-                LeftO.SetActive(false);
+                WallBot.SetActive(true);
+                WallBotGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(true);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
+
             if (DownTrigger)
             {
-                TopO.SetActive(false);
-                BotO.SetActive(true);
-                RightO.SetActive(false);
-                LeftO.SetActive(false);
+                WallTop.SetActive(true);
+                WallTopGO.SetActive(false);
+                //TopX.SetActive(true);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
+
             if (RightTrigger)
             {
-                TopO.SetActive(false);
-                BotO.SetActive(false);
-                RightO.SetActive(true);
-                LeftO.SetActive(false);
+                WallLeft.SetActive(true);
+                WallLeftGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(true);
             }
+
             if (LeftTrigger)
             {
-                TopO.SetActive(false);
-                BotO.SetActive(false);
-                RightO.SetActive(false);
-                LeftO.SetActive(true);
+                WallRight.SetActive(true);
+                WallRightGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(true);
+                //LeftX.SetActive(false);
             }
         }
         if (other.tag == "X")
@@ -405,31 +438,42 @@ public class DN_MoveBlock : MonoBehaviour {
         {
             if (UpTrigger)
             {
-                TopSquare.SetActive(true);
-                BotSquare.SetActive(false);
-                RightSquare.SetActive(false);
-                LeftSquare.SetActive(false);
+                WallBot.SetActive(true);
+                WallBotGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(true);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
+
             if (DownTrigger)
             {
-                TopSquare.SetActive(false);
-                BotSquare.SetActive(true);
-                RightSquare.SetActive(false);
-                LeftSquare.SetActive(false);
+                WallTop.SetActive(true);
+                WallTopGO.SetActive(false);
+                //TopX.SetActive(true);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(false);
             }
+
             if (RightTrigger)
             {
-                TopSquare.SetActive(false);
-                BotSquare.SetActive(false);
-                RightSquare.SetActive(true);
-                LeftSquare.SetActive(false);
+                WallLeft.SetActive(true);
+                WallLeftGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(false);
+                //LeftX.SetActive(true);
             }
+
             if (LeftTrigger)
             {
-                TopSquare.SetActive(false);
-                BotSquare.SetActive(false);
-                RightSquare.SetActive(false);
-                LeftSquare.SetActive(true);
+                WallRight.SetActive(true);
+                WallRightGO.SetActive(false);
+                //TopX.SetActive(false);
+                //BotX.SetActive(false);
+                //RightX.SetActive(true);
+                //LeftX.SetActive(false);
             }
         }
 
@@ -467,25 +511,26 @@ public class DN_MoveBlock : MonoBehaviour {
         {
             if (UpTrigger)
             {
-                TopO.SetActive(false);
-             
+                WallBot.SetActive(false);
+                WallBotGO.SetActive(true);
+
             }
             if (DownTrigger)
             {
-                
-                BotO.SetActive(false);
-                
+
+                WallTop.SetActive(false);
+                WallTopGO.SetActive(true);
+
             }
             if (RightTrigger)
             {
-              
-                RightO.SetActive(false);
-             
+                WallLeftGO.SetActive(true);
+                WallLeft.SetActive(false);
             }
             if (LeftTrigger)
             {
-             
-                LeftO.SetActive(false);
+                WallRight.SetActive(false);
+                WallRightGO.SetActive(true);
             }
         }
         if (other.tag == "X")
@@ -542,25 +587,26 @@ public class DN_MoveBlock : MonoBehaviour {
         {
             if (UpTrigger)
             {
-                TopSquare.SetActive(false);
-          
+                WallBot.SetActive(false);
+                WallBotGO.SetActive(true);
+
             }
             if (DownTrigger)
             {
-               
-                BotSquare.SetActive(false);
-       
+
+                WallTop.SetActive(false);
+                WallTopGO.SetActive(true);
+
             }
             if (RightTrigger)
             {
-           
-                RightSquare.SetActive(false);
-               
+                WallLeftGO.SetActive(true);
+                WallLeft.SetActive(false);
             }
             if (LeftTrigger)
             {
-             
-                LeftSquare.SetActive(false);
+                WallRight.SetActive(false);
+                WallRightGO.SetActive(true);
             }
         }
       

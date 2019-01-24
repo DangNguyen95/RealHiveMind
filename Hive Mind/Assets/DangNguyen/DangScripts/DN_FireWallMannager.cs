@@ -51,6 +51,7 @@ public class DN_FireWallMannager : MonoBehaviour {
     public MeshRenderer[] BlockMesh;
     public BoxCollider[] BlockCollider;
     public SpriteRenderer[] PushSprite;
+    public GameObject[] TimePickups;
     private float BoolCD;
 
     // Use this for initialization
@@ -156,11 +157,14 @@ public class DN_FireWallMannager : MonoBehaviour {
     {
         if(FinalTile1Script.TileDone && FinalTile2Script.TileDone && FinalTile3Script.TileDone && FinalTile4Script.TileDone)
         {
+
             DN_GameManager.SquareHome = true;
             DN_GameManager.XHome = true;
             DN_GameManager.TriangleHome = true;
             DN_GameManager.OHome = true;
             PartThree = false;
+           
+           
         }
         if(TriggerScript1.Player1InPlace && TriggerScript2.Player2InPlace && TriggerScript3.Player3InPlace && TriggerScript4.Player4InPlace)
         {
@@ -171,10 +175,12 @@ public class DN_FireWallMannager : MonoBehaviour {
             WallBlocker.SetActive(true);
             PartOne = false;
             BoolCD -= Time.deltaTime;
+            
             if (SpawnBLockOnce == false)
             {
-             
-                    PushSprite[0].enabled = true;
+                TimePickups[0].SetActive(true);
+                TimePickups[1].SetActive(true);
+                PushSprite[0].enabled = true;
                     PushSprite[1].enabled = true;
                     PushSprite[2].enabled = true;
                     PushSprite[3].enabled = true;
@@ -209,7 +215,9 @@ public class DN_FireWallMannager : MonoBehaviour {
             PartOne = false;
             if (SpawnBLockOnce2 == false)
             {
-                
+                TimePickups[2].SetActive(true);
+                TimePickups[3].SetActive(true);
+                TimePickups[4].SetActive(true);
                 PushSprite[4].enabled = true;
                 PushSprite[5].enabled = true;
                 PushSprite[6].enabled = true;
