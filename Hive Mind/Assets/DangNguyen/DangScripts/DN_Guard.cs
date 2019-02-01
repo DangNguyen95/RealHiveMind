@@ -6,7 +6,7 @@ public class DN_Guard : MonoBehaviour {
 
     //  private DIRECTION dir = DIRECTION.DOWN;
     private bool canMove = true, moving = false;
-    public int speed = 5, buttonCooldown = 0;
+    public int speed, buttonCooldown = 0;
     public int cooldownforbutton;
     private DIRECTION dir = DIRECTION.DOWN;
     private Vector3 pos;
@@ -14,45 +14,47 @@ public class DN_Guard : MonoBehaviour {
     public bool StopRight;
     public bool StopLeft;
     public bool StopBot;
-
+    public bool AutoRun;
+    public bool RunDown;
+    public GameObject Scaredface;
+    public GameObject AngryFace;
+    public GameObject Mech;
+    private DN_Mech MechScripts;
     // Use this for initialization
     void Start() {
-
+        if (AutoRun)
+        {
+            MechScripts = Mech.GetComponent<DN_Mech>();
+        }
     }
 
     // Update is called once per frame
     void Update() {
         buttonCooldown--;
-        if (canMove)
+        if (AutoRun)
         {
-            pos = transform.position;
-            if(DN_PlayerMovement.SoloController)
+            if (MechScripts.BotLeft && MechScripts.BotRight && MechScripts.TopRight && MechScripts.TopLeft)
             {
-                SoloPlayerMove();
+                Scaredface.SetActive(true);
+                AngryFace.SetActive(false);
             }
-            if (DN_PlayerMovement.DualController)
+            if (RunDown)
             {
-                TwoPlayerMove();
+                transform.position += Vector3.back * Time.deltaTime * speed;
+
             }
-            if(DN_PlayerMovement.ThreeController)
+            else
             {
-                ThreePlayerMove();
+                transform.position += Vector3.forward * Time.deltaTime * speed;
             }
-            if(DN_PlayerMovement.FourController)
-            {
-                FourPlayerMove();
-            }
-            if(DN_PlayerMovement.SoloKeyBoard)
-            {
-                SoloKeyboardMove();
-            }
+
+
         }
-        if (moving)
+        else
         {
-            if (transform.position == pos)
+            if (canMove)
             {
-                moving = false;
-                canMove = true;
+                pos = transform.position;
                 if (DN_PlayerMovement.SoloController)
                 {
                     SoloPlayerMove();
@@ -72,76 +74,105 @@ public class DN_Guard : MonoBehaviour {
                 if (DN_PlayerMovement.SoloKeyBoard)
                 {
                     SoloKeyboardMove();
-
                 }
             }
-            transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
+            if (moving)
+            {
+                if (transform.position == pos)
+                {
+                    moving = false;
+                    canMove = true;
+                    if (DN_PlayerMovement.SoloController)
+                    {
+                        SoloPlayerMove();
+                    }
+                    if (DN_PlayerMovement.DualController)
+                    {
+                        TwoPlayerMove();
+                    }
+                    if (DN_PlayerMovement.ThreeController)
+                    {
+                        ThreePlayerMove();
+                    }
+                    if (DN_PlayerMovement.FourController)
+                    {
+                        FourPlayerMove();
+                    }
+                    if (DN_PlayerMovement.SoloKeyBoard)
+                    {
+                        SoloKeyboardMove();
+
+                    }
+                }
+                transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
+            }
         }
+       
     }
     void SoloKeyboardMove()
     {
         if (buttonCooldown <= 0)
-        {
-            if (Input.GetKey(KeyCode.LeftArrow) && StopLeft == false)
-            {
-
-                if (dir != DIRECTION.LEFT)
-                {
-                    buttonCooldown = cooldownforbutton;
-                    dir = DIRECTION.LEFT;
-                }
-                else
-                {
-                    canMove = false;
-                    moving = true;
-                    pos += Vector3.left;
-                }
-            }
-            if (Input.GetKey(KeyCode.RightArrow) && StopRight == false)
-            {
-                if (dir != DIRECTION.RIGHT)
-                {
-                    buttonCooldown = cooldownforbutton;
-                    dir = DIRECTION.RIGHT;
-                }
-                else
+        { 
+                if (Input.GetKey(KeyCode.LeftArrow) && StopLeft == false)
                 {
 
-                    canMove = false;
-                    moving = true;
-                    pos += Vector3.right;
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+                }
+                if (Input.GetKey(KeyCode.RightArrow) && StopRight == false)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.RIGHT;
+                    }
+                    else
+                    {
 
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+
+                    }
+                }
+                if (Input.GetKey(KeyCode.DownArrow) && StopBot == false)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        buttonCooldown = cooldownforbutton;
+                        dir = DIRECTION.DOWN;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetKey(KeyCode.UpArrow) && StopTop == false)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
                 }
             }
-            if (Input.GetKey(KeyCode.DownArrow) && StopBot == false)
-            {
-                if (dir != DIRECTION.DOWN)
-                {
-                    buttonCooldown = cooldownforbutton;
-                    dir = DIRECTION.DOWN;
-                }
-                else
-                {
-                    canMove = false;
-                    moving = true;
-                    pos += Vector3.back;
-                }
-            }
-            if (Input.GetKey(KeyCode.UpArrow) && StopTop == false)
-            {
-                if (dir != DIRECTION.UP)
-                {
-                    dir = DIRECTION.UP;
-                    buttonCooldown = cooldownforbutton;
-                }
-                else
-                {
-                    canMove = false;
-                    moving = true;
-                    pos += Vector3.forward;
-                }
-            }
-        }
     }
     void SoloPlayerMove()
     {

@@ -35,17 +35,20 @@ public class DN_GameManager : MonoBehaviour {
     //These bool bellow are for testing purposes
     public bool Keyboard;
     // Use this for initialization
+ 
     void Start () {
         timescripts = Times.GetComponent<DN_Time>();
         Time.timeScale = 0;
         if (Keyboard)
         {
             DN_PlayerMovement.SoloKeyBoard = true;
+            DN_Mech.SoloKeyBoard = true;
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        
         if(DN_PlayerMovement.SoloController)
         {
             if (therePrison)

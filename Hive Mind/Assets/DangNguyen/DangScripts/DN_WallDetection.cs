@@ -5,6 +5,9 @@ using UnityEngine;
 public class DN_WallDetection : MonoBehaviour {
     public GameObject Player;
     private DN_PlayerMovement PlayerScript;
+    public GameObject Mech;
+    private DN_Mech MechScripts;
+    public bool MechDetection;
     public bool TopDetection;
     public bool BotDetection;
     public bool RightDetection;
@@ -15,7 +18,14 @@ public class DN_WallDetection : MonoBehaviour {
     public bool X;
 	// Use this for initialization
 	void Start () {
-        PlayerScript = Player.GetComponent<DN_PlayerMovement>();
+        if (MechDetection)
+        {
+            MechScripts = Mech.GetComponent<DN_Mech>();
+        }
+        else
+        {
+            PlayerScript = Player.GetComponent<DN_PlayerMovement>();
+        }
 	}
 	
 	// Update is called once per frame
@@ -26,255 +36,298 @@ public class DN_WallDetection : MonoBehaviour {
     {
         if (TopDetection)
         {
-            if(other.tag == "GO")
+            if (MechDetection)
             {
-                PlayerScript.StopTop = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopTop = true;
+                }
+              
             }
-            if (other.tag == "Wall")
+            else
             {
-                PlayerScript.StopTop = true;
+                if (other.tag == "GO")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopTop = true;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopTop = true;
+                }
             }
-            if (other.tag == "FakeWall")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopTop = true;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopTop = true;
-            }
-
         }
         if(BotDetection)
         {
-            if (other.tag == "GO")
+            if (MechDetection)
             {
-                PlayerScript.StopBot = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopBot = true;
+                }
+              
             }
-            if (other.tag == "Wall")
+            else
             {
-                PlayerScript.StopBot = true;
-            }
-            if (other.tag == "FakeWall")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopBot = true;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopBot = true;
+                if (other.tag == "GO")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopBot = true;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopBot = true;
+                }
             }
         }
         if(RightDetection)
         {
-            if (other.tag == "GO")
+            if (MechDetection)
             {
-                PlayerScript.StopRight = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopRight = true;
+                }
+               
             }
-            if (other.tag == "Wall")
+            else
             {
-                PlayerScript.StopRight = true;
-            }
-            if (other.tag == "FakeWall")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopRight = true;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopRight = true;
+                if (other.tag == "GO")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopRight = true;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopRight = true;
+                }
             }
         }
         if(LeftDetection)
         {
-            if (other.tag == "GO")
+            if (MechDetection)
             {
-                PlayerScript.StopLeft = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopLeft = true;
+                }
+              
             }
-            if (other.tag == "Wall")
+            else
             {
-                PlayerScript.StopLeft = true;
-            }
-            if (other.tag == "FakeWall")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopLeft = true;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopLeft = true;
+                if (other.tag == "GO")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopLeft = true;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopLeft = true;
+                }
             }
         }
     }
@@ -282,239 +335,283 @@ public class DN_WallDetection : MonoBehaviour {
     {
         if (TopDetection)
         {
-            if (other.tag == "Wall")
+            if (MechDetection)
             {
-                PlayerScript.StopTop = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopTop = false;
+                }
+               
             }
-            if (other.tag == "FakeWall")
+            else
             {
-                PlayerScript.StopTop = false;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopTop = false;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopTop = false;
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopTop = false;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopTop = false;
+                }
             }
 
         }
         if (BotDetection)
         {
-            if (other.tag == "Wall")
+            if (MechDetection)
             {
-                PlayerScript.StopBot = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopBot = false;
+                }
+               
             }
-            if (other.tag == "FakeWall")
+            else
             {
-                PlayerScript.StopBot = false;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopBot = false;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopBot = false;
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopBot = false;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopBot = false;
+                }
             }
         }
         if (RightDetection)
         {
-            if (other.tag == "Wall")
+            if (MechDetection)
             {
-                PlayerScript.StopRight = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopRight = false;
+                }
+               
             }
-            if (other.tag == "FakeWall")
+            else
             {
-                PlayerScript.StopRight = false;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopRight = false;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopRight = false;
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopRight = false;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopRight = false;
+                }
             }
         }
         if (LeftDetection)
         {
-            if (other.tag == "Wall")
+            if (MechDetection)
             {
-                PlayerScript.StopLeft = false;
+                if (other.tag == "Wall")
+                {
+                    MechScripts.StopLeft = false;
+                }
+           
             }
-            if (other.tag == "FakeWall")
+            else
             {
-                PlayerScript.StopLeft = false;
-            }
-            if (o && other.tag == "Square")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (o && other.tag == "X")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (o && other.tag == "Triangle")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (Square && other.tag == "O")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (Square && other.tag == "X")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (Square && other.tag == "Triangle")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (Triangle && other.tag == "Square")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (Triangle && other.tag == "O")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (Triangle && other.tag == "X")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (X && other.tag == "Square")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (X && other.tag == "O")
-            {
-                PlayerScript.StopLeft = false;
-            }
-            if (X && other.tag == "Triangle")
-            {
-                PlayerScript.StopLeft = false;
+                if (other.tag == "Wall")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (other.tag == "FakeWall")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (o && other.tag == "Square")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (o && other.tag == "X")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (o && other.tag == "Triangle")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (Square && other.tag == "O")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (Square && other.tag == "X")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (Square && other.tag == "Triangle")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (Triangle && other.tag == "Square")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (Triangle && other.tag == "O")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (Triangle && other.tag == "X")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (X && other.tag == "Square")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (X && other.tag == "O")
+                {
+                    PlayerScript.StopLeft = false;
+                }
+                if (X && other.tag == "Triangle")
+                {
+                    PlayerScript.StopLeft = false;
+                }
             }
         }
     }
