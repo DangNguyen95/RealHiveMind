@@ -28,6 +28,9 @@ TagManager:
   - BlueBlock
   - Guard
   - GO
+  - TopWall
+  - BotWall
+  - Kill
   layers:
   - Default
   - TransparentFX

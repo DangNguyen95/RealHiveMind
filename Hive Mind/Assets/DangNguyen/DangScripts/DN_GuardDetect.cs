@@ -22,15 +22,61 @@ public class DN_GuardDetect : MonoBehaviour {
 	void Update () {
 		
 	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "TopWall")
+        {
+            GuardScripts.RunDown = true;
+          
+        }
+        if (other.tag == "BotWall")
+        {
+            GuardScripts.RunDown = false;
+           
+        }
+        if (TopDetection)
+        {
+            if (other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
+        }
+        if(RightDetection)
+        {
+            if (other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
+        }
+        if(LeftDetection)
+        {
+            if (other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
+        }
+        if(BotDetection)
+        {
+            if (other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
+        }
+
+        }
     private void OnTriggerStay(Collider other)
     {
         if (TopDetection)
         {
+            if(other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
             if (other.tag == "Wall")
             {
                 GuardScripts.StopTop = true;
             }
-            if(Guard1 && other.tag == "Guard2")
+            if (Guard1 && other.tag == "Guard2")
             {
                 GuardScripts.StopTop = true;
             }
@@ -82,10 +128,15 @@ public class DN_GuardDetect : MonoBehaviour {
         }
         if (BotDetection)
         {
+            if (other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
             if (other.tag == "Wall")
             {
                 GuardScripts.StopBot = true;
             }
+           
             if (Guard1 && other.tag == "Guard2")
             {
                 GuardScripts.StopBot = true;
@@ -138,6 +189,10 @@ public class DN_GuardDetect : MonoBehaviour {
         }
         if (RightDetection)
         {
+            if (other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
             if (other.tag == "Wall")
             {
                 GuardScripts.StopRight = true;
@@ -193,6 +248,10 @@ public class DN_GuardDetect : MonoBehaviour {
         }
         if (LeftDetection)
         {
+            if (other.tag == "Kill")
+            {
+                Guard.SetActive(false);
+            }
             if (other.tag == "Wall")
             {
                 GuardScripts.StopLeft = true;
