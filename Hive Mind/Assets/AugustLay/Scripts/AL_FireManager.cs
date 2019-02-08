@@ -5,7 +5,8 @@ using UnityEngine;
 public class AL_FireManager : MonoBehaviour {
     [SerializeField]
     List<GameObject> lavaTraps = new List<GameObject>();
-
+    [SerializeField]
+    GameObject[] myVictoryDest;
 
     DN_GameManager managerGame;
 
@@ -19,8 +20,9 @@ public class AL_FireManager : MonoBehaviour {
     int myNumbersMax;
     [SerializeField]
     int myCurPat = 0;
-    float myCurFireTime = 2;
+    float myCurFireTime = 10;
     bool doOnce = false;
+    public bool doneWithIntro = false;
     GameObject myPatternObject;
     int[] myNumbsRef;
     public List<myPatternNumbers> myPattern = new List<myPatternNumbers>();
@@ -54,7 +56,7 @@ public class AL_FireManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         //FiresToReach.Invoke();
-        if (Time.timeScale == 1 && doOnce == false)
+        if (Time.timeScale == 1 && doOnce == false && doneWithIntro == true)
         {
             doOnce = true;
             myNumbersMax = myPattern.Count;
@@ -70,11 +72,17 @@ public class AL_FireManager : MonoBehaviour {
                 return (a.GetComponent<AL_FirePit>().fireNumber).CompareTo(b.GetComponent<AL_FirePit>().fireNumber);
             });
 
-            StartCoroutine(kickOOF(myCurPat, myCurFireTime));
+            Invoke("startGame", 2);
         }
+    }
+
+    void startGame()
+    {
+        StartCoroutine(kickOOF(myCurPat, myCurFireTime));
     }
     IEnumerator kickOOF(int myCurrentPattern, float timeToFire)
     {
+        
         //blach = blach + 1;
         firePatternPFIStarter(myPattern[myCurrentPattern]);
         yield return new WaitForSeconds(timeToFire);
@@ -112,15 +120,21 @@ public class AL_FireManager : MonoBehaviour {
     IEnumerator resetingFires()
     {
 
-        
-            yield return new WaitForSeconds(3);
-            myCurPat++;
-            FireReset.Invoke();
-            yield return new WaitForSeconds(1);
-            StopCoroutine(resetingFires());
+        yield return new WaitForSeconds(3);
+        myCurPat++;
+        FireReset.Invoke();
+        yield return new WaitForSeconds(1);
+        StopCoroutine(resetingFires());
         if (myCurPat < myNumbersMax)
         {
             StartCoroutine(kickOOF(myCurPat, myCurFireTime));
+        }
+        else
+        {
+            foreach(GameObject victoryD in myVictoryDest)
+            {
+                victoryD.SetActive(true);
+            }
         }
     }
 }
