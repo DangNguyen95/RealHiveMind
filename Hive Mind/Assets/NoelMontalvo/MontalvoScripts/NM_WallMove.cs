@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NM_WallMove : MonoBehaviour {
-    int speed = 1;
+    public int speed = 1;
     private Vector3 pos;
     public float waittime = 1;
     public bool Back, Forward, Left, Right;
@@ -11,7 +11,8 @@ public class NM_WallMove : MonoBehaviour {
     // Use this for initialization
     void Start () {
         StartCoroutine(trial());
-        pos = Vector3.back;
+        positioning();
+      //  pos = Vector3.back;
     }
 	
 	// Update is called once per frame

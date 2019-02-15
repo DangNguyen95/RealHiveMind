@@ -17,7 +17,7 @@ public class NM_KillPlayer : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "X"|| other.gameObject.tag == "O" || other.gameObject.tag == "Traingle" || other.gameObject.tag == "Square")
+        if (other.gameObject.tag == "X"|| other.gameObject.tag == "O" || other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square")
         {
             DN_GameManager.Death = true;
         }
