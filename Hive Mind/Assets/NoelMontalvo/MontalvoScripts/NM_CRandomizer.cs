@@ -26,6 +26,7 @@ public class NM_CRandomizer : MonoBehaviour {
         foreach (NM_ColorPlate element in nm_colorplate)
         {
             Colorplates.Add(element.gameObject);
+    
             //element.gameObject.SetActive(false);
         }
     }
@@ -55,8 +56,9 @@ public class NM_CRandomizer : MonoBehaviour {
                         NM_ColorPlate[] nm_colorplate = FindObjectsOfType<NM_ColorPlate>();
                         foreach (NM_ColorPlate element in nm_colorplate)
                         {
+                            element.thisiscolornow();
                             Colorplates.Add(element.gameObject);
-
+                            element.thisiscolornow();
 
                             //element.gameObject.SetActive(false);
                         }
@@ -154,28 +156,16 @@ public class NM_CRandomizer : MonoBehaviour {
             cubeobject.GetComponent<Renderer>().material.color = Mycolors[i];
             yield return new WaitForSeconds(1);
             cubeobject.GetComponent<Renderer>().material.color = Color.white;
-
-        
+ 
+        }
+        NM_ColorPlate[] nm_colorplate = FindObjectsOfType<NM_ColorPlate>();
+        foreach (NM_ColorPlate element in nm_colorplate)
+        {
+            element.thisiscolornow();
             
-            //yield return new WaitForSeconds(5);
-        
-            //for (int a = startnum; a <= Mycolors.Count; a++)
-            //{
-            //    yield return new WaitForSeconds(.2f);
-            //    startnum = a;
-            //    Mycolors[a] = Rcolors[Random.Range(0, 4)];
-            //    cubeobject.GetComponent<Renderer>().material.color = Mycolors[a];
-            //    yield return new WaitForSeconds(1);
-            //    cubeobject.GetComponent<Renderer>().material.color = Color.white;
-            //    //
+            element.thisiscolornow();
 
-
-            //    StartCoroutine(ColorThePlates());
-                
-
-            //}
-            //yield return new WaitForSeconds(2);
-       
+            //element.gameObject.SetActive(false);
         }
         StartCoroutine(pauseamoment());
         StopCoroutine(RepeatColors());
