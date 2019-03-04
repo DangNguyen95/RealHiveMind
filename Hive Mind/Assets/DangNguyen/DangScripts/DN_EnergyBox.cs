@@ -5,6 +5,8 @@ using UnityEngine;
 public class DN_EnergyBox : MonoBehaviour {
     private bool p1;
     private bool p2;
+    private bool p3;
+    private bool p4;
     public GameObject Ship;
     private DN_SpaceShipControl ShipScripts;
     // Use this for initialization
@@ -14,7 +16,7 @@ public class DN_EnergyBox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(p1 && p2)
+		if(p1 && p2 && p3 && p4)
         {
             if (ShipScripts.RegenEnergy == false)
             {
@@ -22,7 +24,7 @@ public class DN_EnergyBox : MonoBehaviour {
               //  ShipScripts.ForceEnergyIncrease = false;
             }
         }
-        if(p1 == false || p2 == false)
+        if(p1 == false || p2 == false || p3 == false || p4 == false)
         {
             
             if (ShipScripts.RegenEnergy == false)
@@ -43,6 +45,14 @@ public class DN_EnergyBox : MonoBehaviour {
         {
             p2 = true;
         }
+        if (other.tag == "Triangle")
+        {
+            p3 = true;
+        }
+        if (other.tag == "O")
+        {
+            p4 = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -53,6 +63,14 @@ public class DN_EnergyBox : MonoBehaviour {
         if (other.tag == "X")
         {
             p2 = false;
+        }
+        if (other.tag == "Triangle")
+        {
+            p3 = false;
+        }
+        if (other.tag == "O")
+        {
+            p4 = false;
         }
     }
 }

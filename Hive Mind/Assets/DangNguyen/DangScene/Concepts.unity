@@ -46095,7 +46095,7 @@ MonoBehaviour:
   - {fileID: 221806357}
   therePrison: 1
   ObjectiveIndicator: {fileID: 1021396469}
-  Keyboard: 1
+  Keyboard: 0
 --- !u!4 &1809590850
 Transform:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class DN_FixBox : MonoBehaviour {
     public bool StartCD;
     private bool p1;
     private bool p2;
+    private bool p3;
+    private bool p4;
+    private bool InTrigger;
     // Use this for initialization
     void Start () {
         ShipScripts = Ship.GetComponent<DN_SpaceShipControl>();
@@ -28,14 +31,35 @@ public class DN_FixBox : MonoBehaviour {
         {
             HPCountdown -= Time.deltaTime;
         }
-        if(p1 &&p2)
+        if(p1 && p2)
         {
             StartCD = true;
         }
-        if(p1 == false || p2 ==false)
+        if(p1 && p3)
         {
-            StartCD = false;
+            StartCD = true;
         }
+        if(p1 && p4)
+        {
+            StartCD = true;
+        }
+        if(p2 && p3)
+        {
+            StartCD = true;
+        }
+        if(p2 && p4)
+        {
+            StartCD = true;
+        }
+        if(p3 && p4)
+        {
+            StartCD = true;
+        }
+
+        //if (p1 == false && p2 == false && p3 == false || p4 == false)
+        //    {
+        //        StartCD = false;
+        //    }
 
     }
     private void OnTriggerStay(Collider other)
@@ -48,16 +72,36 @@ public class DN_FixBox : MonoBehaviour {
         {
             p2 = true;
         }
+        if (other.tag == "Triangle")
+        {
+            p3 = true;
+        }
+        if (other.tag == "O")
+        {
+            p4 = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Square")
         {
             p1 = false;
+            StartCD = false;
         }
         if(other.tag == "X")
         {
             p2 = false;
+            StartCD = false;
+        }
+        if (other.tag == "Triangle")
+        {
+            p3 = false;
+            StartCD = false;
+        }
+        if (other.tag == "O")
+        {
+            p4 = false;
+            StartCD = false;
         }
     }
 

@@ -3835,6 +3835,11 @@ MonoBehaviour:
   StopRight: 0
   StopLeft: 0
   StopBot: 0
+  AutoRun: 0
+  RunDown: 0
+  Scaredface: {fileID: 0}
+  AngryFace: {fileID: 0}
+  Mech: {fileID: 0}
 --- !u!54 &206023863
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4265,6 +4270,11 @@ MonoBehaviour:
   StopRight: 0
   StopLeft: 0
   StopBot: 0
+  AutoRun: 0
+  RunDown: 0
+  Scaredface: {fileID: 0}
+  AngryFace: {fileID: 0}
+  Mech: {fileID: 0}
 --- !u!54 &249786389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6952,8 +6962,8 @@ Transform:
   - {fileID: 1241299662}
   - {fileID: 1876194528}
   - {fileID: 791048958}
-  - {fileID: 96617511}
   - {fileID: 985707414}
+  - {fileID: 96617511}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8341,7 +8351,7 @@ MonoBehaviour:
   - {fileID: 279345745}
   therePrison: 1
   ObjectiveIndicator: {fileID: 860865373}
-  Keyboard: 1
+  Keyboard: 0
 --- !u!4 &529965636
 Transform:
   m_ObjectHideFlags: 0
@@ -11971,6 +11981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeText: {fileID: 801108176}
   Timer: 80
+  InfiniteTIme: 0
 --- !u!114 &801108176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27346,6 +27357,11 @@ MonoBehaviour:
   StopRight: 0
   StopLeft: 0
   StopBot: 0
+  AutoRun: 0
+  RunDown: 0
+  Scaredface: {fileID: 0}
+  AngryFace: {fileID: 0}
+  Mech: {fileID: 0}
 --- !u!54 &1707832820
 Rigidbody:
   m_ObjectHideFlags: 0

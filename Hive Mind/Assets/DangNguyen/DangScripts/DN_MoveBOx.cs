@@ -18,7 +18,23 @@ public class DN_MoveBOx : MonoBehaviour {
 	}
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Square" && UpPad)
+        if (other.tag == "Triangle" && UpPad)
+        {
+            ShipScripts.UpPad = true;
+        }
+        if (other.tag == "O" && UpPad)
+        {
+            ShipScripts.UpPad = true;
+        }
+        if (other.tag == "Triangle" && DownPad)
+        {
+            ShipScripts.DownPad = true;
+        }
+        if (other.tag == "O" && DownPad)
+        {
+            ShipScripts.DownPad = true;
+        }
+        if (other.tag == "Square" && UpPad)
         {
             ShipScripts.UpPad = true;
         }
@@ -37,6 +53,22 @@ public class DN_MoveBOx : MonoBehaviour {
     }
     private void OnTriggerExit(Collider other)
     {
+        if (other.tag == "Triangle" && UpPad)
+        {
+            ShipScripts.UpPad = false;
+        }
+        if (other.tag == "O" && UpPad)
+        {
+            ShipScripts.UpPad = false;
+        }
+        if (other.tag == "Triangle" && DownPad)
+        {
+            ShipScripts.DownPad = false;
+        }
+        if (other.tag == "O" && DownPad)
+        {
+            ShipScripts.DownPad = false;
+        }
         if (other.tag == "Square" && UpPad)
         {
             ShipScripts.UpPad = false;
