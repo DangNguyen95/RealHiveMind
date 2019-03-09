@@ -406,6 +406,7 @@ public class DN_GameManager : MonoBehaviour {
         TriangleHome = false;
         Death = false;
         SceneManager.LoadScene(RestartSceneNumber);
+
     }
     public void NextLevel()
     {
@@ -433,6 +434,7 @@ public class DN_GameManager : MonoBehaviour {
         DN_MainMenuMannager.PC = false;
         DN_MainMenuMannager.Ps4 = false;
         DN_MainMenuMannager.Xbox = false;
+        DN_MainMenuMannager.Scenarios = false;
     }
     public void PreviousScene()
     { 
