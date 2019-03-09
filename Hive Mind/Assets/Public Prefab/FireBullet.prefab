@@ -23,8 +23,7 @@ GameObject:
   - component: {fileID: 23656260692952554}
   - component: {fileID: 65971473042290270}
   - component: {fileID: 54739210398481540}
-  - component: {fileID: 114900703627096496}
-  - component: {fileID: 114491684320545936}
+  - component: {fileID: 114565189127897864}
   m_Layer: 0
   m_Name: FireBullet
   m_TagString: Fire
@@ -114,19 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114491684320545936
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1315042517927874}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 591fee9e57f1ed744b5d13c7f8ec8dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DistanceToPool: 50
---- !u!114 &114900703627096496
+--- !u!114 &114565189127897864
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

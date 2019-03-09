@@ -42,8 +42,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181756}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -238,16 +238,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab60061230bdcd468b9368e9a97f37b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Boss: []
+  Camera: []
+  Enemy: 0
   MoveSpeed: 15
+  DistanceToPool: 20
 --- !u!114 &114593051826725752
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181756}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 591fee9e57f1ed744b5d13c7f8ec8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DistanceToPool: 20
+  Enemy: 0

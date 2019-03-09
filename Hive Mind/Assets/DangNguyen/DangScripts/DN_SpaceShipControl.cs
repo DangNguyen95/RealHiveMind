@@ -45,6 +45,8 @@ public class DN_SpaceShipControl : MonoBehaviour {
     public Image EnergyFill2;
     public Image EnergyFill3;
     public Image EnergyFill4;
+    public bool ReducingEnergy;
+   
     // Use this for initialization
     void Start () {
         //  Currenthealth = MaxHealth;
@@ -132,11 +134,16 @@ public class DN_SpaceShipControl : MonoBehaviour {
         {
             Currenthealth = MaxHealth;
         }
+        if(Currenthealth >0)
+        {
+            HealthSlider.GetComponent<Image>().color = new Color32(31, 236, 0, 225);
+        }
         if (Currenthealth < 0)
         {
             Currenthealth = 0;
             HealthSlider.GetComponent<Image>().color = new Color32(1, 0, 0, 1);
-
+            DN_GameManager.Death = true;
+            
         }
         //if(StopPointUp)
         //{
@@ -169,23 +176,24 @@ public class DN_SpaceShipControl : MonoBehaviour {
     }
     public void IncreaseEnergy()
     {
+        ReducingEnergy = false;
         if (ForceEnergyIncrease)
         {
             if (CurrentEnergy1 < 100)
             {
-                CurrentEnergy1 += Time.deltaTime * EnergyIncreaseRate;
+                CurrentEnergy1 += Time.deltaTime * EnergyIncreaseRate/2;
             }
             if (CurrentEnergy1 >= 100 && CurrentEnergy2 < 100 && CurrentEnergy3 <100 && CurrentEnergy4 <100)
             {
-                CurrentEnergy2 += Time.deltaTime * EnergyIncreaseRate;
+                CurrentEnergy2 += Time.deltaTime * EnergyIncreaseRate/2;
             }
             if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy3 < 100 && CurrentEnergy4 <100)
             {
-                CurrentEnergy3 += Time.deltaTime * EnergyIncreaseRate;
+                CurrentEnergy3 += Time.deltaTime * EnergyIncreaseRate/2;
             }
             if (CurrentEnergy1 >= 100 && CurrentEnergy2 >= 100 && CurrentEnergy3 >= 100 && CurrentEnergy4 < 100)
             {
-                CurrentEnergy4 += Time.deltaTime * EnergyIncreaseRate;
+                CurrentEnergy4 += Time.deltaTime * EnergyIncreaseRate/2;
             }
          }
         else
@@ -247,6 +255,7 @@ public class DN_SpaceShipControl : MonoBehaviour {
             //{
             //    CurrentEnergy1 -= Time.deltaTime * EnergyReductionRate;
             //}
+            ReducingEnergy = true;
             if ( CurrentEnergy2 <=0 && CurrentEnergy3 <=0 && CurrentEnergy4<=0)
             {
                 CurrentEnergy1 -= Time.deltaTime * EnergyReductionRate;

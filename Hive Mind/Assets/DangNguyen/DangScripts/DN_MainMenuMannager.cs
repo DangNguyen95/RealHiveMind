@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject[] MainMenuButtons;
     public GameObject[] PlayerActivate;
+    public GameObject[] Mode;
     public GameObject[] USbOption;
     public GameObject[] Credits;
     public GameObject backButton;
@@ -16,6 +17,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public static bool Ps4;
     public static bool Xbox;
     public static bool PC;
+    public static bool Scenarios;
     // Use this for initialization
     void Start () {
 		
@@ -23,7 +25,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        Debug.Log(Scenarios);
     }
     public void PressStart()
     {
@@ -32,10 +34,25 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             MainMenuButtons[i].SetActive(false);
         }
+      
         for (int i = 0; i < PlayerActivate.Length; i++)
         {
             PlayerActivate[i].SetActive(true);
         }
+    }
+    public void AddScenario()
+    {
+        Scenarios = !Scenarios;
+    }
+    public void PressContinueAfterMode()
+    {
+        for (int i = 0; i < Mode.Length; i++)
+        {
+            Mode[i].SetActive(false);
+        }
+        KeyBoard.SetActive(false);
+        Ps4Controller.SetActive(true);
+        XboxController.SetActive(true);
     }
     public void PressQuit()
     {
@@ -60,6 +77,10 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             USbOption[i].SetActive(false);
         }
+        for (int i = 0; i < Mode.Length; i++)
+        {
+            Mode[i].SetActive(false);
+        }
         DN_PlayerMovement.UsbExtender = false;
         DN_PlayerMovement.SoloController = false;
         DN_PlayerMovement.DualController = false;
@@ -75,6 +96,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
         Ps4 = false;
         Xbox = false;
         PC = false;
+        Scenarios = false;
     }
     public void PlayerOne()
     {
@@ -100,9 +122,10 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             PlayerActivate[i].SetActive(false);
         }
-        KeyBoard.SetActive(false);
-        Ps4Controller.SetActive(true);
-        XboxController.SetActive(true);
+        for (int i = 0; i < Mode.Length; i++)
+        {
+            Mode[i].SetActive(true);
+        }
     }
     public void PlayerThree()
     {
@@ -114,9 +137,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             PlayerActivate[i].SetActive(false);
         }
-        KeyBoard.SetActive(false);
-        Ps4Controller.SetActive(true);
-        XboxController.SetActive(true);
+      
+        for (int i = 0; i < Mode.Length; i++)
+        {
+            Mode[i].SetActive(true);
+        }
     }
     public void PlayerFour()
     {
@@ -128,9 +153,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             PlayerActivate[i].SetActive(false);
         }
-        KeyBoard.SetActive(false);
-        Ps4Controller.SetActive(true);
-        XboxController.SetActive(true);
+      
+        for (int i = 0; i < Mode.Length; i++)
+        {
+            Mode[i].SetActive(true);
+        }
     }
     public void USBExtenderOptionPs4()
     {
