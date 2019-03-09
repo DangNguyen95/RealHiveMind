@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8816,6 +8816,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 152453102}
     m_Modifications:
+    - target: {fileID: 114963037153786182, guid: 4010bb8d0020ee344aaa160d0d5ea231,
+        type: 2}
+      propertyPath: Marker3.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4713178988482880, guid: 4010bb8d0020ee344aaa160d0d5ea231, type: 2}
       propertyPath: m_LocalPosition.x
       value: -8.31
@@ -8908,6 +8913,11 @@ Prefab:
       propertyPath: Marker4.Array.data[3]
       value: 
       objectReference: {fileID: 1315426032}
+    - target: {fileID: 114963037153786182, guid: 4010bb8d0020ee344aaa160d0d5ea231,
+        type: 2}
+      propertyPath: Marker3.Array.data[4]
+      value: 
+      objectReference: {fileID: 1099027222}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4010bb8d0020ee344aaa160d0d5ea231, type: 2}
   m_IsPrefabParent: 0
@@ -15698,7 +15708,7 @@ MonoBehaviour:
   - {fileID: 935586056}
   therePrison: 1
   ObjectiveIndicator: {fileID: 2039029490}
-  Keyboard: 0
+  Keyboard: 1
 --- !u!4 &869165638
 Transform:
   m_ObjectHideFlags: 0
@@ -21084,6 +21094,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092506304}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1099027222 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1094479116169888, guid: 4010bb8d0020ee344aaa160d0d5ea231,
+    type: 2}
+  m_PrefabInternal: {fileID: 544980177}
 --- !u!1 &1107120199
 GameObject:
   m_ObjectHideFlags: 0
@@ -29298,6 +29313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorNum: 3
+  playerOnMe: 0
+  pressurePlate: {fileID: 0}
 --- !u!1 &1581609419
 GameObject:
   m_ObjectHideFlags: 0
@@ -30261,6 +30278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorNum: 1
+  playerOnMe: 0
+  pressurePlate: {fileID: 0}
 --- !u!1001 &1631681616
 Prefab:
   m_ObjectHideFlags: 0
@@ -30518,6 +30537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorNum: 2
+  playerOnMe: 0
+  pressurePlate: {fileID: 0}
 --- !u!1 &1639496129
 GameObject:
   m_ObjectHideFlags: 0
