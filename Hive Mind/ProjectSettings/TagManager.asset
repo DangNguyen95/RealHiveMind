@@ -32,6 +32,24 @@ TagManager:
   - BotWall
   - Kill
   - SpaceForce
+  - PlayersShipWall
+  - Camera
+  - EnemyShootPoint
+  - OuterWall
+  - Meteor
+  - BossShip
+  - BossTurret
+  - BossCore
+  - Spawner
+  - RedEnemy
+  - Core
+  - Core2
+  - Core3
+  - Core4
+  - Start1
+  - Start2
+  - Start3
+  - Start4
   layers:
   - Default
   - TransparentFX

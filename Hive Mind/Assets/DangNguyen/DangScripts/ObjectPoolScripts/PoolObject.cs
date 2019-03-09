@@ -6,9 +6,14 @@ public class PoolObject : MonoBehaviour, ISpawnEvent
 {
     public float DistanceToPool;
     ObjectPool pool;
+    public bool Enemy;
     private void Start()
     {
-        gameObject.transform.parent = null;
+     
+        if(!Enemy)
+        {
+            gameObject.transform.parent = null;
+        }
     }
     // Update is called once per frame
     void Update()

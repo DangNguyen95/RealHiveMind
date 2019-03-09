@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WaveSpawner : MonoBehaviour
+public class DN_WaveSpawnTD : MonoBehaviour
 {
 
 
@@ -17,7 +17,6 @@ public class WaveSpawner : MonoBehaviour
         public float rate;
     }
     public string UnitBeingSpawn;
-    public string UnitBeingSpawn2;
 
     public Wave[] waves;
     public int nextWave = 0;
@@ -27,8 +26,6 @@ public class WaveSpawner : MonoBehaviour
     }
 
     public Transform[] spawnPoints;
-    public Transform[] MeteorspawnPoints;
-    public Transform[] BossSpawnPoint;
 
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
@@ -44,15 +41,10 @@ public class WaveSpawner : MonoBehaviour
     {
         get { return state; }
     }
-    public GameObject Boss;
     void Start()
     {
-        
+
         if (spawnPoints.Length == 0)
-        {
-            Debug.LogError("No spawn points referenced.");
-        }
-        if (MeteorspawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points referenced.");
         }
@@ -63,18 +55,12 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        if (NextWave == 5)
+        if(nextWave >=4)
         {
-                searchCountdown -= Time.deltaTime;
-                if (searchCountdown <= 0f)
-                {
-                    searchCountdown = 1f;
-                    if (GameObject.FindGameObjectWithTag(UnitBeingSpawn2) == null)
-                    {
-                        Boss.SetActive(true);
-                    }
-                }
-
+            DN_GameManager.SquareHome = true;
+            DN_GameManager.XHome = true;
+            DN_GameManager.TriangleHome = true;
+            DN_GameManager.OHome = true;
         }
         if (state == SpawnState.WAITING)
         {
@@ -125,21 +111,10 @@ public class WaveSpawner : MonoBehaviour
         searchCountdown -= Time.deltaTime;
         if (searchCountdown <= 0f)
         {
-            if (nextWave == 0 || nextWave == 2)
+             searchCountdown = 1f;
+            if (GameObject.FindGameObjectWithTag(UnitBeingSpawn) == null)
             {
-                searchCountdown = 1f;
-                if (GameObject.FindGameObjectWithTag(UnitBeingSpawn) == null)
-                {
-                    return false;
-                }
-            }
-                if (nextWave == 1 || nextWave == 3)
-            {
-                searchCountdown = 1f;
-                if (GameObject.FindGameObjectWithTag(UnitBeingSpawn2) == null)
-                {
-                    return false;
-                }
+                return false;
             }
             
         }
@@ -154,7 +129,7 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < _wave.count; i++)
         {
             SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(2f/ _wave.rate);
+            yield return new WaitForSeconds(2f / _wave.rate);
         }
 
         state = SpawnState.WAITING;
@@ -165,19 +140,12 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(Transform _enemy)
     {
         Debug.Log("Spawning Enemy: " + _enemy.name);
-
-        if (nextWave == 1 || nextWave == 3)
-        {
-            Transform _sp2 = MeteorspawnPoints[Random.Range(0, MeteorspawnPoints.Length)];
-            Instantiate(_enemy, _sp2.position, _sp2.rotation);
-        }
-        if (nextWave == 0 || nextWave == 2)
-        {
+        
             Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
             Instantiate(_enemy, _sp.position, _sp.rotation);
-        }
-      
+
     }
 
 }
+
 

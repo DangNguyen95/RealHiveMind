@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 114070079561109234}
   - component: {fileID: 114593051826725752}
   m_Layer: 12
-  m_Name: TurretBullet
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,9 +238,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab60061230bdcd468b9368e9a97f37b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boss: []
-  Camera: []
-  Enemy: 0
+  Boss:
+  - {fileID: 0}
+  Camera:
+  - {fileID: 0}
+  Enemy: 1
+  SpawnerObject:
+  - {fileID: 0}
   MoveSpeed: 15
   DistanceToPool: 20
 --- !u!114 &114593051826725752
@@ -255,4 +259,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DistanceToPool: 20
-  Enemy: 0
+  Enemy: 1

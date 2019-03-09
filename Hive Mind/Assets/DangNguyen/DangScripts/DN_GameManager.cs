@@ -32,6 +32,10 @@ public class DN_GameManager : MonoBehaviour {
     public GameObject[] Player4PS4PFI;
     public bool therePrison;
     public GameObject ObjectiveIndicator;
+    public GameObject Scenarios;
+    public GameObject Intro;
+    public GameObject[] ScenariosText;
+    public float RandomScenarioNumber;
     //These bool bellow are for testing purposes
     public bool Keyboard;
     // Use this for initialization
@@ -39,16 +43,48 @@ public class DN_GameManager : MonoBehaviour {
     void Start () {
         timescripts = Times.GetComponent<DN_Time>();
         Time.timeScale = 0;
+        RandomScenarioNumber = Random.Range(0, 6);
         if (Keyboard)
         {
             DN_PlayerMovement.SoloKeyBoard = true;
             DN_Mech.SoloKeyBoard = true;
         }
+        if(DN_MainMenuMannager.Scenarios)
+        {
+            Scenarios.SetActive(true);
+            Intro.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if(DN_MainMenuMannager.Scenarios)
+        {
+            if(RandomScenarioNumber == 0)
+            {
+                ScenariosText[0].SetActive(true);
+            }
+            if(RandomScenarioNumber == 1)
+            {
+                ScenariosText[1].SetActive(true);
+            }
+            if(RandomScenarioNumber == 2)
+            {
+                ScenariosText[2].SetActive(true);
+            }
+            if(RandomScenarioNumber == 3)
+            {
+                ScenariosText[3].SetActive(true);
+            }
+            if(RandomScenarioNumber == 4)
+            {
+                ScenariosText[4].SetActive(true);
+            }
+            if(RandomScenarioNumber == 5)
+            {
+                ScenariosText[5].SetActive(true);
+            }
+        }
         if(DN_PlayerMovement.SoloController)
         {
             if (therePrison)
@@ -354,6 +390,12 @@ public class DN_GameManager : MonoBehaviour {
     {
         Time.timeScale = 1;
         ObjectiveIndicator.SetActive(false);
+    }
+    public void ContinueToIntro()
+    {
+        Scenarios.SetActive(false);
+        Intro.SetActive(true);
+
     }
     public void Restart()
     { 
