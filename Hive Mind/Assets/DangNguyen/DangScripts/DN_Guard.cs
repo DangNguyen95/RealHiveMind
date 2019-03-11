@@ -15,7 +15,7 @@ public class DN_Guard : MonoBehaviour {
     public bool StopLeft;
     public bool StopBot;
     public bool AutoRun;
-    public bool RunDown;
+    public bool RunRight;
     public GameObject Scaredface;
     public GameObject AngryFace;
     public GameObject Mech;
@@ -38,14 +38,14 @@ public class DN_Guard : MonoBehaviour {
                 Scaredface.SetActive(true);
                 AngryFace.SetActive(false);
             }
-            if (RunDown)
+            if (RunRight)
             {
-                transform.position += Vector3.back * Time.deltaTime * speed;
+                transform.position += Vector3.right * Time.deltaTime * speed;
 
             }
             else
             {
-                transform.position += Vector3.forward * Time.deltaTime * speed;
+                transform.position += Vector3.left * Time.deltaTime * speed;
             }
 
 

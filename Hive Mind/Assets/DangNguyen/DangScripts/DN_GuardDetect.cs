@@ -24,14 +24,14 @@ public class DN_GuardDetect : MonoBehaviour {
 	}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "TopWall")
+        if (other.tag == "RightWall")
         {
-            GuardScripts.RunDown = true;
+            GuardScripts.RunRight = true;
           
         }
-        if (other.tag == "BotWall")
+        if (other.tag == "LeftWall")
         {
-            GuardScripts.RunDown = false;
+            GuardScripts.RunRight = false;
            
         }
         if (TopDetection)

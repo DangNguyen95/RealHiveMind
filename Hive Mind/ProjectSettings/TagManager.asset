@@ -50,6 +50,8 @@ TagManager:
   - Start2
   - Start3
   - Start4
+  - LeftWall
+  - RightWall
   layers:
   - Default
   - TransparentFX

@@ -38,6 +38,9 @@ public class DN_GameManager : MonoBehaviour {
     public float RandomScenarioNumber;
     //These bool bellow are for testing purposes
     public bool Keyboard;
+    public bool Pause;
+    public GameObject PauseScreen;
+    public bool IsPauseThere;
     // Use this for initialization
  
     void Start () {
@@ -58,6 +61,23 @@ public class DN_GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (IsPauseThere)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Pause = !Pause;
+            }
+            if (Pause)
+            {
+                Time.timeScale = 0;
+                PauseScreen.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                PauseScreen.SetActive(false);
+            }
+        }
         if(DN_MainMenuMannager.Scenarios)
         {
             if(RandomScenarioNumber == 0)
@@ -386,6 +406,14 @@ public class DN_GameManager : MonoBehaviour {
         }
 
 	}
+    public void PauseTime()
+    {
+        Pause = true;
+    }
+    public void Resume()
+    {
+        Pause = false;
+    }
     public void Ok()
     {
         Time.timeScale = 1;
