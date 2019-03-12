@@ -11209,9 +11209,9 @@ MonoBehaviour:
   VictoryScreen: {fileID: 1049374927}
   DefeatScreen: {fileID: 1944189793}
   Times: {fileID: 1286815833}
-  RestartSceneNumber: 1
-  PreviousSceneNumber: 0
-  NextLevelNumber: 1
+  RestartSceneNumber: 9
+  PreviousSceneNumber: 8
+  NextLevelNumber: 10
   RedImage: {fileID: 437554456}
   OrangeImage: {fileID: 845003116}
   BlueImage: {fileID: 73001937}
@@ -11252,7 +11252,7 @@ MonoBehaviour:
   RandomScenarioNumber: 0
   Keyboard: 0
   Pause: 0
-  PauseScreen: {fileID: 417109259}
+  PauseScreen: {fileID: 547645541}
   IsPauseThere: 1
 --- !u!4 &483169485
 Transform:

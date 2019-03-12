@@ -37601,9 +37601,9 @@ MonoBehaviour:
   VictoryScreen: {fileID: 789367058}
   DefeatScreen: {fileID: 1984432113}
   Times: {fileID: 1807822037}
-  RestartSceneNumber: 3
-  PreviousSceneNumber: 2
-  NextLevelNumber: 0
+  RestartSceneNumber: 8
+  PreviousSceneNumber: 7
+  NextLevelNumber: 9
   RedImage: {fileID: 690639504}
   OrangeImage: {fileID: 2119679232}
   BlueImage: {fileID: 351696592}
@@ -37642,7 +37642,7 @@ MonoBehaviour:
   - {fileID: 2057174864}
   - {fileID: 843985813}
   RandomScenarioNumber: 0
-  Keyboard: 1
+  Keyboard: 0
   Pause: 0
   PauseScreen: {fileID: 617409708}
   IsPauseThere: 1
@@ -55802,7 +55802,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 878923835}
         m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
@@ -68698,7 +68698,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 878923835}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -80692,7 +80692,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 878923835}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -91235,7 +91235,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 878923835}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:

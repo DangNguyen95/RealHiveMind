@@ -4946,6 +4946,7 @@ MonoBehaviour:
   Keyboard: 0
   Pause: 0
   PauseScreen: {fileID: 2079619695}
+  IsPauseThere: 1
 --- !u!4 &574092665
 Transform:
   m_ObjectHideFlags: 0
