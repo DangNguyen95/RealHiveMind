@@ -15678,9 +15678,9 @@ MonoBehaviour:
   VictoryScreen: {fileID: 829010892}
   DefeatScreen: {fileID: 1548232168}
   Times: {fileID: 1654822182}
-  RestartSceneNumber: 6
-  PreviousSceneNumber: 5
-  NextLevelNumber: 7
+  RestartSceneNumber: 2
+  PreviousSceneNumber: 1
+  NextLevelNumber: 3
   RedImage: {fileID: 727690548}
   OrangeImage: {fileID: 915259861}
   BlueImage: {fileID: 2107111679}
