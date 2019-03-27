@@ -48178,7 +48178,7 @@ MonoBehaviour:
   Intro: {fileID: 1021396469}
   ScenariosText: []
   RandomScenarioNumber: 0
-  Keyboard: 0
+  Keyboard: 1
   Pause: 0
   PauseScreen: {fileID: 246198570}
   IsPauseThere: 1

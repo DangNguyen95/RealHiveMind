@@ -8672,7 +8672,7 @@ MonoBehaviour:
   - {fileID: 949944862}
   - {fileID: 698319850}
   RandomScenarioNumber: 0
-  Keyboard: 0
+  Keyboard: 1
   Pause: 0
   PauseScreen: {fileID: 2144070347}
   IsPauseThere: 1
@@ -23095,6 +23095,11 @@ Prefab:
         type: 2}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114911043089171674, guid: 1e937c807e6b5c54faca8c767f522a4d,
+        type: 2}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e937c807e6b5c54faca8c767f522a4d, type: 2}

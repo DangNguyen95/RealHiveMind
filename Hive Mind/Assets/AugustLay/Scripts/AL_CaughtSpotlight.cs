@@ -16,7 +16,7 @@ public class AL_CaughtSpotlight : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<DN_PlayerMovement>())
+        if (other.GetComponent<DN_PlayerMovement>())
         {
             DN_GameManager.Death = true;
         }

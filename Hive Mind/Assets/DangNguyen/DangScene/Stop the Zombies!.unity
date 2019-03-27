@@ -37642,7 +37642,7 @@ MonoBehaviour:
   - {fileID: 2057174864}
   - {fileID: 843985813}
   RandomScenarioNumber: 0
-  Keyboard: 0
+  Keyboard: 1
   Pause: 0
   PauseScreen: {fileID: 617409708}
   IsPauseThere: 1
