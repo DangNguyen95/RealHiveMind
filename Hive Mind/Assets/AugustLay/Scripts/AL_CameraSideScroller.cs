@@ -20,7 +20,7 @@ public class AL_CameraSideScroller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timePassing = Time.deltaTime * 0.02f;
+        timePassing = Time.deltaTime * 0.01f;
         distanceTraveled = Mathf.Lerp(transform.position.x, myEndPoint.transform.position.x, timePassing);
         transform.position = new Vector3(distanceTraveled, transform.position.y, transform.position.z);
         
