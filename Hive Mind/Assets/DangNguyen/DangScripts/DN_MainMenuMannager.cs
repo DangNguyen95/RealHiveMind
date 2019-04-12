@@ -230,5 +230,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
             MainMenuButtons[i].SetActive(false);
         }
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
 }

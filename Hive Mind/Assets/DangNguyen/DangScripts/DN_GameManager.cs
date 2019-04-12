@@ -45,6 +45,7 @@ public class DN_GameManager : MonoBehaviour {
  
     void Start () {
         timescripts = Times.GetComponent<DN_Time>();
+        timescripts.StartTimer = false;
         Time.timeScale = 0;
         RandomScenarioNumber = Random.Range(0, 6);
         if (Keyboard)
@@ -417,6 +418,7 @@ public class DN_GameManager : MonoBehaviour {
     public void Ok()
     {
         Time.timeScale = 1;
+        timescripts.StartTimer = true;
         ObjectiveIndicator.SetActive(false);
     }
     public void ContinueToIntro()
