@@ -6,6 +6,7 @@ public class DN_Time : MonoBehaviour {
     public Text TimeText;
     public float Timer;
     public bool InfiniteTIme;
+    public bool StartTimer;
 	// Use this for initialization
 	void Start () {
         TimeText = GetComponent<Text>();
@@ -13,7 +14,7 @@ public class DN_Time : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (InfiniteTIme == false)
+        if (InfiniteTIme == false && StartTimer)
         {
             Timer -= Time.deltaTime;
         }
