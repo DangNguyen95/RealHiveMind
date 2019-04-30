@@ -65,9 +65,17 @@ public class DN_PlayerMovement : MonoBehaviour {
     public GameObject[] KeyboardKey;
     public GameObject[] PS4Buttons;
     public GameObject[] XboxButtons;
-
+    public bool TestAnimation;
+    public GameObject SpriteSelf;
+    private Animator SpriteSelfAnim;
+    private SpriteRenderer Sprite;
     // Use this for initialization
     void Start () {
+        if(TestAnimation)
+        {
+            SpriteSelfAnim = SpriteSelf.GetComponent<Animator>();
+            Sprite = SpriteSelf.GetComponent<SpriteRenderer>();
+        }
          //SoloController = true;
         // DualController = true;
        // UsbExtender = true;
@@ -1687,9 +1695,17 @@ public class DN_PlayerMovement : MonoBehaviour {
                     {
                         dir = DIRECTION.UP;
                         buttonCooldown = cooldownforbutton;
+                        //SpriteSelfAnim.SetBool("MoveUp", true);
+                        //SpriteSelfAnim.SetBool("MoveDown", false);
+                        //SpriteSelfAnim.SetBool("MoveRight", false);
+                        //SpriteSelfAnim.SetBool("Idle", false);
                     }
                     else
                     {
+                        //SpriteSelfAnim.SetBool("MoveUp", false);
+                        //SpriteSelfAnim.SetBool("MoveDown", false);
+                        //SpriteSelfAnim.SetBool("MoveRight", false);
+                        //SpriteSelfAnim.SetBool("Idle", true);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -1703,9 +1719,18 @@ public class DN_PlayerMovement : MonoBehaviour {
                     {
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.DOWN;
+                        //SpriteSelfAnim.SetBool("MoveUp", false);
+                        //SpriteSelfAnim.SetBool("MoveDown", true);
+                        //SpriteSelfAnim.SetBool("MoveRight", false);
+                        //SpriteSelfAnim.SetBool("Idle", false);
+                        
                     }
                     else
                     {
+                        //SpriteSelfAnim.SetBool("MoveUp", false);
+                        //SpriteSelfAnim.SetBool("MoveDown", false);
+                        //SpriteSelfAnim.SetBool("MoveRight", false);
+                        //SpriteSelfAnim.SetBool("Idle", true);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -1718,9 +1743,18 @@ public class DN_PlayerMovement : MonoBehaviour {
                     {
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.LEFT;
+                        //SpriteSelfAnim.SetBool("MoveUp", false);
+                        //SpriteSelfAnim.SetBool("MoveDown", false);
+                        //SpriteSelfAnim.SetBool("MoveRight", true);
+                        //SpriteSelfAnim.SetBool("Idle", false);
+                        Sprite.flipX = true;
                     }
                     else
                     {
+                        //SpriteSelfAnim.SetBool("MoveUp", false);
+                        //SpriteSelfAnim.SetBool("MoveDown", false);
+                        //SpriteSelfAnim.SetBool("MoveRight", false);
+                        //SpriteSelfAnim.SetBool("Idle", true);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -1733,10 +1767,18 @@ public class DN_PlayerMovement : MonoBehaviour {
                     {
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.RIGHT;
+                        //SpriteSelfAnim.SetBool("MoveUp", false);
+                        //SpriteSelfAnim.SetBool("MoveDown", false);
+                        //SpriteSelfAnim.SetBool("MoveRight", true);
+                        //SpriteSelfAnim.SetBool("Idle", false);
+                        Sprite.flipX = false;
                     }
                     else
                     {
-
+                        //SpriteSelfAnim.SetBool("MoveUp", false);
+                        //SpriteSelfAnim.SetBool("MoveDown", false);
+                        //SpriteSelfAnim.SetBool("MoveRight", false);
+                        //SpriteSelfAnim.SetBool("Idle", true);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -2052,15 +2094,28 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
             if (P4)
             {
-                if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && X1 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0  && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                    {
+                    SpriteSelfAnim.SetBool("MoveUp", false);
+                    SpriteSelfAnim.SetBool("MoveDown", false);
+                    SpriteSelfAnim.SetBool("MoveRight", false);
+                    SpriteSelfAnim.SetBool("Idle", true);
+                }
+                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && X1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
                     {
+                       
+                        SpriteSelfAnim.SetBool("MoveUp", true);
+                        SpriteSelfAnim.SetBool("MoveDown", false);
+                        SpriteSelfAnim.SetBool("MoveRight", false);
+                        SpriteSelfAnim.SetBool("Idle", false);
                         dir = DIRECTION.UP;
                         buttonCooldown = cooldownforbutton;
                     }
                     else
                     {
+                       
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -2071,6 +2126,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (dir != DIRECTION.UP)
                     {
+
                         dir = DIRECTION.UP;
                         buttonCooldown = cooldownforbutton;
                     }
@@ -2086,11 +2142,16 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     if (dir != DIRECTION.DOWN)
                     {
+                        SpriteSelfAnim.SetBool("MoveUp", false);
+                        SpriteSelfAnim.SetBool("MoveDown", true);
+                        SpriteSelfAnim.SetBool("MoveRight", false);
+                        SpriteSelfAnim.SetBool("Idle", false);
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.DOWN;
                     }
                     else
                     {
+                      
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -2115,11 +2176,17 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     if (dir != DIRECTION.LEFT)
                     {
+                        SpriteSelfAnim.SetBool("MoveUp", false);
+                        SpriteSelfAnim.SetBool("MoveDown", false);
+                        SpriteSelfAnim.SetBool("MoveRight", true);
+                        SpriteSelfAnim.SetBool("Idle", false);
+                        Sprite.flipX = true;
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.LEFT;
                     }
                     else
                     {
+                       
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -2144,12 +2211,17 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     if (dir != DIRECTION.RIGHT)
                     {
+                        SpriteSelfAnim.SetBool("MoveUp", false);
+                        SpriteSelfAnim.SetBool("MoveDown", false);
+                        SpriteSelfAnim.SetBool("MoveRight", true);
+                        SpriteSelfAnim.SetBool("Idle", false);
+                        Sprite.flipX = false;
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.RIGHT;
                     }
                     else
                     {
-
+                       
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
