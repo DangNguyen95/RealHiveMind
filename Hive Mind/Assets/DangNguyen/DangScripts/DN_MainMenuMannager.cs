@@ -18,27 +18,37 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public static bool Xbox;
     public static bool PC;
     public static bool Scenarios;
+    public GameObject Style;
+    private DN_Transition Transcripts;
+    private bool StartNow;
     // Use this for initialization
     void Start () {
-		
+        Transcripts = Style.GetComponent<DN_Transition>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Scenarios);
+        if(StartNow)
+        {
+            if (Transcripts.TransitionStart)
+            {
+                backButton.SetActive(true);
+                for (int i = 0; i < MainMenuButtons.Length; i++)
+                {
+                    MainMenuButtons[i].SetActive(false);
+                }
+                for (int i = 0; i < PlayerActivate.Length; i++)
+                {
+                    PlayerActivate[i].SetActive(true);
+                }
+                Transcripts.TransitionStart = false;
+                StartNow = false;
+            }
+        }
     }
     public void PressStart()
     {
-        backButton.SetActive(true);
-        for (int i = 0; i < MainMenuButtons.Length; i++)
-        {
-            MainMenuButtons[i].SetActive(false);
-        }
-      
-        for (int i = 0; i < PlayerActivate.Length; i++)
-        {
-            PlayerActivate[i].SetActive(true);
-        }
+        StartNow = true;
     }
     public void AddScenario()
     {

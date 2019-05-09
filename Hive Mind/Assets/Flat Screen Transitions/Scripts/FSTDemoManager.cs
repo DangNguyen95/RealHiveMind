@@ -47,15 +47,15 @@ namespace Michsky.UI.FSC
         {
             currentButton = buttons[currentPanelIndex];
             currentButtonAnimator = currentButton.GetComponent<Animator>();
-            currentButtonAnimator.Play(buttonFadeIn);
+           // currentButtonAnimator.Play(buttonFadeIn);
 
             currentPanel = panels[currentPanelIndex];
             currentPanelAnimator = currentPanel.GetComponent<Animator>();
-            currentPanelAnimator.Play(panelFadeIn);
+           // currentPanelAnimator.Play(panelFadeIn);
 
             styleObject = objects[currentStylelIndex];
             styleAnimator = currentPanel.GetComponent<Animator>();
-            styleAnimator.Play(styleExpand);
+           // styleAnimator.Play(styleExpand);
 
             nextPanel = panels[currentPanelIndex];
             nextPanelAnimator = nextPanel.GetComponent<Animator>();
