@@ -21,6 +21,15 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject Style;
     private DN_Transition Transcripts;
     private bool StartNow;
+    private bool CreditNow;
+    private bool BackNow;
+    private bool P1Now;
+    private bool P2Now;
+    private bool P3Now;
+    private bool P4Now;
+    private bool ContinueNow;
+    private bool Ps4BeginNow;
+    private bool XboxBeginNow;
     // Use this for initialization
     void Start () {
         Transcripts = Style.GetComponent<DN_Transition>();
@@ -45,6 +54,196 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 StartNow = false;
             }
         }
+        if(CreditNow)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                for (int i = 0; i < Credits.Length; i++)
+                {
+                    Credits[i].SetActive(true);
+                }
+                backButton.SetActive(true);
+                for (int i = 0; i < MainMenuButtons.Length; i++)
+                {
+                    MainMenuButtons[i].SetActive(false);
+                }
+                Transcripts.TransitionStart = false;
+                CreditNow = false;
+            }
+        }
+        if(BackNow)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                for (int i = 0; i < Credits.Length; i++)
+                {
+                    Credits[i].SetActive(false);
+                }
+                for (int i = 0; i < MainMenuButtons.Length; i++)
+                {
+                    MainMenuButtons[i].SetActive(true);
+                }
+                for (int i = 0; i < PlayerActivate.Length; i++)
+                {
+                    PlayerActivate[i].SetActive(false);
+                }
+                for (int i = 0; i < USbOption.Length; i++)
+                {
+                    USbOption[i].SetActive(false);
+                }
+                for (int i = 0; i < Mode.Length; i++)
+                {
+                    Mode[i].SetActive(false);
+                }
+                DN_PlayerMovement.UsbExtender = false;
+                DN_PlayerMovement.SoloController = false;
+                DN_PlayerMovement.DualController = false;
+                DN_PlayerMovement.ThreeController = false;
+                DN_PlayerMovement.FourController = false;
+                DN_PlayerMovement.SoloKeyBoard = false;
+                Ps4ControllerSolo.SetActive(false);
+                XboxControllerSolo.SetActive(false);
+                KeyBoard.SetActive(false);
+                Ps4Controller.SetActive(false);
+                XboxController.SetActive(false);
+                backButton.SetActive(false);
+                Ps4 = false;
+                Xbox = false;
+                PC = false;
+                Scenarios = false;
+                Transcripts.TransitionStart = false;
+                BackNow = false;
+            }
+        }
+        if(P1Now)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                DN_PlayerMovement.SoloController = true;
+                DN_PlayerMovement.DualController = false;
+                DN_PlayerMovement.ThreeController = false;
+                DN_PlayerMovement.FourController = false;
+                for (int i = 0; i < PlayerActivate.Length; i++)
+                {
+                    PlayerActivate[i].SetActive(false);
+                }
+                KeyBoard.SetActive(true);
+                Ps4ControllerSolo.SetActive(true);
+                XboxControllerSolo.SetActive(true);
+                Transcripts.TransitionStart = false;
+                P1Now = false;
+            }
+        }
+        if(P2Now)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                DN_PlayerMovement.SoloController = false;
+                DN_PlayerMovement.DualController = true;
+                DN_PlayerMovement.ThreeController = false;
+                DN_PlayerMovement.FourController = false;
+                for (int i = 0; i < PlayerActivate.Length; i++)
+                {
+                    PlayerActivate[i].SetActive(false);
+                }
+                for (int i = 0; i < Mode.Length; i++)
+                {
+                    Mode[i].SetActive(true);
+                }
+                Transcripts.TransitionStart = false;
+                P2Now = false;
+            }
+        }
+        if(P3Now)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                DN_PlayerMovement.SoloController = false;
+                DN_PlayerMovement.DualController = false;
+                DN_PlayerMovement.ThreeController = true;
+                DN_PlayerMovement.FourController = false;
+                for (int i = 0; i < PlayerActivate.Length; i++)
+                {
+                    PlayerActivate[i].SetActive(false);
+                }
+
+                for (int i = 0; i < Mode.Length; i++)
+                {
+                    Mode[i].SetActive(true);
+                }
+                Transcripts.TransitionStart = false;
+                P3Now = false;
+            }
+        }
+        if(P4Now)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                DN_PlayerMovement.SoloController = false;
+                DN_PlayerMovement.DualController = false;
+                DN_PlayerMovement.ThreeController = false;
+                DN_PlayerMovement.FourController = true;
+                for (int i = 0; i < PlayerActivate.Length; i++)
+                {
+                    PlayerActivate[i].SetActive(false);
+                }
+
+                for (int i = 0; i < Mode.Length; i++)
+                {
+                    Mode[i].SetActive(true);
+                }
+                Transcripts.TransitionStart = false;
+                P4Now = false;
+            }
+        }
+        if(ContinueNow)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                for (int i = 0; i < Mode.Length; i++)
+                {
+                    Mode[i].SetActive(false);
+                }
+                KeyBoard.SetActive(false);
+                Ps4Controller.SetActive(true);
+                XboxController.SetActive(true);
+                Transcripts.TransitionStart = false;
+                ContinueNow = false;
+            }
+        }
+        if(Ps4BeginNow)
+        {
+            if (Transcripts.TransitionStart)
+            {
+                Ps4 = true;
+                KeyBoard.SetActive(false);
+                Ps4Controller.SetActive(false);
+                XboxController.SetActive(false);
+                for (int i = 0; i < USbOption.Length; i++)
+                {
+                    USbOption[i].SetActive(true);
+                }
+                Ps4BeginNow = false;
+                Transcripts.TransitionStart = false;
+            }
+        }
+        if(XboxBeginNow)
+        {
+            if (Transcripts.TransitionStart)
+            {
+                Xbox = true;
+                KeyBoard.SetActive(false);
+                Ps4Controller.SetActive(false);
+                XboxController.SetActive(false);
+                for (int i = 0; i < USbOption.Length; i++)
+                {
+                    USbOption[i].SetActive(true);
+                }
+                XboxBeginNow = false;
+                Transcripts.TransitionStart = false;
+            }
+        }
+
     }
     public void PressStart()
     {
@@ -56,13 +255,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PressContinueAfterMode()
     {
-        for (int i = 0; i < Mode.Length; i++)
-        {
-            Mode[i].SetActive(false);
-        }
-        KeyBoard.SetActive(false);
-        Ps4Controller.SetActive(true);
-        XboxController.SetActive(true);
+        ContinueNow = true;
     }
     public void PressQuit()
     {
@@ -71,125 +264,32 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void BackMainMenu()
     {
-        for (int i = 0; i < Credits.Length; i++)
-        {
-            Credits[i].SetActive(false);
-        }
-        for (int i = 0; i < MainMenuButtons.Length; i++)
-        {
-            MainMenuButtons[i].SetActive(true);
-        }
-        for (int i = 0; i < PlayerActivate.Length; i++)
-        {
-            PlayerActivate[i].SetActive(false);
-        }
-        for (int i = 0; i < USbOption.Length; i++)
-        {
-            USbOption[i].SetActive(false);
-        }
-        for (int i = 0; i < Mode.Length; i++)
-        {
-            Mode[i].SetActive(false);
-        }
-        DN_PlayerMovement.UsbExtender = false;
-        DN_PlayerMovement.SoloController = false;
-        DN_PlayerMovement.DualController = false;
-        DN_PlayerMovement.ThreeController = false;
-        DN_PlayerMovement.FourController = false;
-        DN_PlayerMovement.SoloKeyBoard = false;
-        Ps4ControllerSolo.SetActive(false);
-        XboxControllerSolo.SetActive(false);
-        KeyBoard.SetActive(false);
-        Ps4Controller.SetActive(false);
-        XboxController.SetActive(false);
-        backButton.SetActive(false);
-        Ps4 = false;
-        Xbox = false;
-        PC = false;
-        Scenarios = false;
+        BackNow = true;
     }
     public void PlayerOne()
     {
-        DN_PlayerMovement.SoloController = true;
-        DN_PlayerMovement.DualController = false;
-        DN_PlayerMovement.ThreeController = false;
-        DN_PlayerMovement.FourController = false;
-        for (int i = 0; i < PlayerActivate.Length; i++)
-        {
-            PlayerActivate[i].SetActive(false);
-        }
-        KeyBoard.SetActive(true);
-        Ps4ControllerSolo.SetActive(true);
-        XboxControllerSolo.SetActive(true);
+        P1Now = true;
+       
     }
     public void PlayerTwo()
     {
-        DN_PlayerMovement.SoloController = false;
-        DN_PlayerMovement.DualController = true;
-        DN_PlayerMovement.ThreeController = false;
-        DN_PlayerMovement.FourController = false;
-        for (int i = 0; i < PlayerActivate.Length; i++)
-        {
-            PlayerActivate[i].SetActive(false);
-        }
-        for (int i = 0; i < Mode.Length; i++)
-        {
-            Mode[i].SetActive(true);
-        }
+        P2Now = true;
     }
     public void PlayerThree()
     {
-        DN_PlayerMovement.SoloController = false;
-        DN_PlayerMovement.DualController = false;
-        DN_PlayerMovement.ThreeController = true;
-        DN_PlayerMovement.FourController = false;
-        for (int i = 0; i < PlayerActivate.Length; i++)
-        {
-            PlayerActivate[i].SetActive(false);
-        }
-      
-        for (int i = 0; i < Mode.Length; i++)
-        {
-            Mode[i].SetActive(true);
-        }
+        P3Now = true;
     }
     public void PlayerFour()
     {
-        DN_PlayerMovement.SoloController = false;
-        DN_PlayerMovement.DualController = false;
-        DN_PlayerMovement.ThreeController = false;
-        DN_PlayerMovement.FourController = true;
-        for (int i = 0; i < PlayerActivate.Length; i++)
-        {
-            PlayerActivate[i].SetActive(false);
-        }
-      
-        for (int i = 0; i < Mode.Length; i++)
-        {
-            Mode[i].SetActive(true);
-        }
+        P4Now = true;
     }
     public void USBExtenderOptionPs4()
     {
-        Ps4 = true;
-        KeyBoard.SetActive(false);
-        Ps4Controller.SetActive(false);
-        XboxController.SetActive(false);
-        for (int i = 0; i < USbOption.Length; i++)
-        {
-            USbOption[i].SetActive(true);
-        }
+        Ps4BeginNow = true;
     }
     public void USBExtenderOptionXbox()
     {
-        Xbox = true;
-        KeyBoard.SetActive(false);
-        Ps4Controller.SetActive(false);
-        XboxController.SetActive(false);
-        for (int i = 0; i < USbOption.Length; i++)
-        {
-            USbOption[i].SetActive(true);
-        }
+        XboxBeginNow = true;
     }
   
     public void GameBeginKeyBoard()
@@ -230,15 +330,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void Credit()
     {
-        for (int i = 0; i < Credits.Length; i++)
-        {
-            Credits[i].SetActive(true);
-        }
-        backButton.SetActive(true);
-        for (int i = 0; i < MainMenuButtons.Length; i++)
-        {
-            MainMenuButtons[i].SetActive(false);
-        }
+        CreditNow = true;
     }
     public void Quit()
     {

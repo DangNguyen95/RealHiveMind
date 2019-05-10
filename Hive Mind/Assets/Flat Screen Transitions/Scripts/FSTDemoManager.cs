@@ -90,6 +90,7 @@ namespace Michsky.UI.FSC
                 currentStylelIndex = newPanel;
                 styleAnimator = currentPanel.GetComponent<Animator>();
                 styleAnimator.Play(styleExpand);
+            
             }    
         }
 

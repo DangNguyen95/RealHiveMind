@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DN_Transition : MonoBehaviour {
     public bool TransitionStart;
-	// Use this for initialization
-	void Start () {
+   
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -16,5 +17,6 @@ public class DN_Transition : MonoBehaviour {
     public void DoTransition()
     {
         TransitionStart = true;
+        
     }
 }
