@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject[] MainMenuButtons;
     public GameObject[] PlayerActivate;
@@ -30,13 +31,30 @@ public class DN_MainMenuMannager : MonoBehaviour {
     private bool ContinueNow;
     private bool Ps4BeginNow;
     private bool XboxBeginNow;
+    private bool Ps4BeginNowSolo;
+    private bool XboxBeginNowSolo;
+    private bool LevelSelectNow;
+    public GameObject LevelsSelector;
+    public Text LevelText;
+    public string LevelsNumber;
+    private float LevelsIndicator;
+    public GameObject[] LevelsImage;
     // Use this for initialization
     void Start () {
         Transcripts = Style.GetComponent<DN_Transition>();
+       
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if(LevelsIndicator <0)
+        {
+            LevelsIndicator = 0;
+        }
+        if(LevelsIndicator >14)
+        {
+            LevelsIndicator = 14;
+        }
         if(StartNow)
         {
             if (Transcripts.TransitionStart)
@@ -227,6 +245,19 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 Transcripts.TransitionStart = false;
             }
         }
+        //if(Ps4BeginNowSolo)
+        //{
+        //    if(Transcripts.TransitionStart)
+        //    {
+        //        Ps4 = true;
+        //        DN_PlayerMovement.SoloController = true;
+        //        DN_PlayerMovement.UsbExtender = false;
+        //        DN_PlayerMovement.SoloKeyBoard = false;
+        //        LevelSelectNow = true;
+        //        Ps4BeginNowSolo = false;
+        //        Transcripts.TransitionStart = false;
+        //    }
+        //}
         if(XboxBeginNow)
         {
             if (Transcripts.TransitionStart)
@@ -243,6 +274,291 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 Transcripts.TransitionStart = false;
             }
         }
+        if(LevelSelectNow)
+        {
+            if(Transcripts.TransitionStart)
+            {
+                KeyBoard.SetActive(false);
+                Ps4ControllerSolo.SetActive(false);
+                XboxControllerSolo.SetActive(false);
+                LevelsSelector.SetActive(true);
+                
+                for (int i = 0; i < USbOption.Length; i++)
+                {
+                    USbOption[i].SetActive(false);
+                }
+                Transcripts.TransitionStart = false;
+                LevelSelectNow = false;  
+            }
+        }
+        if(LevelsIndicator == 0)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(true);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 1";
+        }
+        if (LevelsIndicator == 1)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(true);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 2";
+        }
+        if (LevelsIndicator == 2)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(true);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 3";
+        }
+        if (LevelsIndicator == 3)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(true);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 4";
+        }
+        if (LevelsIndicator == 4)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(true);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 5";
+        }
+        if (LevelsIndicator == 5)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(true);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 6";
+        }
+        if (LevelsIndicator == 6)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(true);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 7";
+        }
+        if (LevelsIndicator == 7)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(true);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 8";
+        }
+        if (LevelsIndicator == 8)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(true);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 9";
+        }
+        if (LevelsIndicator == 9)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(true);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 10";
+        }
+        if (LevelsIndicator == 10)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(true);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 11";
+        }
+        if (LevelsIndicator == 11)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(true);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 12";
+        }
+        if (LevelsIndicator == 12)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(true);
+            LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 13";
+        }
+        if (LevelsIndicator == 13)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            LevelsImage[10].SetActive(false);
+            LevelsImage[11].SetActive(false);
+            LevelsImage[12].SetActive(false);
+            LevelsImage[13].SetActive(true);
+            LevelsNumber = "Level 14";
+        }
+     
+
 
     }
     public void PressStart()
@@ -286,10 +602,12 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public void USBExtenderOptionPs4()
     {
         Ps4BeginNow = true;
+       
     }
     public void USBExtenderOptionXbox()
     {
         XboxBeginNow = true;
+     
     }
   
     public void GameBeginKeyBoard()
@@ -298,35 +616,49 @@ public class DN_MainMenuMannager : MonoBehaviour {
         DN_PlayerMovement.SoloController = false;
         DN_PlayerMovement.UsbExtender = false;
         DN_PlayerMovement.SoloKeyBoard = true;
-        SceneManager.LoadScene(1);
+        LevelSelectNow = true;
     }
     public void GameBeginPs4()
     {
-        Ps4 = true;
         DN_PlayerMovement.SoloController = true;
         DN_PlayerMovement.UsbExtender = false;
         DN_PlayerMovement.SoloKeyBoard = false;
-        SceneManager.LoadScene(1);
+        Ps4 = true;
+        LevelSelectNow = true;
+
     }
     public void GameBeginXbox()
     {
+        //XboxBeginNow = true;
         Xbox = true;
         DN_PlayerMovement.SoloController = true;
         DN_PlayerMovement.UsbExtender = false;
         DN_PlayerMovement.SoloKeyBoard = false;
-        SceneManager.LoadScene(1);
+        LevelSelectNow = true;
     }
     public void YesUsbExtender()
     {
         DN_PlayerMovement.SoloKeyBoard = false;
         DN_PlayerMovement.UsbExtender = true;
-        SceneManager.LoadScene(1);
+        LevelSelectNow = true;
     }
     public void NoUsbExtender()
     {
         DN_PlayerMovement.SoloKeyBoard = false;
         DN_PlayerMovement.UsbExtender = false;
+        LevelSelectNow = true;
+    }
+    public void StartGame()
+    {
         SceneManager.LoadScene(1);
+    }
+    public void AddLevel()
+    {
+        LevelsIndicator += 1;
+    }
+    public void ReduceLevel()
+    {
+        LevelsIndicator -= 1;
     }
     public void Credit()
     {
