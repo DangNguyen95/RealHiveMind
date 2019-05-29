@@ -39,6 +39,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public string LevelsNumber;
     private float LevelsIndicator;
     public GameObject[] LevelsImage;
+    public GameObject[] LevelSelectorButtons;
+    private int MenuPhase;
     // Use this for initialization
     void Start () {
         Transcripts = Style.GetComponent<DN_Transition>();
@@ -68,6 +70,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     PlayerActivate[i].SetActive(true);
                 }
+                PlayerActivate[0].GetComponent<Button>().enabled = true;
+                PlayerActivate[1].GetComponent<Button>().enabled = true;
+                PlayerActivate[2].GetComponent<Button>().enabled = true;
+                PlayerActivate[3].GetComponent<Button>().enabled = true;
+                backButton.GetComponent<Button>().enabled = true;
                 Transcripts.TransitionStart = false;
                 StartNow = false;
             }
@@ -85,6 +92,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     MainMenuButtons[i].SetActive(false);
                 }
+                PlayerActivate[0].GetComponent<Button>().enabled = true;
+                PlayerActivate[1].GetComponent<Button>().enabled = true;
+                PlayerActivate[2].GetComponent<Button>().enabled = true;
+                PlayerActivate[3].GetComponent<Button>().enabled = true;
+                backButton.GetComponent<Button>().enabled = true;
                 Transcripts.TransitionStart = false;
                 CreditNow = false;
             }
@@ -113,6 +125,29 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     Mode[i].SetActive(false);
                 }
+                LevelsSelector.SetActive(false);
+                MainMenuButtons[0].GetComponent<Button>().enabled = true;
+                MainMenuButtons[1].GetComponent<Button>().enabled = true;
+                MainMenuButtons[2].GetComponent<Button>().enabled = true;
+                //PlayerActivate[0].GetComponent<Button>().enabled = true;
+                //PlayerActivate[1].GetComponent<Button>().enabled = true;
+                //PlayerActivate[2].GetComponent<Button>().enabled = true;
+                //PlayerActivate[3].GetComponent<Button>().enabled = true;
+                //Mode[1].GetComponent<Button>().enabled = true;
+                //Mode[2].GetComponent<Button>().enabled = true;
+                //USbOption[0].GetComponent<Button>().enabled = true;
+                //USbOption[1].GetComponent<Button>().enabled = true;
+                //Credits[0].GetComponent<Button>().enabled = true;
+                //backButton.GetComponent<Button>().enabled = true;
+                //KeyBoard.GetComponent<Button>().enabled = true;
+                //Ps4Controller.GetComponent<Button>().enabled = true;
+                //XboxController.GetComponent<Button>().enabled = true;
+                //Ps4ControllerSolo.GetComponent<Button>().enabled = true;
+                //XboxControllerSolo.GetComponent<Button>().enabled = true;
+                //LevelsSelector.GetComponent<Button>().enabled = true;
+                //LevelSelectorButtons[0].GetComponent<Button>().enabled = true;
+                //LevelSelectorButtons[1].GetComponent<Button>().enabled = true;
+                //LevelSelectorButtons[2].GetComponent<Button>().enabled = true;
                 DN_PlayerMovement.UsbExtender = false;
                 DN_PlayerMovement.SoloController = false;
                 DN_PlayerMovement.DualController = false;
@@ -148,6 +183,10 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 KeyBoard.SetActive(true);
                 Ps4ControllerSolo.SetActive(true);
                 XboxControllerSolo.SetActive(true);
+                KeyBoard.GetComponent<Button>().enabled = true;
+                Ps4ControllerSolo.GetComponent<Button>().enabled = true;
+                XboxControllerSolo.GetComponent<Button>().enabled = true;
+                backButton.GetComponent<Button>().enabled = true;
                 Transcripts.TransitionStart = false;
                 P1Now = false;
             }
@@ -156,6 +195,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             if(Transcripts.TransitionStart)
             {
+               
                 DN_PlayerMovement.SoloController = false;
                 DN_PlayerMovement.DualController = true;
                 DN_PlayerMovement.ThreeController = false;
@@ -168,6 +208,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     Mode[i].SetActive(true);
                 }
+                backButton.GetComponent<Button>().enabled = true;
+                Mode[1].GetComponent<Toggle>().enabled = true;
+                Mode[2].GetComponent<Button>().enabled = true;
                 Transcripts.TransitionStart = false;
                 P2Now = false;
             }
@@ -176,6 +219,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             if(Transcripts.TransitionStart)
             {
+              
                 DN_PlayerMovement.SoloController = false;
                 DN_PlayerMovement.DualController = false;
                 DN_PlayerMovement.ThreeController = true;
@@ -189,6 +233,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     Mode[i].SetActive(true);
                 }
+                Mode[1].GetComponent<Toggle>().enabled = true;
+                Mode[2].GetComponent<Button>().enabled = true;
+                backButton.GetComponent<Button>().enabled = true;
                 Transcripts.TransitionStart = false;
                 P3Now = false;
             }
@@ -196,7 +243,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
         if(P4Now)
         {
             if(Transcripts.TransitionStart)
-            {
+            {   
                 DN_PlayerMovement.SoloController = false;
                 DN_PlayerMovement.DualController = false;
                 DN_PlayerMovement.ThreeController = false;
@@ -210,6 +257,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     Mode[i].SetActive(true);
                 }
+                backButton.GetComponent<Button>().enabled = true;
+                Mode[1].GetComponent<Toggle>().enabled = true;
+                Mode[2].GetComponent<Button>().enabled = true;
                 Transcripts.TransitionStart = false;
                 P4Now = false;
             }
@@ -225,6 +275,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 KeyBoard.SetActive(false);
                 Ps4Controller.SetActive(true);
                 XboxController.SetActive(true);
+                Ps4Controller.GetComponent<Button>().enabled = true;
+                XboxController.GetComponent<Button>().enabled = true;
+                backButton.GetComponent<Button>().enabled = true;
                 Transcripts.TransitionStart = false;
                 ContinueNow = false;
             }
@@ -241,8 +294,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     USbOption[i].SetActive(true);
                 }
+                USbOption[1].GetComponent<Button>().enabled = true;
+                USbOption[2].GetComponent<Button>().enabled = true;
                 Ps4BeginNow = false;
                 Transcripts.TransitionStart = false;
+                backButton.GetComponent<Button>().enabled = true;
             }
         }
         //if(Ps4BeginNowSolo)
@@ -270,6 +326,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     USbOption[i].SetActive(true);
                 }
+                USbOption[1].GetComponent<Button>().enabled = true;
+                USbOption[2].GetComponent<Button>().enabled = true;
+                backButton.GetComponent<Button>().enabled = true;
                 XboxBeginNow = false;
                 Transcripts.TransitionStart = false;
             }
@@ -278,11 +337,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             if(Transcripts.TransitionStart)
             {
+                LevelSelectorButtons[0].GetComponent<Button>().enabled = true;
+                LevelSelectorButtons[1].GetComponent<Button>().enabled = true;
+                LevelSelectorButtons[2].GetComponent<Button>().enabled = true;
+                backButton.GetComponent<Button>().enabled = true;
                 KeyBoard.SetActive(false);
                 Ps4ControllerSolo.SetActive(false);
                 XboxControllerSolo.SetActive(false);
                 LevelsSelector.SetActive(true);
-                
                 for (int i = 0; i < USbOption.Length; i++)
                 {
                     USbOption[i].SetActive(false);
@@ -557,12 +619,13 @@ public class DN_MainMenuMannager : MonoBehaviour {
             LevelsImage[13].SetActive(true);
             LevelsNumber = "Level 14";
         }
-     
-
-
     }
     public void PressStart()
     {
+        MenuPhase = 1;
+        MainMenuButtons[0].GetComponent<Button>().enabled = false;
+        MainMenuButtons[1].GetComponent<Button>().enabled = false;
+        MainMenuButtons[2].GetComponent<Button>().enabled = false;
         StartNow = true;
     }
     public void AddScenario()
@@ -571,6 +634,10 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PressContinueAfterMode()
     {
+        MenuPhase = 4;
+        backButton.GetComponent<Button>().enabled = false;
+        Mode[1].GetComponent<Toggle>().enabled = false;
+        Mode[2].GetComponent<Button>().enabled = false;
         ContinueNow = true;
     }
     public void PressQuit()
@@ -580,38 +647,110 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void BackMainMenu()
     {
+        if(MenuPhase == 1)
+        {
+            PlayerActivate[0].GetComponent<Button>().enabled = false;
+            PlayerActivate[1].GetComponent<Button>().enabled = false;
+            PlayerActivate[2].GetComponent<Button>().enabled = false;
+            PlayerActivate[3].GetComponent<Button>().enabled = false;
+        }
+        if(MenuPhase == 2)
+        {
+            Ps4ControllerSolo.GetComponent<Button>().enabled = false;
+            XboxControllerSolo.GetComponent<Button>().enabled = false;
+            KeyBoard.GetComponent<Button>().enabled = false;
+        }
+        if (MenuPhase == 3)
+        {
+
+            Mode[1].GetComponent<Toggle>().enabled = false;
+            Mode[2].GetComponent<Button>().enabled = false;
+        }
+        if (MenuPhase == 4)
+        {
+            Ps4Controller.GetComponent<Button>().enabled = false;
+            XboxController.GetComponent<Button>().enabled = false;
+        }
+        if(MenuPhase == 5)
+        {
+            USbOption[1].GetComponent<Button>().enabled = false;
+            USbOption[2].GetComponent<Button>().enabled = false;
+        }
+        if(MenuPhase == 6)
+        {
+            LevelSelectorButtons[0].GetComponent<Button>().enabled = false;
+            LevelSelectorButtons[1].GetComponent<Button>().enabled = false;
+            LevelSelectorButtons[2].GetComponent<Button>().enabled = false;
+        }
+        backButton.GetComponent<Button>().enabled = false;
         BackNow = true;
     }
     public void PlayerOne()
     {
+        MenuPhase = 2;
+        backButton.GetComponent<Button>().enabled = false;
+        PlayerActivate[0].GetComponent<Button>().enabled = false;
+        PlayerActivate[1].GetComponent<Button>().enabled = false;
+        PlayerActivate[2].GetComponent<Button>().enabled = false;
+        PlayerActivate[3].GetComponent<Button>().enabled = false;
         P1Now = true;
        
     }
     public void PlayerTwo()
     {
+        MenuPhase = 3;
+        backButton.GetComponent<Button>().enabled = false;
+        PlayerActivate[0].GetComponent<Button>().enabled = false;
+        PlayerActivate[1].GetComponent<Button>().enabled = false;
+        PlayerActivate[2].GetComponent<Button>().enabled = false;
+        PlayerActivate[3].GetComponent<Button>().enabled = false;
         P2Now = true;
     }
     public void PlayerThree()
     {
+        MenuPhase = 3;
+        backButton.GetComponent<Button>().enabled = false;
+        PlayerActivate[0].GetComponent<Button>().enabled = false;
+        PlayerActivate[1].GetComponent<Button>().enabled = false;
+        PlayerActivate[2].GetComponent<Button>().enabled = false;
+        PlayerActivate[3].GetComponent<Button>().enabled = false;
         P3Now = true;
     }
     public void PlayerFour()
     {
+        MenuPhase = 3;
+        backButton.GetComponent<Button>().enabled = false;
+        PlayerActivate[0].GetComponent<Button>().enabled = false;
+        PlayerActivate[1].GetComponent<Button>().enabled = false;
+        PlayerActivate[2].GetComponent<Button>().enabled = false;
+        PlayerActivate[3].GetComponent<Button>().enabled = false;
         P4Now = true;
     }
     public void USBExtenderOptionPs4()
     {
+        backButton.GetComponent<Button>().enabled = false;
+        MenuPhase = 5;
+        Ps4Controller.GetComponent<Button>().enabled = false;
+        XboxController.GetComponent<Button>().enabled = false;
         Ps4BeginNow = true;
        
     }
     public void USBExtenderOptionXbox()
     {
+        backButton.GetComponent<Button>().enabled = false;
+        MenuPhase = 5;
+        Ps4Controller.GetComponent<Button>().enabled = false;
+        XboxController.GetComponent<Button>().enabled = false;
         XboxBeginNow = true;
-     
     }
   
     public void GameBeginKeyBoard()
     {
+        MenuPhase = 6;
+        backButton.GetComponent<Button>().enabled = false;
+        KeyBoard.GetComponent<Button>().enabled = false;
+        Ps4ControllerSolo.GetComponent<Button>().enabled = false;
+        XboxControllerSolo.GetComponent<Button>().enabled = false;
         PC = true;
         DN_PlayerMovement.SoloController = false;
         DN_PlayerMovement.UsbExtender = false;
@@ -620,6 +759,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void GameBeginPs4()
     {
+        MenuPhase = 6;
+        backButton.GetComponent<Button>().enabled = false;
+        KeyBoard.GetComponent<Button>().enabled = false;
+        Ps4ControllerSolo.GetComponent<Button>().enabled = false;
+        XboxControllerSolo.GetComponent<Button>().enabled = false;
         DN_PlayerMovement.SoloController = true;
         DN_PlayerMovement.UsbExtender = false;
         DN_PlayerMovement.SoloKeyBoard = false;
@@ -629,7 +773,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void GameBeginXbox()
     {
-        //XboxBeginNow = true;
+        MenuPhase = 6;
+        backButton.GetComponent<Button>().enabled = false;
+        KeyBoard.GetComponent<Button>().enabled = false;
+        Ps4ControllerSolo.GetComponent<Button>().enabled = false;
+        XboxControllerSolo.GetComponent<Button>().enabled = false;
         Xbox = true;
         DN_PlayerMovement.SoloController = true;
         DN_PlayerMovement.UsbExtender = false;
@@ -638,12 +786,20 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void YesUsbExtender()
     {
+        MenuPhase = 6;
+        backButton.GetComponent<Button>().enabled = false;
+        USbOption[1].GetComponent<Button>().enabled = false;
+        USbOption[2].GetComponent<Button>().enabled = false;
         DN_PlayerMovement.SoloKeyBoard = false;
         DN_PlayerMovement.UsbExtender = true;
         LevelSelectNow = true;
     }
     public void NoUsbExtender()
     {
+        MenuPhase = 6;
+        backButton.GetComponent<Button>().enabled = false;
+        USbOption[1].GetComponent<Button>().enabled = false;
+        USbOption[2].GetComponent<Button>().enabled = false;
         DN_PlayerMovement.SoloKeyBoard = false;
         DN_PlayerMovement.UsbExtender = false;
         LevelSelectNow = true;
@@ -662,11 +818,15 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void Credit()
     {
+        MenuPhase = 1;
+        MainMenuButtons[0].GetComponent<Button>().enabled = false;
+        MainMenuButtons[1].GetComponent<Button>().enabled = false;
+        MainMenuButtons[2].GetComponent<Button>().enabled = false;
         CreditNow = true;
     }
     public void Quit()
     {
         Application.Quit();
     }
-
+    
 }
