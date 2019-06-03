@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Elliott : MonoBehaviour {
+public class Door_Animation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
