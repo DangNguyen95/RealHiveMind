@@ -55,19 +55,76 @@ public class DN_TDBullet : MonoBehaviour, ISpawnEvent
                 Destroy(other.gameObject);
                 pool.Despawn(this.gameObject);
             }
+              if(RedBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamBlue)
+            {
+                pool.Despawn(this.gameObject);
+            }
+            if (RedBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamGreen)
+            {
+                pool.Despawn(this.gameObject);
+            }
+            if(RedBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamYellow)
+            {
+                pool.Despawn(this.gameObject);
+            }
             if(BlueBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamBlue)
             {
                 Destroy(other.gameObject);
                 pool.Despawn(this.gameObject);
             }
+              if(BlueBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamRed)
+            {
+
+                pool.Despawn(this.gameObject);
+            }
+               if(BlueBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamGreen)
+            {
+                
+                pool.Despawn(this.gameObject);
+            }
+                if(BlueBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamYellow)
+            {
+                
+                pool.Despawn(this.gameObject);
+            }
+         
             if (GreenBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamGreen)
             {
                 Destroy(other.gameObject);
                 pool.Despawn(this.gameObject);
             }
+            if (GreenBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamBlue)
+            {
+                
+                pool.Despawn(this.gameObject);
+            }
+            if (GreenBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamRed)
+            {
+              
+                pool.Despawn(this.gameObject);
+            }
+            if (GreenBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamYellow)
+            {
+                pool.Despawn(this.gameObject);
+            }
             if(YellowBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamYellow)
             {
                 Destroy(other.gameObject);
+                pool.Despawn(this.gameObject);
+            }
+             if(YellowBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamRed)
+            {
+             
+                pool.Despawn(this.gameObject);
+            }
+              if(YellowBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamGreen )
+            {
+               
+                pool.Despawn(this.gameObject);
+            }
+               if(YellowBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamBlue)
+            {
+                
                 pool.Despawn(this.gameObject);
             }
       

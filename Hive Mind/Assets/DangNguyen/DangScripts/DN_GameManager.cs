@@ -34,6 +34,7 @@ public class DN_GameManager : MonoBehaviour {
     public GameObject ObjectiveIndicator;
     public GameObject Scenarios;
     public GameObject Intro;
+    public bool IntroState;
     public GameObject[] ScenariosText;
     public float RandomScenarioNumber;
     //These bool bellow are for testing purposes
@@ -62,7 +63,7 @@ public class DN_GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (IsPauseThere)
+        if (IsPauseThere && IntroState == false)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -420,6 +421,7 @@ public class DN_GameManager : MonoBehaviour {
         Time.timeScale = 1;
         timescripts.StartTimer = true;
         ObjectiveIndicator.SetActive(false);
+        IntroState = false;
     }
     public void ContinueToIntro()
     {

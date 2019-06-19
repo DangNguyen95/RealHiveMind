@@ -55,13 +55,13 @@ public class DN_WaveSpawnTD : MonoBehaviour
 
     void Update()
     {
-        if(nextWave >=4)
-        {
-            DN_GameManager.SquareHome = true;
-            DN_GameManager.XHome = true;
-            DN_GameManager.TriangleHome = true;
-            DN_GameManager.OHome = true;
-        }
+        //if(nextWave >=4)
+        //{
+        //    DN_GameManager.SquareHome = true;
+        //    DN_GameManager.XHome = true;
+        //    DN_GameManager.TriangleHome = true;
+        //    DN_GameManager.OHome = true;
+        //}
         if (state == SpawnState.WAITING)
         {
             if (!EnemyIsAlive())
@@ -99,6 +99,10 @@ public class DN_WaveSpawnTD : MonoBehaviour
         {
             nextWave = 0;
             Debug.Log("ALL WAVES COMPLETE! Looping...");
+            DN_GameManager.SquareHome = true;
+            DN_GameManager.XHome = true;
+            DN_GameManager.TriangleHome = true;
+            DN_GameManager.OHome = true;
         }
         else
         {

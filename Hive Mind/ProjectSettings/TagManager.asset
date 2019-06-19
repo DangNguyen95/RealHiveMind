@@ -52,6 +52,9 @@ TagManager:
   - Start4
   - LeftWall
   - RightWall
+  - YellowEnemy
+  - BlueEnemy
+  - GreenEnemy
   layers:
   - Default
   - TransparentFX
