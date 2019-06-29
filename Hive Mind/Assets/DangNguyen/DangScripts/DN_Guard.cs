@@ -20,16 +20,36 @@ public class DN_Guard : MonoBehaviour {
     public GameObject AngryFace;
     public GameObject Mech;
     private DN_Mech MechScripts;
+    public GameObject BadMechSprite;
+    private Animator BadMechAnimator;
     // Use this for initialization
     void Start() {
         if (AutoRun)
         {
             MechScripts = Mech.GetComponent<DN_Mech>();
         }
+        else
+        {
+            BadMechAnimator = BadMechSprite.GetComponent<Animator>();
+        }
     }
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetKey(KeyCode.DownArrow) == false && Input.GetKey(KeyCode.UpArrow) == false && Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.LeftArrow) == false && DN_PlayerMovement.SoloKeyBoard)
+        {
+            BadMechAnimator.SetBool("BadMechMoveRight", false);
+            BadMechAnimator.SetBool("BadMechMoveUp", false);
+            BadMechAnimator.SetBool("BadMechMoveDown", false);
+            BadMechAnimator.SetBool("BadMechIdle", true);
+        }
+        if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+        {
+            BadMechAnimator.SetBool("BadMechMoveRight", false);
+            BadMechAnimator.SetBool("BadMechMoveUp", false);
+            BadMechAnimator.SetBool("BadMechMoveDown", false);
+            BadMechAnimator.SetBool("BadMechIdle", true);
+        }
         buttonCooldown--;
         if (AutoRun)
         {
@@ -113,6 +133,7 @@ public class DN_Guard : MonoBehaviour {
     {
         if (buttonCooldown <= 0)
         { 
+
                 if (Input.GetKey(KeyCode.LeftArrow) && StopLeft == false)
                 {
 
@@ -120,10 +141,16 @@ public class DN_Guard : MonoBehaviour {
                     {
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.LEFT;
-                    }
+                    
+                }
                     else
                     {
-                        canMove = false;
+                    BadMechAnimator.SetBool("BadMechMoveRight", true);
+                    BadMechAnimator.SetBool("BadMechMoveUp", false);
+                    BadMechAnimator.SetBool("BadMechMoveDown", false);
+                    BadMechAnimator.SetBool("BadMechIdle", false);
+                    BadMechSprite.GetComponent<SpriteRenderer>().flipX = true;
+                    canMove = false;
                         moving = true;
                         pos += Vector3.left;
                     }
@@ -134,11 +161,16 @@ public class DN_Guard : MonoBehaviour {
                     {
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.RIGHT;
-                    }
+                 
+                }
                     else
                     {
-
-                        canMove = false;
+                    BadMechAnimator.SetBool("BadMechMoveRight", true);
+                    BadMechAnimator.SetBool("BadMechMoveUp", false);
+                    BadMechAnimator.SetBool("BadMechMoveDown", false);
+                    BadMechAnimator.SetBool("BadMechIdle", false);
+                    BadMechSprite.GetComponent<SpriteRenderer>().flipX = false;
+                    canMove = false;
                         moving = true;
                         pos += Vector3.right;
 
@@ -150,10 +182,15 @@ public class DN_Guard : MonoBehaviour {
                     {
                         buttonCooldown = cooldownforbutton;
                         dir = DIRECTION.DOWN;
-                    }
+                    
+                }
                     else
                     {
-                        canMove = false;
+                    BadMechAnimator.SetBool("BadMechMoveRight", false);
+                    BadMechAnimator.SetBool("BadMechMoveUp", false);
+                    BadMechAnimator.SetBool("BadMechMoveDown", true);
+                    BadMechAnimator.SetBool("BadMechIdle", false);
+                    canMove = false;
                         moving = true;
                         pos += Vector3.back;
                     }
@@ -164,10 +201,15 @@ public class DN_Guard : MonoBehaviour {
                     {
                         dir = DIRECTION.UP;
                         buttonCooldown = cooldownforbutton;
-                    }
+                    
+                }
                     else
                     {
-                        canMove = false;
+                    BadMechAnimator.SetBool("BadMechMoveRight", false);
+                    BadMechAnimator.SetBool("BadMechMoveUp", true);
+                    BadMechAnimator.SetBool("BadMechMoveDown", false);
+                    BadMechAnimator.SetBool("BadMechIdle", false);
+                    canMove = false;
                         moving = true;
                         pos += Vector3.forward;
                     }
@@ -180,6 +222,7 @@ public class DN_Guard : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
+               
                 if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false)
                 {
                     if (dir != DIRECTION.UP)
@@ -189,6 +232,10 @@ public class DN_Guard : MonoBehaviour {
                     }
                     else
                     {
+                        BadMechAnimator.SetBool("BadMechMoveRight", false);
+                        BadMechAnimator.SetBool("BadMechMoveUp", true);
+                        BadMechAnimator.SetBool("BadMechMoveDown", false);
+                        BadMechAnimator.SetBool("BadMechIdle", false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -206,6 +253,10 @@ public class DN_Guard : MonoBehaviour {
                     }
                     else
                     {
+                        BadMechAnimator.SetBool("BadMechMoveRight", false);
+                        BadMechAnimator.SetBool("BadMechMoveUp", false);
+                        BadMechAnimator.SetBool("BadMechMoveDown", true);
+                        BadMechAnimator.SetBool("BadMechIdle", false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -224,6 +275,11 @@ public class DN_Guard : MonoBehaviour {
                     }
                     else
                     {
+                        BadMechAnimator.SetBool("BadMechMoveRight", true);
+                        BadMechAnimator.SetBool("BadMechMoveUp", false);
+                        BadMechAnimator.SetBool("BadMechMoveDown", false);
+                        BadMechAnimator.SetBool("BadMechIdle", false);
+                        BadMechSprite.GetComponent<SpriteRenderer>().flipX = true;
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -242,7 +298,11 @@ public class DN_Guard : MonoBehaviour {
                     }
                     else
                     {
-
+                        BadMechAnimator.SetBool("BadMechMoveRight", true);
+                        BadMechAnimator.SetBool("BadMechMoveUp", false);
+                        BadMechAnimator.SetBool("BadMechMoveDown", false);
+                        BadMechAnimator.SetBool("BadMechIdle", false);
+                        BadMechSprite.GetComponent<SpriteRenderer>().flipX = false;
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;

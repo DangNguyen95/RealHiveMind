@@ -45,6 +45,7 @@ public class DN_GameManager : MonoBehaviour {
     // Use this for initialization
  
     void Start () {
+        IntroState = true;
         timescripts = Times.GetComponent<DN_Time>();
         timescripts.StartTimer = false;
         Time.timeScale = 0;
