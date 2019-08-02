@@ -9,7 +9,8 @@ public class DN_LeverManager : MonoBehaviour {
     public static bool CirlceInPlace;
     public static bool XInplace;
     public static bool OInplace;
-
+    public Animator HorrizontalDoor;
+    public Animator VerticalDoor;
 	// Use this for initialization
 	void Start () {
        
@@ -19,11 +20,13 @@ public class DN_LeverManager : MonoBehaviour {
 	void Update () {
 		if(SquareInPlace && CirlceInPlace)
         {
+            HorrizontalDoor.SetBool("HDoorOff", true);
             Cell.GetComponent<Rigidbody>().useGravity = true;
             Cell.GetComponent<Rigidbody>().isKinematic = false;
         }
         if(XInplace && SquareInPlace)
         {
+            VerticalDoor.SetBool("VDoorOff", true);
             Cell2.GetComponent<Rigidbody>().useGravity = true;
             Cell2.GetComponent<Rigidbody>().isKinematic = false;
         }
