@@ -20,13 +20,14 @@ public class DN_LeverManager : MonoBehaviour {
 	void Update () {
 		if(SquareInPlace && CirlceInPlace)
         {
-            HorrizontalDoor.SetBool("HDoorOff", true);
+            VerticalDoor.SetBool("VDoorOff", true);
             Cell.GetComponent<Rigidbody>().useGravity = true;
             Cell.GetComponent<Rigidbody>().isKinematic = false;
         }
         if(XInplace && SquareInPlace)
         {
-            VerticalDoor.SetBool("VDoorOff", true);
+            HorrizontalDoor.SetBool("HDoorOff", true);
+            
             Cell2.GetComponent<Rigidbody>().useGravity = true;
             Cell2.GetComponent<Rigidbody>().isKinematic = false;
         }
