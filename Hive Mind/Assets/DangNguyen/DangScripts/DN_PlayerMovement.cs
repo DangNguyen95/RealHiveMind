@@ -65,7 +65,10 @@ public class DN_PlayerMovement : MonoBehaviour {
     public GameObject[] KeyboardKey;
     public GameObject[] PS4Buttons;
     public GameObject[] XboxButtons;
-    public bool TestAnimation;
+    //public bool TestAnimation;
+    public bool Improsion;
+    public bool Hooray;
+    public bool Die;
     //public GameObject SpriteSelf;
     //private Animator SpriteSelfAnim;
     //private SpriteRenderer Sprite;
@@ -74,13 +77,14 @@ public class DN_PlayerMovement : MonoBehaviour {
     public GameObject Up;
     public GameObject Right;
     public GameObject Left;
+    public GameObject Trapped;
     // Use this for initialization
     void Start () {
-        if(TestAnimation)
-        {
-            //SpriteSelfAnim = SpriteSelf.GetComponent<Animator>();
-            //Sprite = SpriteSelf.GetComponent<SpriteRenderer>();
-        }
+        //if(TestAnimation)
+        //{
+        //    //SpriteSelfAnim = SpriteSelf.GetComponent<Animator>();
+        //    //Sprite = SpriteSelf.GetComponent<SpriteRenderer>();
+        //}
         if (SoloController && DN_MainMenuMannager.Ps4)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
@@ -1709,6 +1713,16 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (P1)
             {
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+
+                }
                 if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Square1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
@@ -1726,6 +1740,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         //SpriteSelfAnim.SetBool("MoveDown", false);
                         //SpriteSelfAnim.SetBool("MoveRight", false);
                         //SpriteSelfAnim.SetBool("Idle", true);
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -1751,6 +1771,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         //SpriteSelfAnim.SetBool("MoveDown", false);
                         //SpriteSelfAnim.SetBool("MoveRight", false);
                         //SpriteSelfAnim.SetBool("Idle", true);
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -1775,6 +1801,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         //SpriteSelfAnim.SetBool("MoveDown", false);
                         //SpriteSelfAnim.SetBool("MoveRight", false);
                         //SpriteSelfAnim.SetBool("Idle", true);
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -1799,6 +1831,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         //SpriteSelfAnim.SetBool("MoveDown", false);
                         //SpriteSelfAnim.SetBool("MoveRight", false);
                         //SpriteSelfAnim.SetBool("Idle", true);
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -1866,6 +1904,16 @@ public class DN_PlayerMovement : MonoBehaviour {
             }
             if (P2)
             {
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+
+                }
                 if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && O1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
@@ -1875,6 +1923,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -1890,6 +1944,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -1905,6 +1960,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -1935,6 +1996,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -1964,7 +2031,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -1990,6 +2062,16 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
             if(P3)
             {
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+
+                }
                 if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Triangle1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
@@ -1999,6 +2081,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -2030,6 +2118,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -2059,6 +2153,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -2088,7 +2188,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -2121,11 +2226,18 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Down.SetActive(false);
                     Right.SetActive(false);
                     Left.SetActive(false);
-                    //SpriteSelfAnim.SetBool("MoveUp", false);
-                    //SpriteSelfAnim.SetBool("MoveDown", false);
-                    //SpriteSelfAnim.SetBool("MoveRight", false);
-                    //SpriteSelfAnim.SetBool("Idle", true);
+                    Trapped.SetActive(false);
+                  
                 }
+                //if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0)
+                //{
+                //    Idle.SetActive(true);
+                //    Up.SetActive(false);
+                //    Down.SetActive(false);
+                //    Right.SetActive(false);
+                //    Left.SetActive(false);
+                //    Trapped.SetActive(false);
+                //}
                 if (Input.GetAxis("Solo P1 Press Up Arrow") > 0 && StopTop == false && X1 && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
@@ -2145,6 +2257,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Down.SetActive(false);
                         Right.SetActive(false);
                         Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -2161,6 +2274,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -2186,6 +2300,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Down.SetActive(true);
                         Right.SetActive(false);
                         Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -2226,6 +2341,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Down.SetActive(false);
                         Right.SetActive(false);
                         Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -2266,6 +2382,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Down.SetActive(false);
                         Right.SetActive(true);
                         Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -2299,6 +2416,15 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 if (UsbExtender)
                 {
+                    if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 &&DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(true);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -2309,6 +2435,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -2325,6 +2457,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -2340,6 +2478,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -2355,7 +2499,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -2424,9 +2573,18 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
                 else
                 {
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(true);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
                     {
-
+                       
                         if (dir != DIRECTION.LEFT)
                         {
                             buttonCooldown = cooldownforbutton;
@@ -2434,6 +2592,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -2442,7 +2606,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Square1 && DN_MainMenuMannager.Ps4)
                     {
-
+                      
                         if (dir != DIRECTION.UP)
                         {
                             dir = DIRECTION.UP;
@@ -2450,6 +2614,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -2457,7 +2627,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false && Square2 && DN_MainMenuMannager.Ps4)
                     {
-
+                      
                         if (dir != DIRECTION.DOWN)
                         {
                             buttonCooldown = cooldownforbutton;
@@ -2465,6 +2635,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -2472,7 +2648,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else if (Input.GetAxis("P2 Press Right Arrow") == 1 && StopRight == false && Square2 && DN_MainMenuMannager.Ps4)
                     {
-
+                        
                         if (dir != DIRECTION.RIGHT)
                         {
                             buttonCooldown = cooldownforbutton;
@@ -2480,7 +2656,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -2560,6 +2741,15 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 if (UsbExtender)
                 {
+                    if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && O1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -2570,6 +2760,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -2586,6 +2782,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -2601,6 +2803,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -2616,7 +2824,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -2686,6 +2899,15 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
                 else
                 {
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(true);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && O1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -2696,6 +2918,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -2712,6 +2940,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -2727,6 +2961,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -2742,7 +2982,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -2821,6 +3066,16 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 if (UsbExtender)
                 {
+
+                    if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(true);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && Triangle1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -2831,6 +3086,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -2846,6 +3107,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -2861,6 +3128,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -2876,7 +3149,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -2945,6 +3223,15 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
                 else
                 {
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(true);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && Triangle1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -2955,6 +3242,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -2971,6 +3264,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -2986,6 +3285,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -3001,7 +3306,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -3080,6 +3390,15 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 if (UsbExtender)
                 {
+                    if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(true);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && X1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -3090,6 +3409,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -3105,6 +3430,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -3120,6 +3451,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -3135,7 +3472,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -3204,6 +3546,15 @@ public class DN_PlayerMovement : MonoBehaviour {
                 }
                 else
                 {
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    {
+                        Idle.SetActive(true);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
+                    }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && X1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -3214,6 +3565,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(true);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -3230,6 +3587,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(true);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -3245,6 +3608,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(true);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -3260,7 +3629,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(true);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -3336,7 +3710,16 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
-                if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && Square1)
+                if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
+                    if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && Square1)
                 {
 
                     if (dir != DIRECTION.LEFT)
@@ -3346,6 +3729,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3361,6 +3750,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3376,6 +3771,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3391,7 +3792,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3466,6 +3872,15 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
+                if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
                 if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && O1)
                 {
 
@@ -3476,6 +3891,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3491,6 +3912,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3506,6 +3933,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3521,7 +3954,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3596,6 +4034,15 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
+                if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
                 if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && Triangle1)
                 {
 
@@ -3606,6 +4053,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3621,6 +4074,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3636,6 +4095,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3651,7 +4116,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3726,6 +4196,15 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
+                if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
                 if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && X1)
                 {
 
@@ -3736,6 +4215,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3751,6 +4236,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3766,6 +4257,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3781,7 +4278,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3856,6 +4358,15 @@ public class DN_PlayerMovement : MonoBehaviour {
         { 
         if (buttonCooldown <= 0)
         {
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
                 if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && Square1)
                 {
                     if (dir != DIRECTION.UP)
@@ -3865,6 +4376,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3881,6 +4398,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3896,6 +4419,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3912,7 +4441,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3928,6 +4462,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3989,6 +4524,15 @@ public class DN_PlayerMovement : MonoBehaviour {
         { 
         if (buttonCooldown <= 0)
         {
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
                 if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && O1)
                 {
                     if (dir != DIRECTION.UP)
@@ -3998,6 +4542,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -4014,6 +4564,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -4030,6 +4586,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -4046,7 +4608,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -4122,6 +4689,15 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
                 if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && Triangle1)
                 {
                     if (dir != DIRECTION.UP)
@@ -4131,6 +4707,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -4147,6 +4729,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -4163,6 +4751,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -4179,7 +4773,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -4255,6 +4854,15 @@ public class DN_PlayerMovement : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                {
+                    Idle.SetActive(true);
+                    Up.SetActive(false);
+                    Down.SetActive(false);
+                    Right.SetActive(false);
+                    Left.SetActive(false);
+                    Trapped.SetActive(false);
+                }
                 if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && X1)
                 {
                     if (dir != DIRECTION.UP)
@@ -4264,6 +4872,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(true);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -4280,6 +4894,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(true);
+                        Right.SetActive(false);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -4296,6 +4916,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(false);
+                        Left.SetActive(true);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -4312,7 +4938,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        Idle.SetActive(false);
+                        Up.SetActive(false);
+                        Down.SetActive(false);
+                        Right.SetActive(true);
+                        Left.SetActive(false);
+                        Trapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
