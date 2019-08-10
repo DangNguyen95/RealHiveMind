@@ -100,13 +100,133 @@ public class DN_PlayerMovement : MonoBehaviour {
                 XboxButtons[i].SetActive(false);
             }
         }
-        //SoloController = true;
-        // DualController = true;
-        // UsbExtender = true;
-        // ThreeController = true;
-        // FourController = true;
-        //  SoloKeyBoard = true;
-    }
+        if (SoloController && DN_MainMenuMannager.Xbox)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(true);
+            }
+        }
+        if (SoloKeyBoard)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(true);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
+            }
+        }
+        if (DualController && DN_MainMenuMannager.Xbox)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(true);
+            }
+        }
+        if (DualController && DN_MainMenuMannager.Ps4)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(true);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
+            }
+        }
+        if (ThreeController && DN_MainMenuMannager.Ps4)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(true);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
+            }
+        }
+        if (ThreeController && DN_MainMenuMannager.Xbox)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(true);
+            }
+        }
+        if (FourController && DN_MainMenuMannager.Ps4)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(true);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
+            }
+        }
+        if (FourController && DN_MainMenuMannager.Xbox)
+        {
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(false);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(true);
+            }
+        }
+            //SoloController = true;
+            // DualController = true;
+            // UsbExtender = true;
+            // ThreeController = true;
+            // FourController = true;
+            //  SoloKeyBoard = true;
+        }
 	
 	// Update is called once per frame
 	void Update () {
@@ -264,18 +384,18 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if (SoloController && DN_MainMenuMannager.Xbox)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(false);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(false);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(true);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(false);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(false);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(true);
+            //}
 
             if (Input.GetAxis("Xbox Solo P1 Press B") != 0)
             {
@@ -387,18 +507,18 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
             if (SoloKeyBoard)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(true);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(false);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(false);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(true);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(false);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(false);
+            //}
             if (Input.GetKey(KeyCode.A))
             {
                 
@@ -447,18 +567,18 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
             if(DualController && DN_MainMenuMannager.Xbox)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(false);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(false);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(true);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(false);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(false);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(true);
+            //}
             if(UsbExtender)
             {
                 if (Input.GetAxis("Xbox P1 Press B") != 0)
@@ -644,18 +764,18 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if(DualController && DN_MainMenuMannager.Ps4)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(false);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(true);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(false);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(false);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(true);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(false);
+            //}
             if (UsbExtender)
             {
                 if (Input.GetAxis("P1 Press Circle") != 0)
@@ -664,27 +784,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
-                    //if (O1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (O1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = true;
                     Square1 = false;
                     Triangle1 = false;
@@ -696,27 +816,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(true);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
-                    //if (Square1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Square1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = false;
                     Square1 = true;
                     Triangle1 = false;
@@ -728,27 +848,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(true);
                     Marker4[0].SetActive(false);
-                    //if (Triangle1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Triangle1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = false;
                     Square1 = false;
                     Triangle1 = true;
@@ -760,27 +880,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(true);
-                    //if (X1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (X1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = false;
                     Square1 = false;
                     Triangle1 = false;
@@ -792,27 +912,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
-                    //if(O2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (O2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O2 = true;
                     Square2 = false;
                     Triangle2 = false;
@@ -824,27 +944,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(true);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
-                    //if(Square2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Square2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O2 = false;
                     Square2 = true;
                     Triangle2 = false;
@@ -856,27 +976,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(true);
                     Marker4[1].SetActive(false);
-                    //if(Triangle2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Triangle2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O2 = false;
                     Square2 = false;
                     Triangle2 = true;
@@ -888,27 +1008,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(true);
-                    //if(X2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (X2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O2 = false;
                     Square2 = false;
                     Triangle2 = false;
@@ -923,27 +1043,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
-                    //if(O1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (O1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = true;
                     Square1 = false;
                     Triangle1 = false;
@@ -955,27 +1075,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(true);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
-                    //if(Square1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Square1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = false;
                     Square1 = true;
                     Triangle1 = false;
@@ -987,27 +1107,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(true);
                     Marker4[0].SetActive(false);
-                    //if(Triangle1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Triangle1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = false;
                     Square1 = false;
                     Triangle1 = true;
@@ -1019,27 +1139,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(true);
-                    //if(X1 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (X1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O1 = false;
                     Square1 = false;
                     Triangle1 = false;
@@ -1051,27 +1171,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
-                    //if(O2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (O2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O2 = true;
                     Square2 = false;
                     Triangle2 = false;
@@ -1083,27 +1203,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(true);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
-                    //if(Square2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Square2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O2 = false;
                     Square2 = true;
                     Triangle2 = false;
@@ -1115,27 +1235,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(true);
                     Marker4[1].SetActive(false);
-                    //if(Triangle2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (Triangle2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
 
                     O2 = false;
                     Square2 = false;
@@ -1148,27 +1268,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(true);
-                    //if (X2 == false)
-                    //{
-                    //    if (Imprision == false)
-                    //    {
-                    //        Idle.SetActive(true);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(false);
-                    //    }
-                    //    else
-                    //    {
-                    //        Idle.SetActive(false);
-                    //        Up.SetActive(false);
-                    //        Down.SetActive(false);
-                    //        Right.SetActive(false);
-                    //        Left.SetActive(false);
-                    //        Trapped.SetActive(true);
-                    //    }
-                    //}
+                    if (X2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
+                    }
                     O2 = false;
                     Square2 = false;
                     Triangle2 = false;
@@ -1178,25 +1298,25 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if(ThreeController && DN_MainMenuMannager.Ps4)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(false);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(true);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(false);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(false);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(true);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(false);
+            //}
             if (Input.GetAxis("P1 Press Circle") != 0)
             {
                 Marker1[0].SetActive(true);
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
-                if(O1==false)
+                if (O1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1228,7 +1348,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(true);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
-                if(Square1 ==false)
+                if (Square1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1260,7 +1380,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(true);
                 Marker4[0].SetActive(false);
-                if(Triangle1 == false)
+                if (Triangle1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1292,7 +1412,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(true);
-                if(X1 == false)
+                if (X1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1324,7 +1444,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
-                if(O2 == false)
+                if (O2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1356,7 +1476,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(true);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
-                if(Square2 == false)
+                if (Square2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1388,7 +1508,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(true);
                 Marker4[1].SetActive(false);
-                if(Triangle2 == false)
+                if (Triangle2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1420,7 +1540,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(true);
-                if(X2 == false)
+                if (X2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1452,7 +1572,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
-                if(O3 == false)
+                if (O3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1484,7 +1604,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(true);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
-                if(Square3 == false)
+                if (Square3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1516,7 +1636,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(true);
                 Marker4[2].SetActive(false);
-                if(Triangle3 == false)
+                if (Triangle3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1548,7 +1668,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(true);
-                if(X3==false)
+                if (X3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1577,18 +1697,18 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if(ThreeController && DN_MainMenuMannager.Xbox)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(false);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(false);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(true);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(false);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(false);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(true);
+            //}
             if (Input.GetAxis("Xbox P1 Press B") != 0)
             {
                 Marker1[0].SetActive(true);
@@ -1725,25 +1845,25 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if (FourController && DN_MainMenuMannager.Ps4)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(false);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(true);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(false);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(false);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(true);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(false);
+            //}
             if (Input.GetAxis("P1 Press Circle") != 0)
             {
                 Marker1[0].SetActive(true);
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
-                if(O1 == false)
+                if (O1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1775,7 +1895,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(true);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
-                if(Square1 == false)
+                if (Square1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1807,7 +1927,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(true);
                 Marker4[0].SetActive(false);
-                if(Triangle1 == false)
+                if (Triangle1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1839,7 +1959,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(true);
-                if(X1 == false)
+                if (X1 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1871,7 +1991,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
-                if(O2 == false)
+                if (O2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1903,7 +2023,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(true);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
-                if(Square2 == false)
+                if (Square2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1935,7 +2055,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(true);
                 Marker4[1].SetActive(false);
-                if(Triangle2 == false)
+                if (Triangle2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1967,7 +2087,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(true);
-                if(X2 == false)
+                if (X2 == false)
                 {
                     if (Imprision == false)
                     {
@@ -1999,7 +2119,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
-                if(O3 == false)
+                if (O3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2031,7 +2151,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(true);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
-                if(Square3 == false)
+                if (Square3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2063,7 +2183,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(true);
                 Marker4[2].SetActive(false);
-                if(Triangle3 == false)
+                if (Triangle3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2095,7 +2215,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(true);
-                if(X3==false)
+                if (X3 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2127,7 +2247,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(false);
                 Marker3[3].SetActive(false);
                 Marker4[3].SetActive(false);
-                if(O4 == false)
+                if (O4 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2159,7 +2279,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(true);
                 Marker3[3].SetActive(false);
                 Marker4[3].SetActive(false);
-                if(Square4 == false)
+                if (Square4 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2191,7 +2311,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(false);
                 Marker3[3].SetActive(true);
                 Marker4[3].SetActive(false);
-                if(Triangle4 == false)
+                if (Triangle4 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2223,7 +2343,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(false);
                 Marker3[3].SetActive(false);
                 Marker4[3].SetActive(true);
-                if(X4==false)
+                if (X4 == false)
                 {
                     if (Imprision == false)
                     {
@@ -2252,18 +2372,18 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if (FourController && DN_MainMenuMannager.Xbox)
         {
-            for (int i = 0; i < KeyboardKey.Length; i++)
-            {
-                KeyboardKey[i].SetActive(false);
-            }
-            for (int i = 0; i < PS4Buttons.Length; i++)
-            {
-                PS4Buttons[i].SetActive(false);
-            }
-            for (int i = 0; i < XboxButtons.Length; i++)
-            {
-                XboxButtons[i].SetActive(true);
-            }
+            //for (int i = 0; i < KeyboardKey.Length; i++)
+            //{
+            //    KeyboardKey[i].SetActive(false);
+            //}
+            //for (int i = 0; i < PS4Buttons.Length; i++)
+            //{
+            //    PS4Buttons[i].SetActive(false);
+            //}
+            //for (int i = 0; i < XboxButtons.Length; i++)
+            //{
+            //    XboxButtons[i].SetActive(true);
+            //}
             if (Input.GetAxis("Xbox P1 Press B") != 0)
             {
                 Marker1[0].SetActive(true);
@@ -2796,7 +2916,7 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && Square1 && DN_MainMenuMannager.Ps4)
                 {
-                    if(Imprision == false)
+                    if (Imprision == false)
                     {
                         Idle.SetActive(true);
                         Up.SetActive(false);
@@ -2814,7 +2934,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Left.SetActive(false);
                         Trapped.SetActive(true);
                     }
-                   
+
 
                 }
                 if (Input.GetAxis("Solo P1 Press Up Arrow") > 0 && StopTop == false && Square1 && DN_MainMenuMannager.Ps4)
@@ -3548,24 +3668,24 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Square1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("P1 Press Left Arrow") > 0 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
                     {
@@ -3717,24 +3837,24 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Square1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") > 0 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
                     {
@@ -3897,24 +4017,24 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && O2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("P1 Press Left Arrow") >0 && StopLeft == false && O1 && DN_MainMenuMannager.Ps4)
                     {
@@ -4067,24 +4187,24 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && O2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") >0 && StopLeft == false && O1 && DN_MainMenuMannager.Ps4)
                     {
@@ -4247,24 +4367,24 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Triangle1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("P1 Press Left Arrow") >0 && StopLeft == false && Triangle1 && DN_MainMenuMannager.Ps4)
                     {
@@ -4415,24 +4535,24 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Triangle1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") >0 && StopLeft == false && Triangle1 && DN_MainMenuMannager.Ps4)
                     {
@@ -4594,24 +4714,24 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && X2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("P1 Press Left Arrow") >0 && StopLeft == false && X1 && DN_MainMenuMannager.Ps4)
                     {
@@ -4762,24 +4882,24 @@ public class DN_PlayerMovement : MonoBehaviour {
                 {
                     if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4 || Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && X2 && DN_MainMenuMannager.Ps4)
                     {
-                        //if (Imprision == false)
-                        //{
-                        //    Idle.SetActive(true);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(false);
-                        //}
-                        //else
-                        //{
-                        //    Idle.SetActive(false);
-                        //    Up.SetActive(false);
-                        //    Down.SetActive(false);
-                        //    Right.SetActive(false);
-                        //    Left.SetActive(false);
-                        //    Trapped.SetActive(true);
-                        //}
+                        if (Imprision == false)
+                        {
+                            Idle.SetActive(true);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(false);
+                        }
+                        else
+                        {
+                            Idle.SetActive(false);
+                            Up.SetActive(false);
+                            Down.SetActive(false);
+                            Right.SetActive(false);
+                            Left.SetActive(false);
+                            Trapped.SetActive(true);
+                        }
                     }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") >0 && StopLeft == false && X1 && DN_MainMenuMannager.Ps4)
                     {

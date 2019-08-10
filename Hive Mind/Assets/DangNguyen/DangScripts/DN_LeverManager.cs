@@ -11,23 +11,41 @@ public class DN_LeverManager : MonoBehaviour {
     public static bool OInplace;
     public Animator HorrizontalDoor;
     public Animator VerticalDoor;
+    public bool Prison;
+    public GameObject TrappedBot1;
+    public GameObject TrappedBot2;
+    private DN_PlayerMovement PlayerScripts;
+    private DN_PlayerMovement PlayerScripts2;
 	// Use this for initialization
 	void Start () {
-       
+        if (Prison)
+        {
+            PlayerScripts = TrappedBot1.GetComponent<DN_PlayerMovement>();
+            PlayerScripts2 = TrappedBot2.GetComponent<DN_PlayerMovement>();
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(SquareInPlace && CirlceInPlace)
         {
-            VerticalDoor.SetBool("VDoorOff", true);
+            if (PlayerScripts)
+            {
+                PlayerScripts.Imprision = false;
+            }
+                VerticalDoor.SetBool("VDoorOff", true);
+            
             Cell.GetComponent<Rigidbody>().useGravity = true;
             Cell.GetComponent<Rigidbody>().isKinematic = false;
         }
         if(XInplace && SquareInPlace)
         {
-            HorrizontalDoor.SetBool("HDoorOff", true);
-            
+           
+                HorrizontalDoor.SetBool("HDoorOff", true);
+            if (PlayerScripts2)
+            {
+                PlayerScripts2.Imprision = false;
+            }
             Cell2.GetComponent<Rigidbody>().useGravity = true;
             Cell2.GetComponent<Rigidbody>().isKinematic = false;
         }

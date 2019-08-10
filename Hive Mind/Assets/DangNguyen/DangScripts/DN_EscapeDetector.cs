@@ -6,6 +6,7 @@ public class DN_EscapeDetector : MonoBehaviour
 {
     public GameObject SpriteSelf;
     private Animator SpriteSelfAnim;
+
     // Use this for initialization
     void Start()
     {
