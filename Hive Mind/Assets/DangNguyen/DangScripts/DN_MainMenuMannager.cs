@@ -19,8 +19,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public static bool Xbox;
     public static bool PC;
     public static bool Scenarios;
-    public GameObject Style;
-    private DN_Transition Transcripts;
+   // public GameObject Style;
+  //  private DN_Transition Transcripts;
     private bool StartNow;
     private bool CreditNow;
     private bool BackNow;
@@ -41,10 +41,15 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject[] LevelsImage;
     public GameObject[] LevelSelectorButtons;
     private int MenuPhase;
+    //public GameObject RightDoor;
+    //public GameObject LeftDoor;
+    //private DN_DoorTransition RightDoorScript;
+    //private DN_DoorTransition LeftDoorScript;
     // Use this for initialization
     void Start () {
-        Transcripts = Style.GetComponent<DN_Transition>();
-       
+     //   Transcripts = Style.GetComponent<DN_Transition>();
+        //RightDoorScript = RightDoor.GetComponent<DN_DoorTransition>();
+        //LeftDoorScript = LeftDoor.GetComponent<DN_DoorTransition>();
 	}
 	
 	// Update is called once per frame
@@ -59,8 +64,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
         }
         if(StartNow)
         {
-            if (Transcripts.TransitionStart)
-            {
+            //if (Transcripts.TransitionStart)
+            //{
                 backButton.SetActive(true);
                 for (int i = 0; i < MainMenuButtons.Length; i++)
                 {
@@ -75,14 +80,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 PlayerActivate[2].GetComponent<Button>().enabled = true;
                 PlayerActivate[3].GetComponent<Button>().enabled = true;
                 backButton.GetComponent<Button>().enabled = true;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 StartNow = false;
-            }
+            //}
         }
         if(CreditNow)
         {
-            if(Transcripts.TransitionStart)
-            {
+            //if(Transcripts.TransitionStart)
+            //{
                 for (int i = 0; i < Credits.Length; i++)
                 {
                     Credits[i].SetActive(true);
@@ -97,14 +102,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 PlayerActivate[2].GetComponent<Button>().enabled = true;
                 PlayerActivate[3].GetComponent<Button>().enabled = true;
                 backButton.GetComponent<Button>().enabled = true;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 CreditNow = false;
-            }
+            //}
         }
         if(BackNow)
         {
-            if(Transcripts.TransitionStart)
-            {
+            //if(Transcripts.TransitionStart)
+            //{
                 for (int i = 0; i < Credits.Length; i++)
                 {
                     Credits[i].SetActive(false);
@@ -164,14 +169,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 Xbox = false;
                 PC = false;
                 Scenarios = false;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 BackNow = false;
-            }
+            //}
         }
         if(P1Now)
         {
-            if(Transcripts.TransitionStart)
-            {
+            //if(Transcripts.TransitionStart)
+            //{
                 DN_PlayerMovement.SoloController = true;
                 DN_PlayerMovement.DualController = false;
                 DN_PlayerMovement.ThreeController = false;
@@ -187,14 +192,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 Ps4ControllerSolo.GetComponent<Button>().enabled = true;
                 XboxControllerSolo.GetComponent<Button>().enabled = true;
                 backButton.GetComponent<Button>().enabled = true;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 P1Now = false;
-            }
+            //}
         }
         if(P2Now)
         {
-            if(Transcripts.TransitionStart)
-            {
+            //if(Transcripts.TransitionStart)
+            //{
                
                 DN_PlayerMovement.SoloController = false;
                 DN_PlayerMovement.DualController = true;
@@ -211,14 +216,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 backButton.GetComponent<Button>().enabled = true;
                 Mode[1].GetComponent<Toggle>().enabled = true;
                 Mode[2].GetComponent<Button>().enabled = true;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 P2Now = false;
-            }
+            //}
         }
         if(P3Now)
         {
-            if(Transcripts.TransitionStart)
-            {
+            //if(Transcripts.TransitionStart)
+            //{
               
                 DN_PlayerMovement.SoloController = false;
                 DN_PlayerMovement.DualController = false;
@@ -236,14 +241,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 Mode[1].GetComponent<Toggle>().enabled = true;
                 Mode[2].GetComponent<Button>().enabled = true;
                 backButton.GetComponent<Button>().enabled = true;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 P3Now = false;
-            }
+            //}
         }
         if(P4Now)
         {
-            if(Transcripts.TransitionStart)
-            {   
+            //if(Transcripts.TransitionStart)
+            //{   
                 DN_PlayerMovement.SoloController = false;
                 DN_PlayerMovement.DualController = false;
                 DN_PlayerMovement.ThreeController = false;
@@ -260,14 +265,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 backButton.GetComponent<Button>().enabled = true;
                 Mode[1].GetComponent<Toggle>().enabled = true;
                 Mode[2].GetComponent<Button>().enabled = true;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 P4Now = false;
-            }
+            //}
         }
         if(ContinueNow)
         {
-            if(Transcripts.TransitionStart)
-            {
+            //if(Transcripts.TransitionStart)
+            //{
                 for (int i = 0; i < Mode.Length; i++)
                 {
                     Mode[i].SetActive(false);
@@ -278,14 +283,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 Ps4Controller.GetComponent<Button>().enabled = true;
                 XboxController.GetComponent<Button>().enabled = true;
                 backButton.GetComponent<Button>().enabled = true;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 ContinueNow = false;
-            }
+            //}
         }
         if(Ps4BeginNow)
         {
-            if (Transcripts.TransitionStart)
-            {
+            //if (Transcripts.TransitionStart)
+            //{
                 Ps4 = true;
                 KeyBoard.SetActive(false);
                 Ps4Controller.SetActive(false);
@@ -297,11 +302,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 USbOption[1].GetComponent<Button>().enabled = true;
                 USbOption[2].GetComponent<Button>().enabled = true;
                 Ps4BeginNow = false;
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 backButton.GetComponent<Button>().enabled = true;
-            }
+            //}
         }
-        //if(Ps4BeginNowSolo)
+        //if(Ps4BeginNowSolo)W
         //{
         //    if(Transcripts.TransitionStart)
         //    {
@@ -316,8 +321,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
         //}
         if(XboxBeginNow)
         {
-            if (Transcripts.TransitionStart)
-            {
+            //if (Transcripts.TransitionStart)
+            //{
                 Xbox = true;
                 KeyBoard.SetActive(false);
                 Ps4Controller.SetActive(false);
@@ -330,13 +335,13 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 USbOption[2].GetComponent<Button>().enabled = true;
                 backButton.GetComponent<Button>().enabled = true;
                 XboxBeginNow = false;
-                Transcripts.TransitionStart = false;
-            }
+                //Transcripts.TransitionStart = false;
+            //}
         }
         if(LevelSelectNow)
         {
-            if(Transcripts.TransitionStart)
-            {
+            //if(Transcripts.TransitionStart)
+            //{
                 LevelSelectorButtons[0].GetComponent<Button>().enabled = true;
                 LevelSelectorButtons[1].GetComponent<Button>().enabled = true;
                 LevelSelectorButtons[2].GetComponent<Button>().enabled = true;
@@ -349,9 +354,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
                 {
                     USbOption[i].SetActive(false);
                 }
-                Transcripts.TransitionStart = false;
+                //Transcripts.TransitionStart = false;
                 LevelSelectNow = false;  
-            }
+            //}
         }
         if(LevelsIndicator == 0)
         {
@@ -622,11 +627,15 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PressStart()
     {
+        //RightDoorScript.GetComponent<Animator>().SetBool("Close", true);
+        //LeftDoorScript.GetComponent<Animator>().SetBool("Open", false);
+
         MenuPhase = 1;
         MainMenuButtons[0].GetComponent<Button>().enabled = false;
         MainMenuButtons[1].GetComponent<Button>().enabled = false;
         MainMenuButtons[2].GetComponent<Button>().enabled = false;
         StartNow = true;
+       
     }
     public void AddScenario()
     {
