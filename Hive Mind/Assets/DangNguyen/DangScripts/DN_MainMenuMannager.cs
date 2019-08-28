@@ -21,19 +21,19 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public static bool Scenarios;
    // public GameObject Style;
   //  private DN_Transition Transcripts;
-    private bool StartNow;
-    private bool CreditNow;
-    private bool BackNow;
-    private bool P1Now;
-    private bool P2Now;
-    private bool P3Now;
-    private bool P4Now;
-    private bool ContinueNow;
-    private bool Ps4BeginNow;
-    private bool XboxBeginNow;
-    private bool Ps4BeginNowSolo;
-    private bool XboxBeginNowSolo;
-    private bool LevelSelectNow;
+    public bool StartNow;
+    public bool CreditNow;
+    public bool BackNow;
+    public bool P1Now;
+    public bool P2Now;
+    public bool P3Now;
+    public bool P4Now;
+    public bool ContinueNow;
+    public bool Ps4BeginNow;
+    public bool XboxBeginNow;
+    public bool Ps4BeginNowSolo;
+    public bool XboxBeginNowSolo;
+    public bool LevelSelectNow;
     public GameObject LevelsSelector;
     public Text LevelText;
     public string LevelsNumber;
@@ -62,302 +62,302 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             LevelsIndicator = 14;
         }
-        if(StartNow)
-        {
-            //if (Transcripts.TransitionStart)
-            //{
-                backButton.SetActive(true);
-                for (int i = 0; i < MainMenuButtons.Length; i++)
-                {
-                    MainMenuButtons[i].SetActive(false);
-                }
-                for (int i = 0; i < PlayerActivate.Length; i++)
-                {
-                    PlayerActivate[i].SetActive(true);
-                }
-                PlayerActivate[0].GetComponent<Button>().enabled = true;
-                PlayerActivate[1].GetComponent<Button>().enabled = true;
-                PlayerActivate[2].GetComponent<Button>().enabled = true;
-                PlayerActivate[3].GetComponent<Button>().enabled = true;
-                backButton.GetComponent<Button>().enabled = true;
-                //Transcripts.TransitionStart = false;
-                StartNow = false;
-            //}
-        }
-        if(CreditNow)
-        {
-            //if(Transcripts.TransitionStart)
-            //{
-                for (int i = 0; i < Credits.Length; i++)
-                {
-                    Credits[i].SetActive(true);
-                }
-                backButton.SetActive(true);
-                for (int i = 0; i < MainMenuButtons.Length; i++)
-                {
-                    MainMenuButtons[i].SetActive(false);
-                }
-                PlayerActivate[0].GetComponent<Button>().enabled = true;
-                PlayerActivate[1].GetComponent<Button>().enabled = true;
-                PlayerActivate[2].GetComponent<Button>().enabled = true;
-                PlayerActivate[3].GetComponent<Button>().enabled = true;
-                backButton.GetComponent<Button>().enabled = true;
-                //Transcripts.TransitionStart = false;
-                CreditNow = false;
-            //}
-        }
-        if(BackNow)
-        {
-            //if(Transcripts.TransitionStart)
-            //{
-                for (int i = 0; i < Credits.Length; i++)
-                {
-                    Credits[i].SetActive(false);
-                }
-                for (int i = 0; i < MainMenuButtons.Length; i++)
-                {
-                    MainMenuButtons[i].SetActive(true);
-                }
-                for (int i = 0; i < PlayerActivate.Length; i++)
-                {
-                    PlayerActivate[i].SetActive(false);
-                }
-                for (int i = 0; i < USbOption.Length; i++)
-                {
-                    USbOption[i].SetActive(false);
-                }
-                for (int i = 0; i < Mode.Length; i++)
-                {
-                    Mode[i].SetActive(false);
-                }
-                LevelsSelector.SetActive(false);
-                MainMenuButtons[0].GetComponent<Button>().enabled = true;
-                MainMenuButtons[1].GetComponent<Button>().enabled = true;
-                MainMenuButtons[2].GetComponent<Button>().enabled = true;
-                //PlayerActivate[0].GetComponent<Button>().enabled = true;
-                //PlayerActivate[1].GetComponent<Button>().enabled = true;
-                //PlayerActivate[2].GetComponent<Button>().enabled = true;
-                //PlayerActivate[3].GetComponent<Button>().enabled = true;
-                //Mode[1].GetComponent<Button>().enabled = true;
-                //Mode[2].GetComponent<Button>().enabled = true;
-                //USbOption[0].GetComponent<Button>().enabled = true;
-                //USbOption[1].GetComponent<Button>().enabled = true;
-                //Credits[0].GetComponent<Button>().enabled = true;
-                //backButton.GetComponent<Button>().enabled = true;
-                //KeyBoard.GetComponent<Button>().enabled = true;
-                //Ps4Controller.GetComponent<Button>().enabled = true;
-                //XboxController.GetComponent<Button>().enabled = true;
-                //Ps4ControllerSolo.GetComponent<Button>().enabled = true;
-                //XboxControllerSolo.GetComponent<Button>().enabled = true;
-                //LevelsSelector.GetComponent<Button>().enabled = true;
-                //LevelSelectorButtons[0].GetComponent<Button>().enabled = true;
-                //LevelSelectorButtons[1].GetComponent<Button>().enabled = true;
-                //LevelSelectorButtons[2].GetComponent<Button>().enabled = true;
-                DN_PlayerMovement.UsbExtender = false;
-                DN_PlayerMovement.SoloController = false;
-                DN_PlayerMovement.DualController = false;
-                DN_PlayerMovement.ThreeController = false;
-                DN_PlayerMovement.FourController = false;
-                DN_PlayerMovement.SoloKeyBoard = false;
-                Ps4ControllerSolo.SetActive(false);
-                XboxControllerSolo.SetActive(false);
-                KeyBoard.SetActive(false);
-                Ps4Controller.SetActive(false);
-                XboxController.SetActive(false);
-                backButton.SetActive(false);
-                Ps4 = false;
-                Xbox = false;
-                PC = false;
-                Scenarios = false;
-                //Transcripts.TransitionStart = false;
-                BackNow = false;
-            //}
-        }
-        if(P1Now)
-        {
-            //if(Transcripts.TransitionStart)
-            //{
-                DN_PlayerMovement.SoloController = true;
-                DN_PlayerMovement.DualController = false;
-                DN_PlayerMovement.ThreeController = false;
-                DN_PlayerMovement.FourController = false;
-                for (int i = 0; i < PlayerActivate.Length; i++)
-                {
-                    PlayerActivate[i].SetActive(false);
-                }
-                KeyBoard.SetActive(true);
-                Ps4ControllerSolo.SetActive(true);
-                XboxControllerSolo.SetActive(true);
-                KeyBoard.GetComponent<Button>().enabled = true;
-                Ps4ControllerSolo.GetComponent<Button>().enabled = true;
-                XboxControllerSolo.GetComponent<Button>().enabled = true;
-                backButton.GetComponent<Button>().enabled = true;
-                //Transcripts.TransitionStart = false;
-                P1Now = false;
-            //}
-        }
-        if(P2Now)
-        {
-            //if(Transcripts.TransitionStart)
-            //{
-               
-                DN_PlayerMovement.SoloController = false;
-                DN_PlayerMovement.DualController = true;
-                DN_PlayerMovement.ThreeController = false;
-                DN_PlayerMovement.FourController = false;
-                for (int i = 0; i < PlayerActivate.Length; i++)
-                {
-                    PlayerActivate[i].SetActive(false);
-                }
-                for (int i = 0; i < Mode.Length; i++)
-                {
-                    Mode[i].SetActive(true);
-                }
-                backButton.GetComponent<Button>().enabled = true;
-                Mode[1].GetComponent<Toggle>().enabled = true;
-                Mode[2].GetComponent<Button>().enabled = true;
-                //Transcripts.TransitionStart = false;
-                P2Now = false;
-            //}
-        }
-        if(P3Now)
-        {
-            //if(Transcripts.TransitionStart)
-            //{
-              
-                DN_PlayerMovement.SoloController = false;
-                DN_PlayerMovement.DualController = false;
-                DN_PlayerMovement.ThreeController = true;
-                DN_PlayerMovement.FourController = false;
-                for (int i = 0; i < PlayerActivate.Length; i++)
-                {
-                    PlayerActivate[i].SetActive(false);
-                }
-
-                for (int i = 0; i < Mode.Length; i++)
-                {
-                    Mode[i].SetActive(true);
-                }
-                Mode[1].GetComponent<Toggle>().enabled = true;
-                Mode[2].GetComponent<Button>().enabled = true;
-                backButton.GetComponent<Button>().enabled = true;
-                //Transcripts.TransitionStart = false;
-                P3Now = false;
-            //}
-        }
-        if(P4Now)
-        {
-            //if(Transcripts.TransitionStart)
-            //{   
-                DN_PlayerMovement.SoloController = false;
-                DN_PlayerMovement.DualController = false;
-                DN_PlayerMovement.ThreeController = false;
-                DN_PlayerMovement.FourController = true;
-                for (int i = 0; i < PlayerActivate.Length; i++)
-                {
-                    PlayerActivate[i].SetActive(false);
-                }
-
-                for (int i = 0; i < Mode.Length; i++)
-                {
-                    Mode[i].SetActive(true);
-                }
-                backButton.GetComponent<Button>().enabled = true;
-                Mode[1].GetComponent<Toggle>().enabled = true;
-                Mode[2].GetComponent<Button>().enabled = true;
-                //Transcripts.TransitionStart = false;
-                P4Now = false;
-            //}
-        }
-        if(ContinueNow)
-        {
-            //if(Transcripts.TransitionStart)
-            //{
-                for (int i = 0; i < Mode.Length; i++)
-                {
-                    Mode[i].SetActive(false);
-                }
-                KeyBoard.SetActive(false);
-                Ps4Controller.SetActive(true);
-                XboxController.SetActive(true);
-                Ps4Controller.GetComponent<Button>().enabled = true;
-                XboxController.GetComponent<Button>().enabled = true;
-                backButton.GetComponent<Button>().enabled = true;
-                //Transcripts.TransitionStart = false;
-                ContinueNow = false;
-            //}
-        }
-        if(Ps4BeginNow)
-        {
-            //if (Transcripts.TransitionStart)
-            //{
-                Ps4 = true;
-                KeyBoard.SetActive(false);
-                Ps4Controller.SetActive(false);
-                XboxController.SetActive(false);
-                for (int i = 0; i < USbOption.Length; i++)
-                {
-                    USbOption[i].SetActive(true);
-                }
-                USbOption[1].GetComponent<Button>().enabled = true;
-                USbOption[2].GetComponent<Button>().enabled = true;
-                Ps4BeginNow = false;
-                //Transcripts.TransitionStart = false;
-                backButton.GetComponent<Button>().enabled = true;
-            //}
-        }
-        //if(Ps4BeginNowSolo)W
+        //if(StartNow)
         //{
-        //    if(Transcripts.TransitionStart)
-        //    {
-        //        Ps4 = true;
-        //        DN_PlayerMovement.SoloController = true;
-        //        DN_PlayerMovement.UsbExtender = false;
-        //        DN_PlayerMovement.SoloKeyBoard = false;
-        //        LevelSelectNow = true;
-        //        Ps4BeginNowSolo = false;
-        //        Transcripts.TransitionStart = false;
-        //    }
+        //    //if (Transcripts.TransitionStart)
+        //    //{
+        //        backButton.SetActive(true);
+        //        for (int i = 0; i < MainMenuButtons.Length; i++)
+        //        {
+        //            MainMenuButtons[i].SetActive(false);
+        //        }
+        //        for (int i = 0; i < PlayerActivate.Length; i++)
+        //        {
+        //            PlayerActivate[i].SetActive(true);
+        //        }
+        //        PlayerActivate[0].GetComponent<Button>().enabled = true;
+        //        PlayerActivate[1].GetComponent<Button>().enabled = true;
+        //        PlayerActivate[2].GetComponent<Button>().enabled = true;
+        //        PlayerActivate[3].GetComponent<Button>().enabled = true;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        //Transcripts.TransitionStart = false;
+        //        StartNow = false;
+        //    //}
         //}
-        if(XboxBeginNow)
-        {
-            //if (Transcripts.TransitionStart)
-            //{
-                Xbox = true;
-                KeyBoard.SetActive(false);
-                Ps4Controller.SetActive(false);
-                XboxController.SetActive(false);
-                for (int i = 0; i < USbOption.Length; i++)
-                {
-                    USbOption[i].SetActive(true);
-                }
-                USbOption[1].GetComponent<Button>().enabled = true;
-                USbOption[2].GetComponent<Button>().enabled = true;
-                backButton.GetComponent<Button>().enabled = true;
-                XboxBeginNow = false;
-                //Transcripts.TransitionStart = false;
-            //}
-        }
-        if(LevelSelectNow)
-        {
-            //if(Transcripts.TransitionStart)
-            //{
-                LevelSelectorButtons[0].GetComponent<Button>().enabled = true;
-                LevelSelectorButtons[1].GetComponent<Button>().enabled = true;
-                LevelSelectorButtons[2].GetComponent<Button>().enabled = true;
-                backButton.GetComponent<Button>().enabled = true;
-                KeyBoard.SetActive(false);
-                Ps4ControllerSolo.SetActive(false);
-                XboxControllerSolo.SetActive(false);
-                LevelsSelector.SetActive(true);
-                for (int i = 0; i < USbOption.Length; i++)
-                {
-                    USbOption[i].SetActive(false);
-                }
-                //Transcripts.TransitionStart = false;
-                LevelSelectNow = false;  
-            //}
-        }
+        //if(CreditNow)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{
+        //        for (int i = 0; i < Credits.Length; i++)
+        //        {
+        //            Credits[i].SetActive(true);
+        //        }
+        //        backButton.SetActive(true);
+        //        for (int i = 0; i < MainMenuButtons.Length; i++)
+        //        {
+        //            MainMenuButtons[i].SetActive(false);
+        //        }
+        //        PlayerActivate[0].GetComponent<Button>().enabled = true;
+        //        PlayerActivate[1].GetComponent<Button>().enabled = true;
+        //        PlayerActivate[2].GetComponent<Button>().enabled = true;
+        //        PlayerActivate[3].GetComponent<Button>().enabled = true;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        //Transcripts.TransitionStart = false;
+        //        CreditNow = false;
+        //    //}
+        //}
+        //if(BackNow)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{
+        //        for (int i = 0; i < Credits.Length; i++)
+        //        {
+        //            Credits[i].SetActive(false);
+        //        }
+        //        for (int i = 0; i < MainMenuButtons.Length; i++)
+        //        {
+        //            MainMenuButtons[i].SetActive(true);
+        //        }
+        //        for (int i = 0; i < PlayerActivate.Length; i++)
+        //        {
+        //            PlayerActivate[i].SetActive(false);
+        //        }
+        //        for (int i = 0; i < USbOption.Length; i++)
+        //        {
+        //            USbOption[i].SetActive(false);
+        //        }
+        //        for (int i = 0; i < Mode.Length; i++)
+        //        {
+        //            Mode[i].SetActive(false);
+        //        }
+        //        LevelsSelector.SetActive(false);
+        //        MainMenuButtons[0].GetComponent<Button>().enabled = true;
+        //        MainMenuButtons[1].GetComponent<Button>().enabled = true;
+        //        MainMenuButtons[2].GetComponent<Button>().enabled = true;
+        //        //PlayerActivate[0].GetComponent<Button>().enabled = true;
+        //        //PlayerActivate[1].GetComponent<Button>().enabled = true;
+        //        //PlayerActivate[2].GetComponent<Button>().enabled = true;
+        //        //PlayerActivate[3].GetComponent<Button>().enabled = true;
+        //        //Mode[1].GetComponent<Button>().enabled = true;
+        //        //Mode[2].GetComponent<Button>().enabled = true;
+        //        //USbOption[0].GetComponent<Button>().enabled = true;
+        //        //USbOption[1].GetComponent<Button>().enabled = true;
+        //        //Credits[0].GetComponent<Button>().enabled = true;
+        //        //backButton.GetComponent<Button>().enabled = true;
+        //        //KeyBoard.GetComponent<Button>().enabled = true;
+        //        //Ps4Controller.GetComponent<Button>().enabled = true;
+        //        //XboxController.GetComponent<Button>().enabled = true;
+        //        //Ps4ControllerSolo.GetComponent<Button>().enabled = true;
+        //        //XboxControllerSolo.GetComponent<Button>().enabled = true;
+        //        //LevelsSelector.GetComponent<Button>().enabled = true;
+        //        //LevelSelectorButtons[0].GetComponent<Button>().enabled = true;
+        //        //LevelSelectorButtons[1].GetComponent<Button>().enabled = true;
+        //        //LevelSelectorButtons[2].GetComponent<Button>().enabled = true;
+        //        DN_PlayerMovement.UsbExtender = false;
+        //        DN_PlayerMovement.SoloController = false;
+        //        DN_PlayerMovement.DualController = false;
+        //        DN_PlayerMovement.ThreeController = false;
+        //        DN_PlayerMovement.FourController = false;
+        //        DN_PlayerMovement.SoloKeyBoard = false;
+        //        Ps4ControllerSolo.SetActive(false);
+        //        XboxControllerSolo.SetActive(false);
+        //        KeyBoard.SetActive(false);
+        //        Ps4Controller.SetActive(false);
+        //        XboxController.SetActive(false);
+        //        backButton.SetActive(false);
+        //        Ps4 = false;
+        //        Xbox = false;
+        //        PC = false;
+        //        Scenarios = false;
+        //        //Transcripts.TransitionStart = false;
+        //        BackNow = false;
+        //    //}
+        //}
+        //if(P1Now)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{
+        //        DN_PlayerMovement.SoloController = true;
+        //        DN_PlayerMovement.DualController = false;
+        //        DN_PlayerMovement.ThreeController = false;
+        //        DN_PlayerMovement.FourController = false;
+        //        for (int i = 0; i < PlayerActivate.Length; i++)
+        //        {
+        //            PlayerActivate[i].SetActive(false);
+        //        }
+        //        KeyBoard.SetActive(true);
+        //        Ps4ControllerSolo.SetActive(true);
+        //        XboxControllerSolo.SetActive(true);
+        //        KeyBoard.GetComponent<Button>().enabled = true;
+        //        Ps4ControllerSolo.GetComponent<Button>().enabled = true;
+        //        XboxControllerSolo.GetComponent<Button>().enabled = true;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        //Transcripts.TransitionStart = false;
+        //        P1Now = false;
+        //    //}
+        //}
+        //if(P2Now)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{
+               
+        //        DN_PlayerMovement.SoloController = false;
+        //        DN_PlayerMovement.DualController = true;
+        //        DN_PlayerMovement.ThreeController = false;
+        //        DN_PlayerMovement.FourController = false;
+        //        for (int i = 0; i < PlayerActivate.Length; i++)
+        //        {
+        //            PlayerActivate[i].SetActive(false);
+        //        }
+        //        for (int i = 0; i < Mode.Length; i++)
+        //        {
+        //            Mode[i].SetActive(true);
+        //        }
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        Mode[1].GetComponent<Toggle>().enabled = true;
+        //        Mode[2].GetComponent<Button>().enabled = true;
+        //        //Transcripts.TransitionStart = false;
+        //        P2Now = false;
+        //    //}
+        //}
+        //if(P3Now)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{
+              
+        //        DN_PlayerMovement.SoloController = false;
+        //        DN_PlayerMovement.DualController = false;
+        //        DN_PlayerMovement.ThreeController = true;
+        //        DN_PlayerMovement.FourController = false;
+        //        for (int i = 0; i < PlayerActivate.Length; i++)
+        //        {
+        //            PlayerActivate[i].SetActive(false);
+        //        }
+
+        //        for (int i = 0; i < Mode.Length; i++)
+        //        {
+        //            Mode[i].SetActive(true);
+        //        }
+        //        Mode[1].GetComponent<Toggle>().enabled = true;
+        //        Mode[2].GetComponent<Button>().enabled = true;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        //Transcripts.TransitionStart = false;
+        //        P3Now = false;
+        //    //}
+        //}
+        //if(P4Now)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{   
+        //        DN_PlayerMovement.SoloController = false;
+        //        DN_PlayerMovement.DualController = false;
+        //        DN_PlayerMovement.ThreeController = false;
+        //        DN_PlayerMovement.FourController = true;
+        //        for (int i = 0; i < PlayerActivate.Length; i++)
+        //        {
+        //            PlayerActivate[i].SetActive(false);
+        //        }
+
+        //        for (int i = 0; i < Mode.Length; i++)
+        //        {
+        //            Mode[i].SetActive(true);
+        //        }
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        Mode[1].GetComponent<Toggle>().enabled = true;
+        //        Mode[2].GetComponent<Button>().enabled = true;
+        //        //Transcripts.TransitionStart = false;
+        //        P4Now = false;
+        //    //}
+        //}
+        //if(ContinueNow)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{
+        //        for (int i = 0; i < Mode.Length; i++)
+        //        {
+        //            Mode[i].SetActive(false);
+        //        }
+        //        KeyBoard.SetActive(false);
+        //        Ps4Controller.SetActive(true);
+        //        XboxController.SetActive(true);
+        //        Ps4Controller.GetComponent<Button>().enabled = true;
+        //        XboxController.GetComponent<Button>().enabled = true;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        //Transcripts.TransitionStart = false;
+        //        ContinueNow = false;
+        //    //}
+        //}
+        //if(Ps4BeginNow)
+        //{
+        //    //if (Transcripts.TransitionStart)
+        //    //{
+        //        Ps4 = true;
+        //        KeyBoard.SetActive(false);
+        //        Ps4Controller.SetActive(false);
+        //        XboxController.SetActive(false);
+        //        for (int i = 0; i < USbOption.Length; i++)
+        //        {
+        //            USbOption[i].SetActive(true);
+        //        }
+        //        USbOption[1].GetComponent<Button>().enabled = true;
+        //        USbOption[2].GetComponent<Button>().enabled = true;
+        //        Ps4BeginNow = false;
+        //        //Transcripts.TransitionStart = false;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //    //}
+        //}
+        ////if(Ps4BeginNowSolo)W
+        ////{
+        ////    if(Transcripts.TransitionStart)
+        ////    {
+        ////        Ps4 = true;
+        ////        DN_PlayerMovement.SoloController = true;
+        ////        DN_PlayerMovement.UsbExtender = false;
+        ////        DN_PlayerMovement.SoloKeyBoard = false;
+        ////        LevelSelectNow = true;
+        ////        Ps4BeginNowSolo = false;
+        ////        Transcripts.TransitionStart = false;
+        ////    }
+        ////}
+        //if(XboxBeginNow)
+        //{
+        //    //if (Transcripts.TransitionStart)
+        //    //{
+        //        Xbox = true;
+        //        KeyBoard.SetActive(false);
+        //        Ps4Controller.SetActive(false);
+        //        XboxController.SetActive(false);
+        //        for (int i = 0; i < USbOption.Length; i++)
+        //        {
+        //            USbOption[i].SetActive(true);
+        //        }
+        //        USbOption[1].GetComponent<Button>().enabled = true;
+        //        USbOption[2].GetComponent<Button>().enabled = true;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        XboxBeginNow = false;
+        //        //Transcripts.TransitionStart = false;
+        //    //}
+        //}
+        //if(LevelSelectNow)
+        //{
+        //    //if(Transcripts.TransitionStart)
+        //    //{
+        //        LevelSelectorButtons[0].GetComponent<Button>().enabled = true;
+        //        LevelSelectorButtons[1].GetComponent<Button>().enabled = true;
+        //        LevelSelectorButtons[2].GetComponent<Button>().enabled = true;
+        //        backButton.GetComponent<Button>().enabled = true;
+        //        KeyBoard.SetActive(false);
+        //        Ps4ControllerSolo.SetActive(false);
+        //        XboxControllerSolo.SetActive(false);
+        //        LevelsSelector.SetActive(true);
+        //        for (int i = 0; i < USbOption.Length; i++)
+        //        {
+        //            USbOption[i].SetActive(false);
+        //        }
+        //        //Transcripts.TransitionStart = false;
+        //        LevelSelectNow = false;  
+        //    //}
+        //}
         if(LevelsIndicator == 0)
         {
             LevelText.text = LevelsNumber;
