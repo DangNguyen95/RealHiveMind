@@ -41,6 +41,10 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject[] LevelsImage;
     public GameObject[] LevelSelectorButtons;
     private int MenuPhase;
+    public GameObject LoadingScreen;
+    public GameObject ClickButton;
+    public Slider slider;
+    public Text ProgressText;
     //public GameObject RightDoor;
     //public GameObject LeftDoor;
     //private DN_DoorTransition RightDoorScript;
@@ -623,6 +627,25 @@ public class DN_MainMenuMannager : MonoBehaviour {
             LevelsImage[12].SetActive(false);
             LevelsImage[13].SetActive(true);
             LevelsNumber = "Level 14";
+        }
+    }
+    public void LoadLevel(int sceneIndex)
+    {
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+
+    }
+    IEnumerator LoadAsynchronously(int sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        ClickButton.SetActive(false);
+        LoadingScreen.SetActive(true);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            slider.value = progress;
+            ProgressText.text = progress * 99f + "%";
+
+            yield return null;
         }
     }
     public void PressStart()
