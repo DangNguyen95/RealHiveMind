@@ -12574,8 +12574,8 @@ MonoBehaviour:
     - {fileID: 33407326568246744, guid: 62f9e4bfac6ea8247aec4ee803195240, type: 2}
     - {fileID: 33788102929207456, guid: fb79ab1a7fc60fe48ac8a1b76c3b20e2, type: 2}
     - {fileID: 33261140524324654, guid: fb79ab1a7fc60fe48ac8a1b76c3b20e2, type: 2}
-    - {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
-    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 6, guid: 0000000000000000f000000000000000, type: 3}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 3}
     - {fileID: 11500000, guid: 097e0f20ad8a9c5418a29df65a162aac, type: 3}
     - {fileID: 11500000, guid: 0ab60061230bdcd468b9368e9a97f37b, type: 3}
     - {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -12583,18 +12583,18 @@ MonoBehaviour:
     - {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
     - {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
     - {fileID: 2100000, guid: 7fa8ea8342c708a47aecd3e8f826c859, type: 2}
-    - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-    - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 3}
+    - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 3}
     - {fileID: 11500000, guid: 4bddb6768914df8499f34beb81841c78, type: 3}
     - {fileID: 11500000, guid: 57205cf9eca4fff4cb6f840958dfe7d0, type: 3}
     - {fileID: 11500000, guid: c81d37cace5a94046b1823a5befdb23d, type: 3}
     - {fileID: 11500000, guid: efcc97db8060c5943be70ea76a144d10, type: 3}
     - {fileID: 11500000, guid: 591fee9e57f1ed744b5d13c7f8ec8dca, type: 3}
-    - {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 46, guid: 0000000000000000f000000000000000, type: 3}
     - {fileID: 11500000, guid: 954640ef6387e6a4f9b3d683acfa06d0, type: 3}
-    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-    - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
+    - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
+    - {fileID: 10904, guid: 0000000000000000f000000000000000, type: 3}
     - {fileID: 33824871766146888, guid: fb79ab1a7fc60fe48ac8a1b76c3b20e2, type: 2}
     - {fileID: 33923943111919736, guid: fb79ab1a7fc60fe48ac8a1b76c3b20e2, type: 2}
     - {fileID: 33280506068482412, guid: fb79ab1a7fc60fe48ac8a1b76c3b20e2, type: 2}
@@ -12620,7 +12620,7 @@ MonoBehaviour:
     - {fileID: 4604758181908098, guid: c0ac3e565acb6534d8f2d9b1b6fea838, type: 2}
     - {fileID: 4501305303969394, guid: 44bf6cb8e5ab7d14fb7563d685974abf, type: 2}
     - {fileID: 4822063967457312, guid: fb79ab1a7fc60fe48ac8a1b76c3b20e2, type: 2}
-    - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
     - {fileID: 1187622967041122, guid: c0ac3e565acb6534d8f2d9b1b6fea838, type: 2}
     - {fileID: 4232572728222006, guid: c0ac3e565acb6534d8f2d9b1b6fea838, type: 2}
     - {fileID: 4133297633841198, guid: c0ac3e565acb6534d8f2d9b1b6fea838, type: 2}
@@ -12843,7 +12843,7 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 1ddae91e2662d7c4190ba9d4999d94b8, type: 3}
     - {fileID: 2800000, guid: 3d2d9f7cbc8e76c42af289b69da2014b, type: 3}
     - {fileID: 2100000, guid: 87a34a638be6054498cee3beaaf4ff1d, type: 2}
-    - {fileID: 10906, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10906, guid: 0000000000000000f000000000000000, type: 3}
     - {fileID: 724885729}
     - {fileID: 293081918}
     - {fileID: 384379815}
@@ -13035,7 +13035,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 1ab81c8097b482e42b1af1e25eeb0241, type: 3}
     - {fileID: 21300000, guid: 84fd3436bbfd0ea41a7492d17d844332, type: 3}
     - {fileID: 21300000, guid: 04abd9d97c52917409c673d5e75653c8, type: 3}
-    - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 3}
     - {fileID: 2800000, guid: c491abc7057f9bb4eb41dab170ebf102, type: 3}
     - {fileID: 2800000, guid: 1ab81c8097b482e42b1af1e25eeb0241, type: 3}
     - {fileID: 2800000, guid: 84fd3436bbfd0ea41a7492d17d844332, type: 3}
@@ -13618,7 +13618,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 44282cb8998418b429d7d70de5ed3f7c, type: 2}
     - {fileID: 2800000, guid: ecb4932060056bc4fb19f9cbd3c2c1a7, type: 3}
     - {fileID: 21300000, guid: 2f64b4b2d7b7ecf4a8c03a6ddfc024ed, type: 3}
-    - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 3}
     - {fileID: 21300000, guid: 489fbb14b9cd6374b88b03e69f864b02, type: 3}
     - {fileID: 2800000, guid: 489fbb14b9cd6374b88b03e69f864b02, type: 3}
     - {fileID: 21300000, guid: 6138920e756caea4cba16a5a7246e56d, type: 3}
@@ -15933,6 +15933,7 @@ MonoBehaviour:
   ObjectiveIndicator: {fileID: 273249950}
   Scenarios: {fileID: 1976343953}
   Intro: {fileID: 273249950}
+  IntroState: 0
   ScenariosText:
   - {fileID: 596429859}
   - {fileID: 142786383}
@@ -16723,6 +16724,7 @@ GameObject:
   - component: {fileID: 1812860145}
   - component: {fileID: 1812860147}
   - component: {fileID: 1812860146}
+  - component: {fileID: 1812860148}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Camera
@@ -16876,6 +16878,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &1812860148
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812860141}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 828cb418ad5a34891a8b5ad737dcea5b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1813812864 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1312292815471898, guid: fb79ab1a7fc60fe48ac8a1b76c3b20e2,
