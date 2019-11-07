@@ -42,6 +42,11 @@ public class DN_GameManager : MonoBehaviour {
     public bool Pause;
     public GameObject PauseScreen;
     public bool IsPauseThere;
+    public AudioSource DefeatSound;
+    private bool DefeatAudioPlayOnce;
+    public AudioSource ClickButtonSound;
+    public AudioSource VictorySound;
+    private bool VictorySoundPlayOnce;
     // Use this for initialization
  
     void Start () {
@@ -391,6 +396,11 @@ public class DN_GameManager : MonoBehaviour {
         }
         if (SquareHome && OHome && XHome && TriangleHome)
         {
+            if (VictorySoundPlayOnce == false)
+            {
+                VictorySound.Play();
+                VictorySoundPlayOnce = true;
+            }
             DefeatScreen.SetActive(false);
             VictoryScreen.SetActive(true);
             Time.timeScale = 0;
@@ -403,6 +413,11 @@ public class DN_GameManager : MonoBehaviour {
         }
         if(Death == true)
         {
+            if (DefeatAudioPlayOnce == false)
+            {
+                DefeatSound.Play();
+                DefeatAudioPlayOnce = true;
+            }
             DefeatScreen.SetActive(true);
             VictoryScreen.SetActive(false);
             Time.timeScale = 0;
@@ -411,14 +426,17 @@ public class DN_GameManager : MonoBehaviour {
 	}
     public void PauseTime()
     {
+        
         Pause = true;
     }
     public void Resume()
     {
+        ClickButtonSound.Play();
         Pause = false;
     }
     public void Ok()
     {
+        ClickButtonSound.Play();
         Time.timeScale = 1;
         timescripts.StartTimer = true;
         ObjectiveIndicator.SetActive(false);
@@ -426,12 +444,14 @@ public class DN_GameManager : MonoBehaviour {
     }
     public void ContinueToIntro()
     {
+        ClickButtonSound.Play();
         Scenarios.SetActive(false);
         Intro.SetActive(true);
 
     }
     public void Restart()
-    { 
+    {
+        ClickButtonSound.Play();
         Time.timeScale = 1;
         SquareHome = false;
         XHome = false;
@@ -443,6 +463,7 @@ public class DN_GameManager : MonoBehaviour {
     }
     public void NextLevel()
     {
+        ClickButtonSound.Play();
         SceneManager.LoadScene(NextLevelNumber);
         SquareHome = false;
         XHome = false;
@@ -452,6 +473,7 @@ public class DN_GameManager : MonoBehaviour {
     }
     public void MainMenu()
     {
+        ClickButtonSound.Play();
         DN_PlayerMovement.SoloKeyBoard = false;
         DN_PlayerMovement.UsbExtender = false;
         DN_PlayerMovement.SoloController = false;
@@ -470,7 +492,8 @@ public class DN_GameManager : MonoBehaviour {
         DN_MainMenuMannager.Scenarios = false;
     }
     public void PreviousScene()
-    { 
+    {
+        ClickButtonSound.Play();
         SceneManager.LoadScene(PreviousSceneNumber);
         SquareHome = false;
         XHome = false;

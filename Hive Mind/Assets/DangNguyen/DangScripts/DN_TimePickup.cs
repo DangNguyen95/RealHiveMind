@@ -7,6 +7,8 @@ public class DN_TimePickup : MonoBehaviour {
     private Animator TimePickupAnim;
     private bool Death;
     private float DTimer = 2;
+    public AudioSource TimeSound;
+    private bool TimeSoundPlayOnce;
 	// Use this for initialization
 	void Start () {
         TimePickupAnim = TimeSprite.GetComponent<Animator>();
@@ -17,9 +19,15 @@ public class DN_TimePickup : MonoBehaviour {
 	void Update () {
 		if(Death)
         {
+           if(TimeSoundPlayOnce == false)
+            {
+                TimeSound.Play();
+                TimeSoundPlayOnce = true;
+            }
             DTimer -= Time.deltaTime;
             if(DTimer<=0)
             {
+               
                 gameObject.SetActive(false);
             }
         }

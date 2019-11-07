@@ -9,7 +9,8 @@ public class DN_Pellets : MonoBehaviour {
     private Animator ChipAnimator;
     private SpriteRenderer ChipSprite;
     private float RandomNumber;
-   
+    public AudioSource ChipSound;
+    private bool PlayChipSoundOnce;
 	// Use this for initialization
 	void Start () {
         PointsScripts = PointText.GetComponent<DN_Points>();
@@ -38,7 +39,11 @@ public class DN_Pellets : MonoBehaviour {
     {
         if(other.tag == "X" ||other.tag == "Square" || other.tag == "O" || other.tag == "Triangle")
         {
-         
+         if(PlayChipSoundOnce==false)
+            {
+                ChipSound.Play();
+                PlayChipSoundOnce = true;
+            }
             ChipAnimator.SetBool("ChipPicked", true);
             ChipSprite.sortingOrder = 3;
             PointsScripts.PointsNumber += 1;

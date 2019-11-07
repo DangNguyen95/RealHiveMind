@@ -45,6 +45,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject ClickButton;
     public Slider slider;
     public Text ProgressText;
+    public AudioSource ClickSound;
     //public GameObject RightDoor;
     //public GameObject LeftDoor;
     //private DN_DoorTransition RightDoorScript;
@@ -652,7 +653,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     {
         //RightDoorScript.GetComponent<Animator>().SetBool("Close", true);
         //LeftDoorScript.GetComponent<Animator>().SetBool("Open", false);
-
+        ClickSound.Play();
         MenuPhase = 1;
         MainMenuButtons[0].GetComponent<Button>().enabled = false;
         MainMenuButtons[1].GetComponent<Button>().enabled = false;
@@ -662,10 +663,12 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void AddScenario()
     {
+        ClickSound.Play();
         Scenarios = !Scenarios;
     }
     public void PressContinueAfterMode()
     {
+        ClickSound.Play();
         MenuPhase = 4;
         backButton.GetComponent<Button>().enabled = false;
         Mode[1].GetComponent<Toggle>().enabled = false;
@@ -674,12 +677,14 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PressQuit()
     {
+        ClickSound.Play();
         Application.Quit();
   
     }
     public void BackMainMenu()
     {
-        if(MenuPhase == 1)
+        ClickSound.Play();
+        if (MenuPhase == 1)
         {
             PlayerActivate[0].GetComponent<Button>().enabled = false;
             PlayerActivate[1].GetComponent<Button>().enabled = false;
@@ -719,6 +724,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PlayerOne()
     {
+        ClickSound.Play();
         MenuPhase = 2;
         backButton.GetComponent<Button>().enabled = false;
         PlayerActivate[0].GetComponent<Button>().enabled = false;
@@ -730,6 +736,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PlayerTwo()
     {
+        ClickSound.Play();
         MenuPhase = 3;
         backButton.GetComponent<Button>().enabled = false;
         PlayerActivate[0].GetComponent<Button>().enabled = false;
@@ -740,6 +747,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PlayerThree()
     {
+        ClickSound.Play();
         MenuPhase = 3;
         backButton.GetComponent<Button>().enabled = false;
         PlayerActivate[0].GetComponent<Button>().enabled = false;
@@ -750,6 +758,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PlayerFour()
     {
+        ClickSound.Play();
         MenuPhase = 3;
         backButton.GetComponent<Button>().enabled = false;
         PlayerActivate[0].GetComponent<Button>().enabled = false;
@@ -760,6 +769,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void USBExtenderOptionPs4()
     {
+        ClickSound.Play();
         backButton.GetComponent<Button>().enabled = false;
         MenuPhase = 5;
         Ps4Controller.GetComponent<Button>().enabled = false;
@@ -769,6 +779,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void USBExtenderOptionXbox()
     {
+        ClickSound.Play();
         backButton.GetComponent<Button>().enabled = false;
         MenuPhase = 5;
         Ps4Controller.GetComponent<Button>().enabled = false;
@@ -778,6 +789,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
   
     public void GameBeginKeyBoard()
     {
+        ClickSound.Play();
         MenuPhase = 6;
         backButton.GetComponent<Button>().enabled = false;
         KeyBoard.GetComponent<Button>().enabled = false;
@@ -791,6 +803,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void GameBeginPs4()
     {
+        ClickSound.Play();
         MenuPhase = 6;
         backButton.GetComponent<Button>().enabled = false;
         KeyBoard.GetComponent<Button>().enabled = false;
@@ -805,6 +818,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void GameBeginXbox()
     {
+        ClickSound.Play();
         MenuPhase = 6;
         backButton.GetComponent<Button>().enabled = false;
         KeyBoard.GetComponent<Button>().enabled = false;
@@ -818,6 +832,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void YesUsbExtender()
     {
+        ClickSound.Play();
         MenuPhase = 6;
         backButton.GetComponent<Button>().enabled = false;
         USbOption[1].GetComponent<Button>().enabled = false;
@@ -828,6 +843,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void NoUsbExtender()
     {
+        ClickSound.Play();
         MenuPhase = 6;
         backButton.GetComponent<Button>().enabled = false;
         USbOption[1].GetComponent<Button>().enabled = false;
@@ -838,18 +854,22 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void StartGame()
     {
+        ClickSound.Play();
         SceneManager.LoadScene(1);
     }
     public void AddLevel()
     {
+        ClickSound.Play();
         LevelsIndicator += 1;
     }
     public void ReduceLevel()
     {
+        ClickSound.Play();
         LevelsIndicator -= 1;
     }
     public void Credit()
     {
+        ClickSound.Play();
         MenuPhase = 1;
         MainMenuButtons[0].GetComponent<Button>().enabled = false;
         MainMenuButtons[1].GetComponent<Button>().enabled = false;
@@ -858,6 +878,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void Quit()
     {
+        ClickSound.Play();
         Application.Quit();
     }
     
