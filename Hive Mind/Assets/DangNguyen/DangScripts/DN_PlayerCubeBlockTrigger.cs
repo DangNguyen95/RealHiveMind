@@ -30,18 +30,20 @@ public class DN_PlayerCubeBlockTrigger : MonoBehaviour {
     {
         if(other.tag == "X")
         {
-            SpriteSelfAnim.SetBool("Close", true);
+            
             if (XTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", true);
                 Player1InPlace = true;
             }
         }
 
         if (other.tag == "O")
         {
-            SpriteSelfAnim.SetBool("Close", true);
+           
             if (OTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", true);
                 Player2InPlace = true;
             }
 
@@ -49,18 +51,20 @@ public class DN_PlayerCubeBlockTrigger : MonoBehaviour {
 
         if (other.tag == "Square")
         {
-            SpriteSelfAnim.SetBool("Close", true);
+           
             if (SquareTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", true);
                 Player3InPlace = true;
             }
         }
 
         if (other.tag == "Triangle")
         {
-            SpriteSelfAnim.SetBool("Close", true);
+          
             if (TriangleTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", true);
                 Player4InPlace = true;
             }
         }
@@ -69,18 +73,20 @@ public class DN_PlayerCubeBlockTrigger : MonoBehaviour {
     {
         if (other.tag == "X")
         {
-            SpriteSelfAnim.SetBool("Close", false);
+          
             if (XTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", false);
                 Player1InPlace = false;
             }
         }
 
         if (other.tag == "O")
         {
-            SpriteSelfAnim.SetBool("Close", false);
+         
             if (OTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", false);
                 Player2InPlace = false;
             }
 
@@ -88,18 +94,20 @@ public class DN_PlayerCubeBlockTrigger : MonoBehaviour {
 
         if (other.tag == "Square")
         {
-            SpriteSelfAnim.SetBool("Close", false);
+         
             if (SquareTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", false);
                 Player3InPlace = false;
             }
         }
 
         if (other.tag == "Triangle")
         {
-            SpriteSelfAnim.SetBool("Close", false);
+           
             if (TriangleTrigger)
             {
+                SpriteSelfAnim.SetBool("Close", false);
                 Player4InPlace = false;
             }
         }

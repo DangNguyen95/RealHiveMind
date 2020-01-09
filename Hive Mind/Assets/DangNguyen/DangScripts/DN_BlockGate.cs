@@ -15,13 +15,19 @@ public class DN_BlockGate : MonoBehaviour {
     public bool part2;
     public GameObject FireMannagerObj;
     private DN_FireWallMannager FireMannagerScripts;
+    public GameObject Door;
+    private Animator VDoorAnim;
+    //private Animator HDoorAnim;
 	// Use this for initialization
 	void Start () {
         FireMannagerScripts = FireMannagerObj.GetComponent<DN_FireWallMannager>();
+       
         if (part1)
         {
             Tiles1Scripts = Tile1.GetComponent<DN_YellowTiles>();
             Tiles2Scripts = Tile2.GetComponent<DN_YellowTiles>();
+            VDoorAnim = Door.GetComponent<Animator>();
+
         }
         if(part2)
         {
@@ -29,7 +35,7 @@ public class DN_BlockGate : MonoBehaviour {
             Tiles2Scripts = Tile2.GetComponent<DN_YellowTiles>();
             Tiles3Scripts = Tile3.GetComponent<DN_YellowTiles>();
             Tiles4Scripts = Tile4.GetComponent<DN_YellowTiles>();
-
+          //  HDoorAnim = Door.GetComponent<Animator>();
         }
 
 	}
@@ -43,6 +49,7 @@ public class DN_BlockGate : MonoBehaviour {
                // FireMannagerScripts.PartOne = false;
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 gameObject.GetComponent<Rigidbody>().useGravity = true;
+                VDoorAnim.SetBool("VDoorOff", true);
             }
         }
         if (part2)
@@ -53,6 +60,8 @@ public class DN_BlockGate : MonoBehaviour {
                 FireMannagerScripts.PartTwo = false;
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 gameObject.GetComponent<Rigidbody>().useGravity = true;
+              //  HDoorAnim.SetBool("HDoorOff", true);
+                
             }
         }
        
