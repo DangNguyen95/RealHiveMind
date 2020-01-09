@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DN_YellowTiles : MonoBehaviour {
     public GameObject FakeBlock;
+    public GameObject BloxON;
+    public GameObject BloxIdle;
     public bool TileDone;
     public bool YellowTile;
     public bool PurpleTile;
@@ -26,19 +28,24 @@ public class DN_YellowTiles : MonoBehaviour {
         {
             if (YellowTile)
             {
+                BloxIdle.SetActive(true);
                 TileDone = true;
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                FakeBlock.SetActive(true);
+                BloxON.SetActive(true);
+               FakeBlock.SetActive(true);
                 other.gameObject.SetActive(false);
+                
             }
         }
         if(other.tag == "BlueBlock")
         {
             if(BlueTile)
             {
+                BloxIdle.SetActive(true);
                 TileDone = true;
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                FakeBlock.SetActive(true);
+                BloxON.SetActive(true);
+               FakeBlock.SetActive(true);
                 other.gameObject.SetActive(false);
             }
         }
@@ -46,8 +53,10 @@ public class DN_YellowTiles : MonoBehaviour {
         {
             if (PurpleTile)
             {
+                BloxIdle.SetActive(true);
                 TileDone = true;
                 gameObject.GetComponent<BoxCollider>().enabled = false;
+                BloxON.SetActive(true);
                 FakeBlock.SetActive(true);
                 other.gameObject.SetActive(false);
             }
@@ -56,8 +65,10 @@ public class DN_YellowTiles : MonoBehaviour {
         {
             if (GreenTile)
             {
+                BloxIdle.SetActive(true);
                 TileDone = true;
                 gameObject.GetComponent<BoxCollider>().enabled = false;
+                BloxON.SetActive(true);
                 FakeBlock.SetActive(true);
                 other.gameObject.SetActive(false);
             }

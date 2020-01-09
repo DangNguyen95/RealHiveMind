@@ -2647,6 +2647,7 @@ public class DN_PlayerMovement : MonoBehaviour {
             {
                 if (Input.GetKey(KeyCode.UpArrow) && StopTop == false && Square1)
                 {
+
                     if (dir != DIRECTION.UP)
                     {
                         dir = DIRECTION.UP;

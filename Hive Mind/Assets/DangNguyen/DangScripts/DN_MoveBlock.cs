@@ -31,11 +31,12 @@ public class DN_MoveBlock : MonoBehaviour {
     public bool DownTrigger;
     public bool RightTrigger;
     public bool LeftTrigger;
+    
 
     
 	// Use this for initialization
 	void Start () {
-       
+
         
     }
 
@@ -210,7 +211,8 @@ public class DN_MoveBlock : MonoBehaviour {
             {
                 WallRight.SetActive(true);
                 WallRightGO.SetActive(false);
-                //TopTriangle.SetActive(false);
+               
+                 //TopTriangle.SetActive(false);
                 //BotTriangle.SetActive(false);
                 //RightTriangle.SetActive(true);
                 //LeftTriangle.SetActive(false);
@@ -428,6 +430,7 @@ public class DN_MoveBlock : MonoBehaviour {
             {
                 WallRight.SetActive(true);
                 WallRightGO.SetActive(false);
+               
                 //TopTriangle.SetActive(false);
                 //BotTriangle.SetActive(false);
                 //RightTriangle.SetActive(true);
@@ -579,8 +582,10 @@ public class DN_MoveBlock : MonoBehaviour {
             }
             if (LeftTrigger)
             {
+
                 WallRight.SetActive(false);
                 WallRightGO.SetActive(true);
+              
             }
         }
         if (other.tag == "Square")
