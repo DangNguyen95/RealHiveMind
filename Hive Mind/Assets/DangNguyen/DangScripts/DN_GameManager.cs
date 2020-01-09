@@ -91,25 +91,55 @@ public class DN_GameManager : MonoBehaviour {
             if(RandomScenarioNumber == 0)
             {
                 ScenariosText[0].SetActive(true);
+                ScenariosText[1].SetActive(false);
+                ScenariosText[2].SetActive(false);
+                ScenariosText[3].SetActive(false);
+                ScenariosText[4].SetActive(false);
+                ScenariosText[5].SetActive(false);
             }
             if(RandomScenarioNumber == 1)
             {
+                ScenariosText[0].SetActive(false);
                 ScenariosText[1].SetActive(true);
+                ScenariosText[2].SetActive(false);
+                ScenariosText[3].SetActive(false);
+                ScenariosText[4].SetActive(false);
+                ScenariosText[5].SetActive(false);
             }
             if(RandomScenarioNumber == 2)
             {
+                ScenariosText[0].SetActive(false);
+                ScenariosText[1].SetActive(false);
                 ScenariosText[2].SetActive(true);
+                ScenariosText[3].SetActive(false);
+                ScenariosText[4].SetActive(false);
+                ScenariosText[5].SetActive(false);
             }
             if(RandomScenarioNumber == 3)
             {
+                ScenariosText[0].SetActive(false);
+                ScenariosText[1].SetActive(false);
+                ScenariosText[2].SetActive(false);
                 ScenariosText[3].SetActive(true);
+                ScenariosText[4].SetActive(false);
+                ScenariosText[5].SetActive(false);
             }
             if(RandomScenarioNumber == 4)
             {
+                ScenariosText[0].SetActive(false);
+                ScenariosText[1].SetActive(false);
+                ScenariosText[2].SetActive(false);
+                ScenariosText[3].SetActive(false);
                 ScenariosText[4].SetActive(true);
+                ScenariosText[5].SetActive(false);
             }
             if(RandomScenarioNumber == 5)
             {
+                ScenariosText[0].SetActive(false);
+                ScenariosText[1].SetActive(false);
+                ScenariosText[2].SetActive(false);
+                ScenariosText[3].SetActive(false);
+                ScenariosText[4].SetActive(false);
                 ScenariosText[5].SetActive(true);
             }
         }
@@ -444,9 +474,11 @@ public class DN_GameManager : MonoBehaviour {
     }
     public void ContinueToIntro()
     {
+        Time.timeScale = 1;
         ClickButtonSound.Play();
         Scenarios.SetActive(false);
         Intro.SetActive(true);
+        Time.timeScale = 0;
 
     }
     public void Restart()

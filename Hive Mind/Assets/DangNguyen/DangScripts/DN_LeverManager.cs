@@ -16,8 +16,15 @@ public class DN_LeverManager : MonoBehaviour {
     public GameObject TrappedBot2;
     private DN_PlayerMovement PlayerScripts;
     private DN_PlayerMovement PlayerScripts2;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void Awake()
+    {
+        SquareInPlace = false;
+        CirlceInPlace = false;
+        XInplace = false;
+        OInplace = false;
+    }
+    void Start () {
         if (Prison)
         {
             PlayerScripts = TrappedBot1.GetComponent<DN_PlayerMovement>();

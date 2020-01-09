@@ -11,8 +11,10 @@ public class DN_Pellets : MonoBehaviour {
     private float RandomNumber;
     public AudioSource ChipSound;
     private bool PlayChipSoundOnce;
-	// Use this for initialization
-	void Start () {
+    private bool Death;
+    private float DTimer = 2;
+    // Use this for initialization
+    void Start () {
         PointsScripts = PointText.GetComponent<DN_Points>();
         ChipAnimator = gameObject.GetComponent<Animator>();
         ChipSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -33,12 +35,21 @@ public class DN_Pellets : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Death)
+        {
+            DTimer -= Time.deltaTime;
+            if (DTimer <= 0)
+            {
+
+                gameObject.SetActive(false);
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "X" ||other.tag == "Square" || other.tag == "O" || other.tag == "Triangle")
         {
+            gameObject.GetComponent<SphereCollider>().enabled = false;
          if(PlayChipSoundOnce==false)
             {
                 ChipSound.Play();
@@ -47,6 +58,7 @@ public class DN_Pellets : MonoBehaviour {
             ChipAnimator.SetBool("ChipPicked", true);
             ChipSprite.sortingOrder = 3;
             PointsScripts.PointsNumber += 1;
+            Death = true;
            
         }
     }

@@ -289,7 +289,7 @@ public class DN_DoorTransition : MonoBehaviour {
             MenuScript.Ps4BeginNow = false;
             
             MenuScript.backButton.GetComponent<Button>().enabled = true;
-       
+        
         }
       
         if (MenuScript.XboxBeginNow)
@@ -306,7 +306,7 @@ public class DN_DoorTransition : MonoBehaviour {
             MenuScript.USbOption[2].GetComponent<Button>().enabled = true;
             MenuScript.backButton.GetComponent<Button>().enabled = true;
             MenuScript.XboxBeginNow = false;
-           
+            
         }
         if (MenuScript.LevelSelectNow)
         {
