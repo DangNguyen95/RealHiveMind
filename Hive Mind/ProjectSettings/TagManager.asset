@@ -55,6 +55,7 @@ TagManager:
   - YellowEnemy
   - BlueEnemy
   - GreenEnemy
+  - Water
   layers:
   - Default
   - TransparentFX

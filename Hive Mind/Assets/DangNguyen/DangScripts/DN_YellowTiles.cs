@@ -22,7 +22,7 @@ public class DN_YellowTiles : MonoBehaviour {
    
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "YellowBlock")
         {
