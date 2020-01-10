@@ -3,35 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockManip : MonoBehaviour {
-    public GameObject Self;
-    private Rigidbody SelfRidgidbody;
-    private bool Undo;
+
+    public GameObject Block;
+    public Transform OriginalPosition; 
 	// Use this for initialization
 	void Start () {
-        SelfRidgidbody = Self.GetComponent<Rigidbody>();
+      
 	}
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
-
-        if (transform.position.z >= 0.461711f)
+        
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Wall")
         {
-            //if (Undo == false)
-            //{
-            //    SelfRidgidbody.isKinematic = true;
-            //    Undo = true;
-            //}
-            //else
-            //{
-            //    SelfRidgidbody.isKinematic = false;
-            //}
-
-            SelfRidgidbody.constraints = RigidbodyConstraints.FreezeRotation;
-            SelfRidgidbody.constraints = RigidbodyConstraints.FreezePositionZ;
-            SelfRidgidbody.constraints = RigidbodyConstraints.FreezePositionY;
+            Block.transform.position = OriginalPosition.position;
+        }
+        if (other.tag == "X")
+        {
+            Block.transform.position = OriginalPosition.position;
+        }
+        if (other.tag == "O")
+        {
+            Block.transform.position = OriginalPosition.position;
+        }
+        if (other.tag == "Triangle")
+        {
+            Block.transform.position = OriginalPosition.position;
+        }
+        if (other.tag == "Square")
+        {
+            Block.transform.position = OriginalPosition.position;
         }
     }
-  
-    
+
+
 }
