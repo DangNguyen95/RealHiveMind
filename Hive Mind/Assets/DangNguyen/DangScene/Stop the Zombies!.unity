@@ -43054,6 +43054,10 @@ Prefab:
       propertyPath: Marker4.Array.data[3]
       value: 
       objectReference: {fileID: 48209438}
+    - target: {fileID: 1876600711404258, guid: b109433fb54a26d4e817f8edb8e60b6a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b109433fb54a26d4e817f8edb8e60b6a, type: 2}
   m_IsPrefabParent: 0
@@ -49230,6 +49234,9 @@ MonoBehaviour:
   Pause: 0
   PauseScreen: {fileID: 617409708}
   IsPauseThere: 1
+  DefeatSound: {fileID: 0}
+  ClickButtonSound: {fileID: 0}
+  VictorySound: {fileID: 0}
 --- !u!4 &878923836
 Transform:
   m_ObjectHideFlags: 0
