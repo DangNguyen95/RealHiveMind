@@ -160,7 +160,7 @@ public class DN_DoorTransition : MonoBehaviour {
             DN_MainMenuMannager.Xbox = false;
             DN_MainMenuMannager.PC = false;
             DN_MainMenuMannager.Scenarios = false;
-           
+            MenuScript.BlooperLevelsSelector.SetActive(false);
             MenuScript.BackNow = false;
           
         }
@@ -326,6 +326,23 @@ public class DN_DoorTransition : MonoBehaviour {
            
             MenuScript.LevelSelectNow = false;
            
+        }
+        if(MenuScript.BlooperLevelSelectNow)
+        {
+            MenuScript.BlooperLevelSelectorButtons[0].GetComponent<Button>().enabled = true;
+            MenuScript.BlooperLevelSelectorButtons[1].GetComponent<Button>().enabled = true;
+            MenuScript.BlooperLevelSelectorButtons[2].GetComponent<Button>().enabled = true;
+            MenuScript.backButton.GetComponent<Button>().enabled = true;
+            MenuScript.KeyBoard.SetActive(false);
+            MenuScript.Ps4ControllerSolo.SetActive(false);
+            MenuScript.XboxControllerSolo.SetActive(false);
+            MenuScript.BlooperLevelsSelector.SetActive(true);
+            for (int i = 0; i < MenuScript.USbOption.Length; i++)
+            {
+                MenuScript.USbOption[i].SetActive(false);
+            }
+            MenuScript.BlooperLevelSelectNow = false;
+            
         }
     }
 }

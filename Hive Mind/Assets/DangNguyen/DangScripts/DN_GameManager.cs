@@ -47,6 +47,8 @@ public class DN_GameManager : MonoBehaviour {
     public AudioSource ClickButtonSound;
     public AudioSource VictorySound;
     private bool VictorySoundPlayOnce;
+    public bool AssembleMech;
+    public float KillerCount;
     // Use this for initialization
  
     void Start () {
@@ -84,6 +86,20 @@ public class DN_GameManager : MonoBehaviour {
             {
                 Time.timeScale = 1;
                 PauseScreen.SetActive(false);
+            }
+        }
+        if(AssembleMech)
+        {
+            if(KillerCount<=0)
+            {
+                if (VictorySoundPlayOnce == false)
+                {
+                    VictorySound.Play();
+                    VictorySoundPlayOnce = true;
+                }
+                DefeatScreen.SetActive(false);
+                VictoryScreen.SetActive(true);
+                Time.timeScale = 0;
             }
         }
         if(DN_MainMenuMannager.Scenarios)

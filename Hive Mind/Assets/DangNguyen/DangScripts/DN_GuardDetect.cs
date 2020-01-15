@@ -13,15 +13,22 @@ public class DN_GuardDetect : MonoBehaviour {
     public bool BotDetection;
     public bool RightDetection;
     public bool LeftDetection;
+    private DN_GameManager GameManager;
+    public GameObject GamemangerObject;
     // Use this for initialization
     void Start () {
         GuardScripts = Guard.GetComponent<DN_Guard>();
+        GameManager = GamemangerObject.GetComponent<DN_GameManager>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+      
+    }
+    void OnDisable()
+    {
+        GameManager.KillerCount -= 1;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "RightWall")
@@ -531,5 +538,6 @@ public class DN_GuardDetect : MonoBehaviour {
                 GuardScripts.StopLeft = false;
             }
         }
+       
     }
 }

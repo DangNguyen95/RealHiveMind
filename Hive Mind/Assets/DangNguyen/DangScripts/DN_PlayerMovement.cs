@@ -230,10 +230,11 @@ public class DN_PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log("1" + SoloController);
+        Debug.Log("1" + SoloController);
         //Debug.Log("2" + DualController);
         //Debug.Log("3" + ThreeController);
         //Debug.Log("4" + FourController);
+        
         if (SoloController && DN_MainMenuMannager.Ps4)
         {
             //for (int i = 0; i < KeyboardKey.Length; i++)

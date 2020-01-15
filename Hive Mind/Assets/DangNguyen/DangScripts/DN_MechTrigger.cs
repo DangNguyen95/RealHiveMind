@@ -24,6 +24,7 @@ public class DN_MechTrigger : MonoBehaviour {
         {
             if (TopRight)
             {
+             //   MechScripts.P1 = true;
                 MechScripts.TopRight = true;
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
@@ -33,6 +34,7 @@ public class DN_MechTrigger : MonoBehaviour {
         {
             if(BotLeft)
             {
+              //  MechScripts.P2 = true;
                 MechScripts.BotLeft = true;
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
@@ -42,6 +44,7 @@ public class DN_MechTrigger : MonoBehaviour {
         {
             if(BotRight)
             {
+              //  MechScripts.P3 = true;
                 MechScripts.BotRight = true;
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
@@ -51,6 +54,7 @@ public class DN_MechTrigger : MonoBehaviour {
         {
             if(TopLeft)
             {
+             //   MechScripts.P4 = true;
                 MechScripts.TopLeft = true;
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
