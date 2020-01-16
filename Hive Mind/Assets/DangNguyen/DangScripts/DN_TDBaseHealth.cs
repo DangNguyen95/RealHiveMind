@@ -12,6 +12,10 @@ public class DN_TDBaseHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        BaseHealthText.text = TDHealth.ToString();
+        BaseHealthText.text = "Health: " + TDHealth.ToString();
+        if(TDHealth <=0)
+        {
+            DN_GameManager.Death = true;
+        }
 	}
 }

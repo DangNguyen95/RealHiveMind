@@ -20,7 +20,7 @@ public class NM_WallStop : MonoBehaviour {
 	}
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "X" || other.gameObject.tag == "O" || other.gameObject.tag == "Traingle" || other.gameObject.tag == "Square")
+        if (other.gameObject.tag == "X" || other.gameObject.tag == "O" || other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square")
         {
 
             if (stopwalls)

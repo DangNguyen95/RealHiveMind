@@ -37399,6 +37399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a01b687171af943b6fb307cb62d0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthText: {fileID: 1383800290}
 --- !u!54 &664374614
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50044,9 +50045,9 @@ MonoBehaviour:
   VictoryScreen: {fileID: 789367058}
   DefeatScreen: {fileID: 1984432113}
   Times: {fileID: 1807822037}
-  RestartSceneNumber: 8
-  PreviousSceneNumber: 7
-  NextLevelNumber: 9
+  RestartSceneNumber: 7
+  PreviousSceneNumber: 6
+  NextLevelNumber: 8
   RedImage: {fileID: 690639504}
   OrangeImage: {fileID: 2119679232}
   BlueImage: {fileID: 351696592}
@@ -50982,6 +50983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a01b687171af943b6fb307cb62d0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthText: {fileID: 1383800290}
 --- !u!54 &891416660
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74142,6 +74144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a01b687171af943b6fb307cb62d0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthText: {fileID: 1383800290}
 --- !u!1 &1283081996
 GameObject:
   m_ObjectHideFlags: 0
@@ -74861,6 +74864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a01b687171af943b6fb307cb62d0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthText: {fileID: 1383800290}
 --- !u!1 &1305273435
 GameObject:
   m_ObjectHideFlags: 0
@@ -77970,7 +77974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143.25, y: 34.999992}
+  m_AnchoredPosition: {x: 41.9, y: 34.999992}
   m_SizeDelta: {x: 592.14, y: 129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383800292
@@ -77984,6 +77988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5842819643cdbed418f772b5f3e7a256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BaseHealthText: {fileID: 1383800293}
+  TDHealth: 20
 --- !u!114 &1383800293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97648,7 +97654,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 878923835}
-        m_MethodName: MainMenu
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -102481,14 +102487,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1807822038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1807822037}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c065e53232288db42a95d64b5efa2fc7, type: 3}
   m_Name: 
