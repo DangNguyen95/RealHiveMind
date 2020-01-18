@@ -13,12 +13,16 @@ public class DN_GuardDetect : MonoBehaviour {
     public bool BotDetection;
     public bool RightDetection;
     public bool LeftDetection;
+    public bool KillLEvel;
     private DN_GameManager GameManager;
     public GameObject GamemangerObject;
     // Use this for initialization
     void Start () {
         GuardScripts = Guard.GetComponent<DN_Guard>();
-        GameManager = GamemangerObject.GetComponent<DN_GameManager>();
+        if (KillLEvel)
+        {
+            GameManager = GamemangerObject.GetComponent<DN_GameManager>();
+        }
     }
 	
 	// Update is called once per frame
@@ -27,7 +31,10 @@ public class DN_GuardDetect : MonoBehaviour {
     }
     void OnDisable()
     {
-        GameManager.KillerCount -= 1;
+        if (KillLEvel)
+        {
+            GameManager.KillerCount -= 1;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

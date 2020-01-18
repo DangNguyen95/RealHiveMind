@@ -347,7 +347,7 @@ public class DN_ButtonsIndicator : MonoBehaviour
                     ThisAnimator.SetBool("PadRight", false);
                     ThisAnimator.SetBool("PadLeft", false);
                 }
-                if (Input.GetAxis("P1 Press Left Arrow") == 0)
+                if (Input.GetAxis("P1 Press Left Arrow") == 1)
                 {
                     ThisAnimator.SetBool("PadIdle", false);
                     ThisAnimator.SetBool("PadUp", false);
@@ -355,7 +355,7 @@ public class DN_ButtonsIndicator : MonoBehaviour
                     ThisAnimator.SetBool("PadRight", false);
                     ThisAnimator.SetBool("PadLeft", true);
                 }
-                if (Input.GetAxis("P1 Press Up Arrow") == 0)
+                if (Input.GetAxis("P1 Press Up Arrow") == 1)
                 {
                     ThisAnimator.SetBool("PadIdle", false);
                     ThisAnimator.SetBool("PadUp", true);
@@ -363,7 +363,7 @@ public class DN_ButtonsIndicator : MonoBehaviour
                     ThisAnimator.SetBool("PadRight", false);
                     ThisAnimator.SetBool("PadLeft", false);
                 }
-                if (Input.GetAxis("P2 Press Down Arrow") == 0)
+                if (Input.GetAxis("P2 Press Down Arrow") == 1)
                 {
                     ThisAnimator.SetBool("PadIdle", false);
                     ThisAnimator.SetBool("PadUp", false);
@@ -371,7 +371,7 @@ public class DN_ButtonsIndicator : MonoBehaviour
                     ThisAnimator.SetBool("PadRight", false);
                     ThisAnimator.SetBool("PadLeft", false);
                 }
-                if (Input.GetAxis("P3 Press Right Arrow") == 0)
+                if (Input.GetAxis("P3 Press Right Arrow") == 1)
                 {
                     ThisAnimator.SetBool("PadIdle", false);
                     ThisAnimator.SetBool("PadUp", false);
