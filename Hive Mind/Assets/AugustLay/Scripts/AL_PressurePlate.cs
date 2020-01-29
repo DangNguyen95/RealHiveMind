@@ -5,6 +5,8 @@ using UnityEngine;
 public class AL_PressurePlate : MonoBehaviour {
     [SerializeField]
     int myDoorNumber = 0;
+    public GameObject PlateOn;
+    public GameObject PlateOff;
     GameObject refToMyDoorManager;
     GameObject refToMyDoor;
     float step;
@@ -33,6 +35,8 @@ public class AL_PressurePlate : MonoBehaviour {
     {
         if (other.GetComponentInParent<DN_PlayerMovement>())
         {
+            PlateOn.SetActive(true);
+            PlateOff.SetActive(false);
             onThePlate = true;
             if (refToMyDoor != null)
             {
@@ -54,6 +58,8 @@ public class AL_PressurePlate : MonoBehaviour {
 
         if (other.GetComponentInParent<DN_PlayerMovement>())
         {
+            PlateOn.SetActive(false);
+            PlateOff.SetActive(true);
             onThePlate = false;
             if (refToMyDoor != null && refToMyDoor.GetComponent<AL_Door>().playerOnMe == false)
             {
