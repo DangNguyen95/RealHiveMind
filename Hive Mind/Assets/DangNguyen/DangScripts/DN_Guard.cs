@@ -22,37 +22,67 @@ public class DN_Guard : MonoBehaviour {
     private DN_Mech MechScripts;
     public GameObject BadMechSprite;
     private Animator BadMechAnimator;
+    public bool Death;
+    public bool DeathANimation;
     // Use this for initialization
     void Start() {
         if (AutoRun)
         {
             MechScripts = Mech.GetComponent<DN_Mech>();
-        }
-        else
-        {
             BadMechAnimator = BadMechSprite.GetComponent<Animator>();
+            BadMechSprite.GetComponent<SpriteRenderer>().flipX = true;
+            
+            BadMechAnimator.SetBool("BadMechMoveRight", false);
+            BadMechAnimator.SetBool("BadMechMoveUp", false);
+            BadMechAnimator.SetBool("BadMechMoveDown", false);
+            BadMechAnimator.SetBool("BadMechIdle", false);
         }
+      
     }
 
     // Update is called once per frame
     void Update() {
        
-      
-        buttonCooldown--;
-        if (AutoRun)
+      if(Death)
         {
-            if (MechScripts.BotLeft && MechScripts.BotRight && MechScripts.TopRight && MechScripts.TopLeft)
-            {
-                Scaredface.SetActive(true);
-                AngryFace.SetActive(false);
-            }
+           
+            gameObject.SetActive(false);
+        }
+      if(DeathANimation)
+        {
+            BadMechAnimator.SetBool("BadMechMoveRight", false);
+            BadMechAnimator.SetBool("BadMechMoveUp", false);
+            BadMechAnimator.SetBool("BadMechMoveDown", false);
+            BadMechAnimator.SetBool("BadMechIdle", false);
+            BadMechAnimator.SetBool("BadMechDeath", true);
+            transform.position += Vector3.right * 0;
+        }
+        buttonCooldown--;
+        if (AutoRun && DeathANimation == false)
+        {
+            //if (MechScripts.BotLeft && MechScripts.BotRight && MechScripts.TopRight && MechScripts.TopLeft)
+            //{
+            //    Scaredface.SetActive(true);
+            //    AngryFace.SetActive(false);
+            //}
+            
             if (RunRight)
             {
                 transform.position += Vector3.right * Time.deltaTime * speed;
+                BadMechAnimator.SetBool("BadMechMoveRight", true);
+                BadMechAnimator.SetBool("BadMechMoveUp", false);
+                BadMechAnimator.SetBool("BadMechMoveDown", false);
+                BadMechAnimator.SetBool("BadMechIdle", false);
+                BadMechSprite.GetComponent<SpriteRenderer>().flipX = false;
 
             }
             else
             {
+                BadMechAnimator.SetBool("BadMechMoveRight", true);
+                BadMechAnimator.SetBool("BadMechMoveUp", false);
+                BadMechAnimator.SetBool("BadMechMoveDown", false);
+                BadMechAnimator.SetBool("BadMechIdle", false);
+                BadMechSprite.GetComponent<SpriteRenderer>().flipX = true;
                 transform.position += Vector3.left * Time.deltaTime * speed;
             }
 

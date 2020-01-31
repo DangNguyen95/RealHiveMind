@@ -52,28 +52,28 @@ public class DN_GuardDetect : MonoBehaviour {
         {
             if (other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
         }
         if(RightDetection)
         {
             if (other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
         }
         if(LeftDetection)
         {
             if (other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
         }
         if(BotDetection)
         {
             if (other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
         }
 
@@ -84,7 +84,7 @@ public class DN_GuardDetect : MonoBehaviour {
         {
             if(other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
             if (other.tag == "Wall")
             {
@@ -144,7 +144,7 @@ public class DN_GuardDetect : MonoBehaviour {
         {
             if (other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
             if (other.tag == "Wall")
             {
@@ -205,7 +205,7 @@ public class DN_GuardDetect : MonoBehaviour {
         {
             if (other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
             if (other.tag == "Wall")
             {
@@ -264,7 +264,7 @@ public class DN_GuardDetect : MonoBehaviour {
         {
             if (other.tag == "Kill")
             {
-                Guard.SetActive(false);
+                GuardScripts.DeathANimation = true;
             }
             if (other.tag == "Wall")
             {

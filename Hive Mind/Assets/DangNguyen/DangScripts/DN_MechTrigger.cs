@@ -9,6 +9,10 @@ public class DN_MechTrigger : MonoBehaviour {
     public bool BotLeft;
     public GameObject Mech;
     private DN_Mech MechScripts;
+    public GameObject Square;
+    public GameObject X;
+    public GameObject Triangle;
+    public GameObject O;
 	// Use this for initialization
 	void Start () {
         MechScripts = Mech.GetComponent<DN_Mech>();
@@ -26,8 +30,8 @@ public class DN_MechTrigger : MonoBehaviour {
             {
              //   MechScripts.P1 = true;
                 MechScripts.TopRight = true;
-                other.gameObject.SetActive(false);
-                gameObject.SetActive(false);
+                Square.SetActive(false);
+            //    gameObject.SetActive(false);
             }
         }
         if(other.tag == "X")
@@ -36,8 +40,8 @@ public class DN_MechTrigger : MonoBehaviour {
             {
               //  MechScripts.P2 = true;
                 MechScripts.BotLeft = true;
-                other.gameObject.SetActive(false);
-                gameObject.SetActive(false);
+                X.SetActive(false);
+              //  gameObject.SetActive(false);
             }
         }
         if(other.tag == "Triangle")
@@ -46,8 +50,8 @@ public class DN_MechTrigger : MonoBehaviour {
             {
               //  MechScripts.P3 = true;
                 MechScripts.BotRight = true;
-                other.gameObject.SetActive(false);
-                gameObject.SetActive(false);
+                Triangle.SetActive(false);
+              //  gameObject.SetActive(false);
             }
         }
         if(other.tag == "O")
@@ -56,8 +60,8 @@ public class DN_MechTrigger : MonoBehaviour {
             {
              //   MechScripts.P4 = true;
                 MechScripts.TopLeft = true;
-                other.gameObject.SetActive(false);
-                gameObject.SetActive(false);
+                O.SetActive(false);
+             //   gameObject.SetActive(false);
             }
         }
     }

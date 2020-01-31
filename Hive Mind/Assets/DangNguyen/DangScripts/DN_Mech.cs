@@ -84,7 +84,7 @@ public class DN_Mech : MonoBehaviour {
     public bool TopBool;
     public bool LeftBool;
     public bool RightBool;
-    public bool UpBool;
+    public bool DownBool;
     public GameObject KillerTrigger1;
     public GameObject KillerTrigger2;
     public GameObject[] ArrowDirection;
@@ -109,7 +109,7 @@ public class DN_Mech : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P1 Press Right Arrow") == 0 && Input.GetAxis("P1 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0  && Input.GetAxis("P2 Press Down Arrow") == 0 && Input.GetAxis("P2 Press Up Arrow") == 0 && Input.GetAxis("P3 Press Left Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P3 Press Down Arrow") == 0 && Input.GetAxis("P3 Press Up Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && Input.GetAxis("P4 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Down Arrow") == 0 && Input.GetAxis("P4 Press Up Arrow") == 0 && DN_MainMenuMannager.Ps4 && StopActivating))
+        if (Input.GetAxis("Solo P1 Press Up Arrow") < 1 && Input.GetAxis("Solo P1 Press Right Arrow") < 1 && Input.GetAxis("Solo P1 Press Left Arrow") < 1 && Input.GetAxis("Solo P1 Press Down Arrow") < 1 && (Input.GetAxis("P1 Press Up Arrow") < 1 && Input.GetAxis("P1 Press Left Arrow") < 1 && Input.GetAxis("P1 Press Right Arrow") < 1 && Input.GetAxis("P1 Press Down Arrow") < 1 && Input.GetAxis("P2 Press Left Arrow") < 1 && Input.GetAxis("P2 Press Right Arrow") < 1 && Input.GetAxis("P2 Press Down Arrow") < 1 && Input.GetAxis("P2 Press Up Arrow") < 1 && Input.GetAxis("P3 Press Left Arrow") < 1 && Input.GetAxis("P3 Press Right Arrow") < 1 && Input.GetAxis("P3 Press Down Arrow") < 1 && Input.GetAxis("P3 Press Up Arrow") < 1 && Input.GetAxis("P4 Press Left Arrow") < 1 && Input.GetAxis("P4 Press Right Arrow") < 1 && Input.GetAxis("P4 Press Down Arrow") < 1 && Input.GetAxis("P4 Press Up Arrow") < 1 && DN_MainMenuMannager.Ps4 && StopActivating))
         {
             MechIdle.SetActive(true);
             MechMoveRNL.SetActive(false);
@@ -161,6 +161,7 @@ public class DN_Mech : MonoBehaviour {
             if(LeftBool == false)
             {
                 TopLeftCube.SetActive(true);
+                TopLeftCube.SetActive(true);
                 LeftBool = true;
             }
         
@@ -188,10 +189,10 @@ public class DN_Mech : MonoBehaviour {
                 BotLeftCube2.SetActive(true);
                 BotLeftCube.SetActive(false);
             }
-          if(LeftBool == false)
+          if(DownBool == false)
             {
                 BotLeftCube.SetActive(true);
-                LeftBool = true;
+                DownBool = true;
             }
             FakeBotLeftCube.SetActive(false);
            
@@ -200,19 +201,26 @@ public class DN_Mech : MonoBehaviour {
         {
             if(StopActivating == false)
             {
+                TopRightCube.SetActive(false);
+                TopLeftCube.SetActive(false);
+                BotRightCube.SetActive(false);
+                BotLeftCube.SetActive(false);
                 MechFakeIdle.SetActive(false);
                 MechActivating.SetActive(true);
                 MechMoveRNL.SetActive(false);
                 MechMoveUND.SetActive(false);
+
+
             }
             if(StopActivating)
             {
+                for (int i = 0; i < ArrowDirection.Length; i++)
+                {
+                    ArrowDirection[i].SetActive(true);
+                }
                 MechActivating.SetActive(false);
             }
-            for (int i = 0; i < ArrowDirection.Length; i++)
-            {
-                ArrowDirection[i].SetActive(false);
-            }
+          
         }
             if (SoloController && DN_MainMenuMannager.Ps4)
         {

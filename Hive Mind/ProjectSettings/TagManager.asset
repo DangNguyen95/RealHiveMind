@@ -56,6 +56,10 @@ TagManager:
   - BlueEnemy
   - GreenEnemy
   - Water
+  - UpTrigger
+  - DownTrigger
+  - RightTrigger
+  - LeftTrigger
   layers:
   - Default
   - TransparentFX
