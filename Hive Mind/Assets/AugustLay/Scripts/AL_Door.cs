@@ -30,7 +30,7 @@ public class AL_Door : MonoBehaviour {
         {
             playerOnMe = false;
 
-            pressurePlate.GetComponent<AL_PressurePlate>().playerTrigger();
+           // pressurePlate.GetComponent<AL_PressurePlate>().playerTrigger();
         }
     }
 }
