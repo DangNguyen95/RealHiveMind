@@ -424,7 +424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level 3: Mothership
+  m_Text: 'Level 1: Mothership
 
 
     Objective: Destroy the enemy space ship.
@@ -14255,9 +14255,9 @@ MonoBehaviour:
   VictoryScreen: {fileID: 2109363093}
   DefeatScreen: {fileID: 852435144}
   Times: {fileID: 1561628592}
-  RestartSceneNumber: 7
-  PreviousSceneNumber: 6
-  NextLevelNumber: 8
+  RestartSceneNumber: 11
+  PreviousSceneNumber: 10
+  NextLevelNumber: 12
   RedImage: {fileID: 612355488}
   OrangeImage: {fileID: 1472066345}
   BlueImage: {fileID: 1279336895}
@@ -16895,7 +16895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Prototype level: 3'
+  m_Text: 'Prototype level: 1'
 --- !u!222 &1984249817
 CanvasRenderer:
   m_ObjectHideFlags: 0

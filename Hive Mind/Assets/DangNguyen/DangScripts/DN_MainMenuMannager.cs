@@ -73,17 +73,17 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             LevelsIndicator = 0;
         }
-        if(LevelsIndicator >3)
+        if(LevelsIndicator >9)
         {
-            LevelsIndicator = 3;
+            LevelsIndicator = 9;
         }
         if (BlooperLevelsIndicator < 0)
         {
             BlooperLevelsIndicator = 0;
         }
-        if (BlooperLevelsIndicator > 9)
+        if (BlooperLevelsIndicator > 1)
         {
-            BlooperLevelsIndicator = 9;
+            BlooperLevelsIndicator = 1;
         }
        
         //if(StartNow)
@@ -389,13 +389,13 @@ public class DN_MainMenuMannager : MonoBehaviour {
             LevelsImage[1].SetActive(false);
             LevelsImage[2].SetActive(false);
             LevelsImage[3].SetActive(false);
-
-            //LevelsImage[5].SetActive(false);
-            //LevelsImage[6].SetActive(false);
-            //LevelsImage[7].SetActive(false);
-            //LevelsImage[8].SetActive(false);
-            //LevelsImage[9].SetActive(false);
-            //LevelsImage[10].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+          //  LevelsImage[10].SetActive(false);
             //LevelsImage[11].SetActive(false);
             //LevelsImage[12].SetActive(false);
             //LevelsImage[13].SetActive(false);
@@ -408,13 +408,13 @@ public class DN_MainMenuMannager : MonoBehaviour {
             LevelsImage[1].SetActive(true);
             LevelsImage[2].SetActive(false);
             LevelsImage[3].SetActive(false);
-          
-            //LevelsImage[5].SetActive(false);
-            //LevelsImage[6].SetActive(false);
-            //LevelsImage[7].SetActive(false);
-            //LevelsImage[8].SetActive(false);
-            //LevelsImage[9].SetActive(false);
-            //LevelsImage[10].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+          //  LevelsImage[10].SetActive(false);
             //LevelsImage[11].SetActive(false);
             //LevelsImage[12].SetActive(false);
             //LevelsImage[13].SetActive(false);
@@ -427,13 +427,13 @@ public class DN_MainMenuMannager : MonoBehaviour {
             LevelsImage[1].SetActive(false);
             LevelsImage[2].SetActive(true);
             LevelsImage[3].SetActive(false);
-           
-            //LevelsImage[5].SetActive(false);
-            //LevelsImage[6].SetActive(false);
-            //LevelsImage[7].SetActive(false);
-            //LevelsImage[8].SetActive(false);
-            //LevelsImage[9].SetActive(false);
-            //LevelsImage[10].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+          //  LevelsImage[10].SetActive(false);
             //LevelsImage[11].SetActive(false);
             //LevelsImage[12].SetActive(false);
             //LevelsImage[13].SetActive(false);
@@ -446,13 +446,13 @@ public class DN_MainMenuMannager : MonoBehaviour {
             LevelsImage[1].SetActive(false);
             LevelsImage[2].SetActive(false);
             LevelsImage[3].SetActive(true);
-        
-            //LevelsImage[5].SetActive(false);
-            //LevelsImage[6].SetActive(false);
-            //LevelsImage[7].SetActive(false);
-            //LevelsImage[8].SetActive(false);
-            //LevelsImage[9].SetActive(false);
-            //LevelsImage[10].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+       //     LevelsImage[10].SetActive(false);
             //LevelsImage[11].SetActive(false);
             //LevelsImage[12].SetActive(false);
             //LevelsImage[13].SetActive(false);
@@ -464,14 +464,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
             BlooperLevelText.text = BlooperLevelsNumber;
             BlooperLevelsImage[0].SetActive(true);
             BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
+         //   BlooperLevelsImage[2].SetActive(false);
+           
             BlooperLevelsNumber = "Prototype level 1";
             
         }
@@ -480,240 +474,135 @@ public class DN_MainMenuMannager : MonoBehaviour {
             BlooperLevelText.text = BlooperLevelsNumber;
             BlooperLevelsImage[0].SetActive(false);
             BlooperLevelsImage[1].SetActive(true);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
+           // BlooperLevelsImage[2].SetActive(false);
+            
             BlooperLevelsNumber = "Prototype level 2";
 
         }
-        if (BlooperLevelsIndicator == 2)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(true);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
-            BlooperLevelsNumber = "Prototype level 3";
-
-        }
-        if (BlooperLevelsIndicator == 3)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(true);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
-            BlooperLevelsNumber = "Prototype level 4";
-
-        }
-        if (BlooperLevelsIndicator == 4)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(true);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
-            BlooperLevelsNumber = "Prototype level 5";
-
-        }
-        if (BlooperLevelsIndicator == 5)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(true);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
-            BlooperLevelsNumber = "Prototype level 6";
-
-        }
-        if (BlooperLevelsIndicator == 6)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(true);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
-            BlooperLevelsNumber = "Prototype level 7";
-
-        }
-        if (BlooperLevelsIndicator == 7)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(true);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(false);
-            BlooperLevelsNumber = "Prototype level 8";
-
-        }
-        if (BlooperLevelsIndicator == 8)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(true);
-            BlooperLevelsImage[9].SetActive(false);
-            BlooperLevelsNumber = "Prototype level 9";
-
-        }
-        if (BlooperLevelsIndicator == 9)
-        {
-            BlooperLevelText.text = BlooperLevelsNumber;
-            BlooperLevelsImage[0].SetActive(false);
-            BlooperLevelsImage[1].SetActive(false);
-            BlooperLevelsImage[2].SetActive(false);
-            BlooperLevelsImage[3].SetActive(false);
-            BlooperLevelsImage[4].SetActive(false);
-            BlooperLevelsImage[5].SetActive(false);
-            BlooperLevelsImage[6].SetActive(false);
-            BlooperLevelsImage[7].SetActive(false);
-            BlooperLevelsImage[8].SetActive(false);
-            BlooperLevelsImage[9].SetActive(true);
-            BlooperLevelsNumber = "Prototype level 10";
-
-        }
-        //if (LevelsIndicator == 5)
+        //if (BlooperLevelsIndicator == 2)
         //{
-        //    LevelText.text = LevelsNumber;
-        //    LevelsImage[0].SetActive(false);
-        //    LevelsImage[1].SetActive(false);
-        //    LevelsImage[2].SetActive(false);
-        //    LevelsImage[3].SetActive(false);
-        //    LevelsImage[4].SetActive(false);
-        //    LevelsImage[5].SetActive(true);
-        //    LevelsImage[6].SetActive(false);
-        //    LevelsImage[7].SetActive(false);
-        //    LevelsImage[8].SetActive(false);
-        //    LevelsImage[9].SetActive(false);
-        //    LevelsImage[10].SetActive(false);
-        //    LevelsImage[11].SetActive(false);
-        //    LevelsImage[12].SetActive(false);
-        //    LevelsImage[13].SetActive(false);
-        //    LevelsNumber = "Level 6";
+        //    BlooperLevelText.text = BlooperLevelsNumber;
+        //    BlooperLevelsImage[0].SetActive(false);
+        //    BlooperLevelsImage[1].SetActive(false);
+        //    BlooperLevelsImage[2].SetActive(true);
+           
+        //    BlooperLevelsNumber = "Prototype level 3";
+
         //}
-        //if (LevelsIndicator == 6)
-        //{
-        //    LevelText.text = LevelsNumber;
-        //    LevelsImage[0].SetActive(false);
-        //    LevelsImage[1].SetActive(false);
-        //    LevelsImage[2].SetActive(false);
-        //    LevelsImage[3].SetActive(false);
-        //    LevelsImage[4].SetActive(false);
-        //    LevelsImage[5].SetActive(false);
-        //    LevelsImage[6].SetActive(true);
-        //    LevelsImage[7].SetActive(false);
-        //    LevelsImage[8].SetActive(false);
-        //    LevelsImage[9].SetActive(false);
+        if (LevelsIndicator == 4)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(true);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+            //     LevelsImage[10].SetActive(false);
+            //LevelsImage[11].SetActive(false);
+            //LevelsImage[12].SetActive(false);
+            //LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 5";
+        }
+        if (LevelsIndicator == 5)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(true);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+         //   LevelsImage[10].SetActive(false);
+            //LevelsImage[11].SetActive(false);
+            //LevelsImage[12].SetActive(false);
+            //LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 6";
+        }
+        if (LevelsIndicator == 6)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(true);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
         //    LevelsImage[10].SetActive(false);
-        //    LevelsImage[11].SetActive(false);
-        //    LevelsImage[12].SetActive(false);
-        //    LevelsImage[13].SetActive(false);
-        //    LevelsNumber = "Level 7";
-        //}
-        //if (LevelsIndicator == 7)
-        //{
-        //    LevelText.text = LevelsNumber;
-        //    LevelsImage[0].SetActive(false);
-        //    LevelsImage[1].SetActive(false);
-        //    LevelsImage[2].SetActive(false);
-        //    LevelsImage[3].SetActive(false);
-        //    LevelsImage[4].SetActive(false);
-        //    LevelsImage[5].SetActive(false);
-        //    LevelsImage[6].SetActive(false);
-        //    LevelsImage[7].SetActive(true);
-        //    LevelsImage[8].SetActive(false);
-        //    LevelsImage[9].SetActive(false);
-        //    LevelsImage[10].SetActive(false);
-        //    LevelsImage[11].SetActive(false);
-        //    LevelsImage[12].SetActive(false);
-        //    LevelsImage[13].SetActive(false);
-        //    LevelsNumber = "Level 8";
-        //}
-        //if (LevelsIndicator == 8)
-        //{
-        //    LevelText.text = LevelsNumber;
-        //    LevelsImage[0].SetActive(false);
-        //    LevelsImage[1].SetActive(false);
-        //    LevelsImage[2].SetActive(false);
-        //    LevelsImage[3].SetActive(false);
-        //    LevelsImage[4].SetActive(false);
-        //    LevelsImage[5].SetActive(false);
-        //    LevelsImage[6].SetActive(false);
-        //    LevelsImage[7].SetActive(false);
-        //    LevelsImage[8].SetActive(true);
-        //    LevelsImage[9].SetActive(false);
-        //    LevelsImage[10].SetActive(false);
-        //    LevelsImage[11].SetActive(false);
-        //    LevelsImage[12].SetActive(false);
-        //    LevelsImage[13].SetActive(false);
-        //    LevelsNumber = "Level 9";
-        //}
-        //if (LevelsIndicator == 9)
-        //{
-        //    LevelText.text = LevelsNumber;
-        //    LevelsImage[0].SetActive(false);
-        //    LevelsImage[1].SetActive(false);
-        //    LevelsImage[2].SetActive(false);
-        //    LevelsImage[3].SetActive(false);
-        //    LevelsImage[4].SetActive(false);
-        //    LevelsImage[5].SetActive(false);
-        //    LevelsImage[6].SetActive(false);
-        //    LevelsImage[7].SetActive(false);
-        //    LevelsImage[8].SetActive(false);
-        //    LevelsImage[9].SetActive(true);
-        //    LevelsImage[10].SetActive(false);
-        //    LevelsImage[11].SetActive(false);
-        //    LevelsImage[12].SetActive(false);
-        //    LevelsImage[13].SetActive(false);
-        //    LevelsNumber = "Level 10";
-        //}
+            //LevelsImage[11].SetActive(false);
+            //LevelsImage[12].SetActive(false);
+            //LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 7";
+        }
+        if (LevelsIndicator == 7)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(true);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(false);
+         //   LevelsImage[10].SetActive(false);
+            //LevelsImage[11].SetActive(false);
+            //LevelsImage[12].SetActive(false);
+            //LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 8";
+        }
+        if (LevelsIndicator == 8)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(true);
+            LevelsImage[9].SetActive(false);
+         //   LevelsImage[10].SetActive(false);
+            //LevelsImage[11].SetActive(false);
+            //LevelsImage[12].SetActive(false);
+            //LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 9";
+        }
+        if (LevelsIndicator == 9)
+        {
+            LevelText.text = LevelsNumber;
+            LevelsImage[0].SetActive(false);
+            LevelsImage[1].SetActive(false);
+            LevelsImage[2].SetActive(false);
+            LevelsImage[3].SetActive(false);
+            LevelsImage[4].SetActive(false);
+            LevelsImage[5].SetActive(false);
+            LevelsImage[6].SetActive(false);
+            LevelsImage[7].SetActive(false);
+            LevelsImage[8].SetActive(false);
+            LevelsImage[9].SetActive(true);
+         //   LevelsImage[10].SetActive(false);
+            //LevelsImage[11].SetActive(false);
+            //LevelsImage[12].SetActive(false);
+            //LevelsImage[13].SetActive(false);
+            LevelsNumber = "Level 10";
+        }
         //if (LevelsIndicator == 10)
         //{
         //    LevelText.text = LevelsNumber;
@@ -728,9 +617,9 @@ public class DN_MainMenuMannager : MonoBehaviour {
         //    LevelsImage[8].SetActive(false);
         //    LevelsImage[9].SetActive(false);
         //    LevelsImage[10].SetActive(true);
-        //    LevelsImage[11].SetActive(false);
-        //    LevelsImage[12].SetActive(false);
-        //    LevelsImage[13].SetActive(false);
+        //    //LevelsImage[11].SetActive(false);
+        //    //LevelsImage[12].SetActive(false);
+        //    //LevelsImage[13].SetActive(false);
         //    LevelsNumber = "Level 11";
         //}
         //if (LevelsIndicator == 11)
@@ -815,44 +704,17 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             if (BlooperLevelsIndicator == 0)
             {
-                sceneIndex = 5;
+                sceneIndex = 11;
             }
             if (BlooperLevelsIndicator == 1)
             {
-                sceneIndex = 6;
-            }
-            if (BlooperLevelsIndicator == 2)
-            {
-                sceneIndex = 7;
-            }
-            if (BlooperLevelsIndicator == 3)
-            {
-                sceneIndex = 8;
-            }
-            if (BlooperLevelsIndicator == 4)
-            {
-                sceneIndex = 9;
-            }
-            if (BlooperLevelsIndicator == 5)
-            {
-                sceneIndex = 10;
-            }
-            if (BlooperLevelsIndicator == 6)
-            {
-                sceneIndex = 11;
-            }
-            if (BlooperLevelsIndicator == 7)
-            {
                 sceneIndex = 12;
             }
-            if (BlooperLevelsIndicator == 8)
-            {
-                sceneIndex = 13;
-            }
-            if (BlooperLevelsIndicator == 9)
-            {
-                sceneIndex = 14;
-            }
+            //if (BlooperLevelsIndicator == 2)
+            //{
+            //    sceneIndex = 13;
+            //}
+         
        
 
         }
@@ -878,6 +740,26 @@ public class DN_MainMenuMannager : MonoBehaviour {
             {
                 sceneIndex = 5;
             }
+            if (LevelsIndicator == 5)
+            {
+                sceneIndex = 6;
+            }
+            if (LevelsIndicator == 6)
+            {
+                sceneIndex = 7;
+            }
+            if (LevelsIndicator == 7)
+            {
+                sceneIndex = 8;
+            }
+            if (LevelsIndicator == 8)
+            {
+                sceneIndex = 9;
+            }
+            //if (LevelsIndicator == 9)
+            //{
+            //    sceneIndex = 10;
+            //}
         }
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);

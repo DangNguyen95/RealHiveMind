@@ -7114,7 +7114,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Prototype level: 10
+  m_Text: 'Prototype level: 2
 
 '
 --- !u!222 &241472909
@@ -16898,7 +16898,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 87
+    m_FontSize: 69
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -16909,16 +16909,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level 10: moving walls
+  m_Text: 'Prototype level 2: Moving Walls
 
 
     Objective: get access to the escape portal.
 
 
-    Avoid: moving walls.
+    Avoid: the moving walls.
 
 
-    Warning: this level is extremely hard.'
+    Warning: this level is extremely difficult.'
 --- !u!222 &602722120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17056,8 +17056,8 @@ MonoBehaviour:
   VictoryScreen: {fileID: 1463296953}
   DefeatScreen: {fileID: 309022806}
   Times: {fileID: 430872407}
-  RestartSceneNumber: 14
-  PreviousSceneNumber: 13
+  RestartSceneNumber: 12
+  PreviousSceneNumber: 11
   NextLevelNumber: 0
   RedImage: {fileID: 2095751127}
   OrangeImage: {fileID: 2098070840}

@@ -27840,7 +27840,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Prototype level: 1'
+  m_Text: 'Level: 5'
 --- !u!222 &535715640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60608,7 +60608,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level 1: Assemble the mech
+  m_Text: 'Level 5: Assemble the mech
 
 
     Objective: kill all that stand in your way.
