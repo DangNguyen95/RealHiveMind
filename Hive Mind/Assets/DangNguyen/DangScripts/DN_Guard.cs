@@ -37,7 +37,7 @@ public class DN_Guard : MonoBehaviour {
             BadMechAnimator.SetBool("BadMechMoveDown", false);
             BadMechAnimator.SetBool("BadMechIdle", false);
         }
-      
+        BadMechAnimator = BadMechSprite.GetComponent<Animator>();
     }
 
     // Update is called once per frame

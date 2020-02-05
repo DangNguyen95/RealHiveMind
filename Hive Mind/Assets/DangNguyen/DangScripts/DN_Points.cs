@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DN_Points : MonoBehaviour {
     public Text points;
+    public bool DoitOnce;
     public float PointsNumber;
     // Use this for initialization
     void Start () {
@@ -13,12 +14,13 @@ public class DN_Points : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         points.text = "Points: " + PointsNumber.ToString();
-        if(PointsNumber >= 296f)
+        if(PointsNumber >= 296f && DoitOnce ==false)
         {
             DN_GameManager.SquareHome = true;
             DN_GameManager.OHome = true;
             DN_GameManager.TriangleHome = true;
             DN_GameManager.XHome = true;
+            DoitOnce = true;
         }
     }
 }
