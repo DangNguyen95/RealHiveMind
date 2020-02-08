@@ -24,6 +24,8 @@ public class DN_Guard : MonoBehaviour {
     private Animator BadMechAnimator;
     public bool Death;
     public bool DeathANimation;
+    //  public GameObject GuardDeathSound;
+
     // Use this for initialization
     void Start() {
         if (AutoRun)
@@ -31,7 +33,7 @@ public class DN_Guard : MonoBehaviour {
             MechScripts = Mech.GetComponent<DN_Mech>();
             BadMechAnimator = BadMechSprite.GetComponent<Animator>();
             BadMechSprite.GetComponent<SpriteRenderer>().flipX = true;
-            
+            //  GuardDeathSoundComp = GuardDeathSound.GetComponent<AudioSource>();
             BadMechAnimator.SetBool("BadMechMoveRight", false);
             BadMechAnimator.SetBool("BadMechMoveUp", false);
             BadMechAnimator.SetBool("BadMechMoveDown", false);
@@ -42,13 +44,13 @@ public class DN_Guard : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-       
-      if(Death)
+
+        if (Death)
         {
-           
+
             gameObject.SetActive(false);
         }
-      if(DeathANimation)
+        if (DeathANimation)
         {
             BadMechAnimator.SetBool("BadMechMoveRight", false);
             BadMechAnimator.SetBool("BadMechMoveUp", false);
@@ -65,7 +67,7 @@ public class DN_Guard : MonoBehaviour {
             //    Scaredface.SetActive(true);
             //    AngryFace.SetActive(false);
             //}
-            
+
             if (RunRight)
             {
                 transform.position += Vector3.right * Time.deltaTime * speed;
@@ -145,7 +147,7 @@ public class DN_Guard : MonoBehaviour {
                 transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
             }
         }
-       
+
     }
     void SoloKeyboardMove()
     {
@@ -159,87 +161,90 @@ public class DN_Guard : MonoBehaviour {
                 BadMechAnimator.SetBool("BadMechIdle", true);
             }
             if (Input.GetKey(KeyCode.LeftArrow) && StopLeft == false)
-                {
+            {
 
-                    if (dir != DIRECTION.LEFT)
-                    {
-                        buttonCooldown = cooldownforbutton;
-                        dir = DIRECTION.LEFT;
-                    
+                if (dir != DIRECTION.LEFT)
+                {
+                    buttonCooldown = cooldownforbutton;
+                    dir = DIRECTION.LEFT;
+
                 }
-                    else
-                    {
+                else
+                {
                     BadMechAnimator.SetBool("BadMechMoveRight", true);
                     BadMechAnimator.SetBool("BadMechMoveUp", false);
                     BadMechAnimator.SetBool("BadMechMoveDown", false);
                     BadMechAnimator.SetBool("BadMechIdle", false);
                     BadMechSprite.GetComponent<SpriteRenderer>().flipX = true;
                     canMove = false;
-                        moving = true;
-                        pos += Vector3.left;
-                    }
+                    moving = true;
+                    pos += Vector3.left;
                 }
-                if (Input.GetKey(KeyCode.RightArrow) && StopRight == false)
+            }
+            if (Input.GetKey(KeyCode.RightArrow) && StopRight == false)
+            {
+                if (dir != DIRECTION.RIGHT)
                 {
-                    if (dir != DIRECTION.RIGHT)
-                    {
-                        buttonCooldown = cooldownforbutton;
-                        dir = DIRECTION.RIGHT;
-                 
+                    buttonCooldown = cooldownforbutton;
+                    dir = DIRECTION.RIGHT;
+
                 }
-                    else
-                    {
+                else
+                {
                     BadMechAnimator.SetBool("BadMechMoveRight", true);
                     BadMechAnimator.SetBool("BadMechMoveUp", false);
                     BadMechAnimator.SetBool("BadMechMoveDown", false);
                     BadMechAnimator.SetBool("BadMechIdle", false);
                     BadMechSprite.GetComponent<SpriteRenderer>().flipX = false;
                     canMove = false;
-                        moving = true;
-                        pos += Vector3.right;
+                    moving = true;
+                    pos += Vector3.right;
 
-                    }
                 }
-                if (Input.GetKey(KeyCode.DownArrow) && StopBot == false)
+            }
+            if (Input.GetKey(KeyCode.DownArrow) && StopBot == false)
+            {
+                if (dir != DIRECTION.DOWN)
                 {
-                    if (dir != DIRECTION.DOWN)
-                    {
-                        buttonCooldown = cooldownforbutton;
-                        dir = DIRECTION.DOWN;
-                    
+                    buttonCooldown = cooldownforbutton;
+                    dir = DIRECTION.DOWN;
+
                 }
-                    else
-                    {
+                else
+                {
                     BadMechAnimator.SetBool("BadMechMoveRight", false);
                     BadMechAnimator.SetBool("BadMechMoveUp", false);
                     BadMechAnimator.SetBool("BadMechMoveDown", true);
                     BadMechAnimator.SetBool("BadMechIdle", false);
                     canMove = false;
-                        moving = true;
-                        pos += Vector3.back;
-                    }
+                    moving = true;
+                    pos += Vector3.back;
                 }
-                if (Input.GetKey(KeyCode.UpArrow) && StopTop == false)
+            }
+            if (Input.GetKey(KeyCode.UpArrow) && StopTop == false)
+            {
+                if (dir != DIRECTION.UP)
                 {
-                    if (dir != DIRECTION.UP)
-                    {
-                        dir = DIRECTION.UP;
-                        buttonCooldown = cooldownforbutton;
-                    
+                    dir = DIRECTION.UP;
+                    buttonCooldown = cooldownforbutton;
+
                 }
-                    else
-                    {
+                else
+                {
                     BadMechAnimator.SetBool("BadMechMoveRight", false);
                     BadMechAnimator.SetBool("BadMechMoveUp", true);
                     BadMechAnimator.SetBool("BadMechMoveDown", false);
                     BadMechAnimator.SetBool("BadMechIdle", false);
                     canMove = false;
-                        moving = true;
-                        pos += Vector3.forward;
-                    }
+                    moving = true;
+                    pos += Vector3.forward;
                 }
             }
+        }
     }
+
+   
+
     void SoloPlayerMove()
     {
         if (DN_MainMenuMannager.Ps4)

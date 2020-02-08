@@ -26,6 +26,7 @@ public class DN_TurretTD : MonoBehaviour
 
 
     public Transform TurretItSelf;
+    public AudioSource ShootSound;
     // Use this for initialization
     void Start()
     {
@@ -84,12 +85,11 @@ public class DN_TurretTD : MonoBehaviour
 
     void Shoot()
     {
+        ShootSound.Play();
         if (_objectpool["EnemyBullet"].Count < numberstospawn)
         {
             _objectpool["EnemyBullet"].Spawn(firePoint.transform.position, firePoint.transform.rotation);
         }
-
-
     }
 
 

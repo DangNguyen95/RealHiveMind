@@ -23,6 +23,7 @@ public class DN_TDEnemyMovement : MonoBehaviour {
     //public GameObject WorkerSwitch;
     public float RandomNumber;
     private UnityEngine.AI.NavMeshAgent navComponent;
+    
     // Use this for initialization
     void Start () {
         //if (TopRight)
@@ -125,6 +126,7 @@ public class DN_TDEnemyMovement : MonoBehaviour {
             }
         }
     }
+  
     private void OnTriggerStay(Collider other)
     {
         if(other.tag=="Start1")

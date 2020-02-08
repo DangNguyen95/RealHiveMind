@@ -18,6 +18,7 @@ public class DN_enemySpaceship : MonoBehaviour {
     public float MoveTimer2;
     public float MoveTimer3;
     public int RandomNumber;
+   // public AudioSource ShootSound;
     // Use this for initialization
     void Start () {
         Target = GameObject.FindWithTag("EnemyShootPoint");
@@ -81,6 +82,7 @@ public class DN_enemySpaceship : MonoBehaviour {
                 if (_objectpool["EnemyBullet"].Count < numberstospawn)
                 {
                     _objectpool["EnemyBullet"].Spawn(ShootPoint.transform.position, ShootPoint.transform.rotation);
+                  //  ShootSound.Play();
                 }
                 fireCountdown = 1f / fireRate;
             }

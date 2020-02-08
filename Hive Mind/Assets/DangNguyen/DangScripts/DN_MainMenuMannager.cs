@@ -9,6 +9,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public GameObject[] Mode;
     public GameObject[] USbOption;
     public GameObject[] Credits;
+    public GameObject[] HowToPlaysObject;
     public GameObject backButton;
     public GameObject KeyBoard;
     public GameObject Ps4Controller;
@@ -23,6 +24,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
   //  private DN_Transition Transcripts;
     public bool StartNow;
     public bool CreditNow;
+    public bool HowToPlayNow;
     public bool BackNow;
     public bool P1Now;
     public bool P2Now;
@@ -55,6 +57,11 @@ public class DN_MainMenuMannager : MonoBehaviour {
     public Slider slider;
     public Text ProgressText;
     public AudioSource ClickSound;
+    public GameObject TutorialPage1;
+    public GameObject TutorialPage2;
+    public GameObject NexttutorialPageButton;
+    public GameObject PreviousTutorialPageButton;
+    public float TutorialNumber;
     //public GameObject RightDoor;
     //public GameObject LeftDoor;
     //private DN_DoorTransition RightDoorScript;
@@ -85,7 +92,30 @@ public class DN_MainMenuMannager : MonoBehaviour {
         {
             BlooperLevelsIndicator = 1;
         }
-       
+        if(TutorialNumber <1)
+        {
+            TutorialNumber = 1;
+        }
+        if(TutorialNumber >2)
+        {
+            TutorialNumber = 2;
+        }
+        if(TutorialNumber == 1)
+        {
+            TutorialPage1.SetActive(true);
+            TutorialPage2.SetActive(false);
+            NexttutorialPageButton.SetActive(true);
+            PreviousTutorialPageButton.SetActive(false);
+        }
+        if (TutorialNumber == 2)
+        {
+            TutorialPage1.SetActive(false);
+            TutorialPage2.SetActive(true);
+            NexttutorialPageButton.SetActive(false);
+            PreviousTutorialPageButton.SetActive(true);
+        }
+
+
         //if(StartNow)
         //{
         //    //if (Transcripts.TransitionStart)
@@ -785,6 +815,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
         MainMenuButtons[0].GetComponent<Button>().enabled = false;
         MainMenuButtons[1].GetComponent<Button>().enabled = false;
         MainMenuButtons[2].GetComponent<Button>().enabled = false;
+        MainMenuButtons[3].GetComponent<Button>().enabled = false;
+        MainMenuButtons[4].GetComponent<Button>().enabled = false;
         StartNow = true;
        
     }
@@ -797,6 +829,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
         MainMenuButtons[0].GetComponent<Button>().enabled = false;
         MainMenuButtons[1].GetComponent<Button>().enabled = false;
         MainMenuButtons[2].GetComponent<Button>().enabled = false;
+        MainMenuButtons[3].GetComponent<Button>().enabled = false;
+        MainMenuButtons[4].GetComponent<Button>().enabled = false;
         PrototypeLevel = true;
         StartNow = true;
 
@@ -892,7 +926,7 @@ public class DN_MainMenuMannager : MonoBehaviour {
     }
     public void PlayerThree()
     {
-        ClickSound.Play();
+     
         MenuPhase = 3;
         backButton.GetComponent<Button>().enabled = false;
         PlayerActivate[0].GetComponent<Button>().enabled = false;
@@ -1047,6 +1081,27 @@ public class DN_MainMenuMannager : MonoBehaviour {
 
         
     }
+    public void HowToPlay()
+    {
+        ClickSound.Play();
+        MenuPhase = 1;
+        MainMenuButtons[0].GetComponent<Button>().enabled = false;
+        MainMenuButtons[1].GetComponent<Button>().enabled = false;
+        MainMenuButtons[2].GetComponent<Button>().enabled = false;
+        MainMenuButtons[3].GetComponent<Button>().enabled = false;
+        MainMenuButtons[4].GetComponent<Button>().enabled = false;
+        HowToPlayNow = true;
+    }
+    public void NextTutorialPage()
+    {
+        ClickSound.Play();
+        TutorialNumber += 1;
+    }
+    public void PreviousTutorialPage()
+    {
+        ClickSound.Play();
+        TutorialNumber -= 1;
+    }
     public void Credit()
     {
         ClickSound.Play();
@@ -1054,6 +1109,8 @@ public class DN_MainMenuMannager : MonoBehaviour {
         MainMenuButtons[0].GetComponent<Button>().enabled = false;
         MainMenuButtons[1].GetComponent<Button>().enabled = false;
         MainMenuButtons[2].GetComponent<Button>().enabled = false;
+        MainMenuButtons[3].GetComponent<Button>().enabled = false;
+        MainMenuButtons[4].GetComponent<Button>().enabled = false;
         CreditNow = true;
     }
     public void Quit()

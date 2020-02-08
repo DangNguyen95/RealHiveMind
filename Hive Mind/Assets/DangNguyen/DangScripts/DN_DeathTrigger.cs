@@ -5,6 +5,7 @@ using UnityEngine;
 public class DN_DeathTrigger : MonoBehaviour {
     public GameObject EnemyGuard;
     private DN_Guard GuardScript;
+    public AudioSource GuardDeathSound;
 	// Use this for initialization
 	void Start () {
         GuardScript = EnemyGuard.GetComponent<DN_Guard>();
@@ -17,5 +18,12 @@ public class DN_DeathTrigger : MonoBehaviour {
     public void GuardDeath()
     {
         GuardScript.Death = true;
+    }
+    public void PlayDeathSound()
+    {
+        if (GuardScript.AutoRun)
+        {
+            GuardDeathSound.Play();
+        }
     }
 }

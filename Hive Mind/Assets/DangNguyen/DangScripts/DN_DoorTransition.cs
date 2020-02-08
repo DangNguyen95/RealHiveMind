@@ -16,6 +16,8 @@ public class DN_DoorTransition : MonoBehaviour {
     public bool ReOpen;
     public GameObject Manager;
     private DN_MainMenuMannager MenuScript;
+    public AudioSource DoorCloseSound;
+    public AudioSource DoorOpenSound;
 	// Use this for initialization
 	void Start () {
         MenuScript = Manager.GetComponent<DN_MainMenuMannager>();
@@ -60,6 +62,14 @@ public class DN_DoorTransition : MonoBehaviour {
     {
         gameObject.GetComponent<Animator>().SetBool("Close", true);
         gameObject.GetComponent<Animator>().SetBool("Open", false);
+    }
+    public void PlayOpenSound()
+    {
+        DoorOpenSound.Play();
+    }
+    public void PlayCloseSound()
+    {
+        DoorCloseSound.Play();
     }
     public void OpenThemDoor()
     {
@@ -117,6 +127,25 @@ public class DN_DoorTransition : MonoBehaviour {
             MenuScript.CreditNow = false;
            
         }
+        if(MenuScript.HowToPlayNow)
+        {
+             for (int i = 0; i < MenuScript.HowToPlaysObject.Length; i++)
+            {
+                MenuScript.HowToPlaysObject[i].SetActive(true);
+            }
+            MenuScript.backButton.SetActive(true);
+            for (int i = 0; i < MenuScript.MainMenuButtons.Length; i++)
+            {
+                MenuScript.MainMenuButtons[i].SetActive(false);
+            }
+            MenuScript.PlayerActivate[0].GetComponent<Button>().enabled = true;
+            MenuScript.PlayerActivate[1].GetComponent<Button>().enabled = true;
+            MenuScript.PlayerActivate[2].GetComponent<Button>().enabled = true;
+            MenuScript.PlayerActivate[3].GetComponent<Button>().enabled = true;
+            MenuScript.backButton.GetComponent<Button>().enabled = true;
+
+            MenuScript.HowToPlayNow = false;
+        }
         if (MenuScript.BackNow)
         {
          
@@ -140,10 +169,17 @@ public class DN_DoorTransition : MonoBehaviour {
             {
                 MenuScript.Mode[i].SetActive(false);
             }
+            for (int i = 0; i < MenuScript.HowToPlaysObject.Length; i++)
+            {
+                MenuScript.HowToPlaysObject[i].SetActive(false);
+            }
             MenuScript.LevelsSelector.SetActive(false);
             MenuScript.MainMenuButtons[0].GetComponent<Button>().enabled = true;
             MenuScript.MainMenuButtons[1].GetComponent<Button>().enabled = true;
             MenuScript.MainMenuButtons[2].GetComponent<Button>().enabled = true;
+            MenuScript.MainMenuButtons[3].GetComponent<Button>().enabled = true;
+            MenuScript.MainMenuButtons[4].GetComponent<Button>().enabled = true;
+
             DN_PlayerMovement.UsbExtender = false;
             DN_PlayerMovement.SoloController = false;
             DN_PlayerMovement.DualController = false;

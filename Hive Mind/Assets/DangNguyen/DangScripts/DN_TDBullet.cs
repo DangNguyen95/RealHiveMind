@@ -13,6 +13,7 @@ public class DN_TDBullet : MonoBehaviour, ISpawnEvent
     public bool GreenBullet;
     public bool YellowBullet;
     public bool BlueBullet;
+    public GameObject SplatterObject;
     // Use this for initialization
     void Start () {
 		
@@ -52,12 +53,14 @@ public class DN_TDBullet : MonoBehaviour, ISpawnEvent
            
             if (RedBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamRed)
             {
+            Instantiate(SplatterObject);
                 Destroy(other.gameObject);
                 pool.Despawn(this.gameObject);
             }
               if(RedBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamBlue)
             {
-                pool.Despawn(this.gameObject);
+            
+            pool.Despawn(this.gameObject);
             }
             if (RedBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamGreen)
             {
@@ -69,7 +72,8 @@ public class DN_TDBullet : MonoBehaviour, ISpawnEvent
             }
             if(BlueBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamBlue)
             {
-                Destroy(other.gameObject);
+            Instantiate(SplatterObject);
+            Destroy(other.gameObject);
                 pool.Despawn(this.gameObject);
             }
               if(BlueBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamRed)
@@ -90,7 +94,8 @@ public class DN_TDBullet : MonoBehaviour, ISpawnEvent
          
             if (GreenBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamGreen)
             {
-                Destroy(other.gameObject);
+            Instantiate(SplatterObject);
+            Destroy(other.gameObject);
                 pool.Despawn(this.gameObject);
             }
             if (GreenBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamBlue)
@@ -109,7 +114,8 @@ public class DN_TDBullet : MonoBehaviour, ISpawnEvent
             }
             if(YellowBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamYellow)
             {
-                Destroy(other.gameObject);
+            Instantiate(SplatterObject);
+            Destroy(other.gameObject);
                 pool.Despawn(this.gameObject);
             }
              if(YellowBullet && other.gameObject.GetComponent<DN_TDEnemyMovement>().IamRed)

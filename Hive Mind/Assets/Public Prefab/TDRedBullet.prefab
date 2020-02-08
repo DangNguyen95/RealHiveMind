@@ -114,3 +114,5 @@ MonoBehaviour:
   GreenBullet: 0
   YellowBullet: 0
   BlueBullet: 0
+  SplatterObject: {fileID: 1306366947799760, guid: 85a92ea409ca5264383af9009836caf0,
+    type: 2}

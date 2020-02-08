@@ -5,6 +5,7 @@ using UnityEngine;
 public class DN_MechActivateScript : MonoBehaviour {
     public GameObject MechSuit;
     private DN_Mech MechScript;
+    public AudioSource MechactivateSOund;
 	// Use this for initialization
 	void Start () {
         MechScript = MechSuit.GetComponent<DN_Mech>();
@@ -18,5 +19,9 @@ public class DN_MechActivateScript : MonoBehaviour {
     {
         MechScript.StopActivating = true;
         MechScript.MechIdle.SetActive(true);
+    }
+    public void ActivatingSOund()
+    {
+        MechactivateSOund.Play();
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AL_Bomb : MonoBehaviour {
 
+    public AudioSource ExplosionSound;
     GameObject myPlayerRef;
     [SerializeField]
     bool xPlayer = false;
@@ -42,6 +43,7 @@ public class AL_Bomb : MonoBehaviour {
         }
         if (other.gameObject.GetComponent<AL_breakableWall>())
         {
+            ExplosionSound.Play();
             GameObject game = other.gameObject;
             game.SetActive(false);
             gameObject.SetActive(false);
