@@ -78,6 +78,13 @@ public class DN_PlayerMovement : MonoBehaviour {
     public GameObject Right;
     public GameObject Left;
     public GameObject Trapped;
+    public GameObject XboxIdle;
+    public GameObject XboxDown;
+    public GameObject XboxUp;
+    public GameObject XboxRight;
+    public GameObject XboxLeft;
+    public GameObject XboxTrapped;
+    
     // Use this for initialization
     void Start () {
         //if(TestAnimation)
@@ -230,25 +237,14 @@ public class DN_PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("1" + SoloController);
+      //  Debug.Log("1" + SoloController);
         //Debug.Log("2" + DualController);
         //Debug.Log("3" + ThreeController);
         //Debug.Log("4" + FourController);
         
         if (SoloController && DN_MainMenuMannager.Ps4)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(true);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(false);
-            //}
+           
 
             if (Input.GetAxis("Solo P1 Press Circle") != 0)
             {
@@ -385,18 +381,7 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if (SoloController && DN_MainMenuMannager.Xbox)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(false);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(true);
-            //}
+            
 
             if (Input.GetAxis("Xbox Solo P1 Press B") != 0)
             {
@@ -404,27 +389,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
-                //if (B1 == false)
-                //{
-                //    if (Imprision == false)
-                //    {
-                //        Idle.SetActive(true);
-                //        Up.SetActive(false);
-                //        Down.SetActive(false);
-                //        Right.SetActive(false);
-                //        Left.SetActive(false);
-                //        Trapped.SetActive(false);
-                //    }
-                //    else
-                //    {
-                //        Idle.SetActive(false);
-                //        Up.SetActive(false);
-                //        Down.SetActive(false);
-                //        Right.SetActive(false);
-                //        Left.SetActive(false);
-                //        Trapped.SetActive(true);
-                //    }
-                //}
+                if (B1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = true;
                 XB1 = false;
                 Y1 = false;
@@ -436,27 +421,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(true);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
-                //if (XB1 == false)
-                //{
-                //    if (Imprision == false)
-                //    {
-                //        Idle.SetActive(true);
-                //        Up.SetActive(false);
-                //        Down.SetActive(false);
-                //        Right.SetActive(false);
-                //        Left.SetActive(false);
-                //        Trapped.SetActive(false);
-                //    }
-                //    else
-                //    {
-                //        Idle.SetActive(false);
-                //        Up.SetActive(false);
-                //        Down.SetActive(false);
-                //        Right.SetActive(false);
-                //        Left.SetActive(false);
-                //        Trapped.SetActive(true);
-                //    }
-                //}
+                if (XB1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = true;
                 Y1 = false;
@@ -468,27 +453,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(true);
                 Marker4[0].SetActive(false);
-                //if (Y1 == false)
-                //{
-                //    if (Imprision == false)
-                //    {
-                //        Idle.SetActive(true);
-                //        Up.SetActive(false);
-                //        Down.SetActive(false);
-                //        Right.SetActive(false);
-                //        Left.SetActive(false);
-                //        Trapped.SetActive(false);
-                //    }
-                //    else
-                //    {
-                //        Idle.SetActive(false);
-                //        Up.SetActive(false);
-                //        Down.SetActive(false);
-                //        Right.SetActive(false);
-                //        Left.SetActive(false);
-                //        Trapped.SetActive(true);
-                //    }
-               // }
+                if (Y1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = false;
                 Y1 = true;
@@ -508,18 +493,18 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
             if (SoloKeyBoard)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(true);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(false);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(false);
-            //}
+            for (int i = 0; i < KeyboardKey.Length; i++)
+            {
+                KeyboardKey[i].SetActive(true);
+            }
+            for (int i = 0; i < PS4Buttons.Length; i++)
+            {
+                PS4Buttons[i].SetActive(false);
+            }
+            for (int i = 0; i < XboxButtons.Length; i++)
+            {
+                XboxButtons[i].SetActive(false);
+            }
             if (Input.GetKey(KeyCode.A))
             {
                 
@@ -568,19 +553,8 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
             if(DualController && DN_MainMenuMannager.Xbox)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(false);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(true);
-            //}
-            if(UsbExtender)
+           
+            if (UsbExtender)
             {
                 if (Input.GetAxis("Xbox P1 Press B") != 0)
                 {
@@ -588,6 +562,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
+                    if (B1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = true;
                     XB1 = false;
                     Y1 = false;
@@ -599,6 +594,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(true);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
+                    if (XB1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = false;
                     XB1 = true;
                     Y1 = false;
@@ -610,6 +626,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(true);
                     Marker4[0].SetActive(false);
+                    if (Y1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = false;
                     XB1 = false;
                     Y1 = true;
@@ -621,6 +658,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(true);
+                    if (A1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = false;
                     XB1 = false;
                     Y1 = false;
@@ -632,6 +690,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
+                    if (B2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = true;
                     XB2 = false;
                     Y2 = false;
@@ -643,6 +722,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(true);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
+                    if (XB2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = false;
                     XB2 = true;
                     Y2 = false;
@@ -654,6 +754,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(true);
                     Marker4[1].SetActive(false);
+                    if (Y2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = false;
                     XB2 = false;
                     Y2 = true;
@@ -665,6 +786,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(true);
+                    if (A2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = false;
                     XB2 = false;
                     Y2 = false;
@@ -679,6 +821,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
+                    if (B1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = true;
                     XB1 = false;
                     Y1 = false;
@@ -690,6 +853,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(true);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(false);
+                    if (XB1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = false;
                     XB1 = true;
                     Y1 = false;
@@ -701,6 +885,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(true);
                     Marker4[0].SetActive(false);
+                    if (Y1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = false;
                     XB1 = false;
                     Y1 = true;
@@ -712,6 +917,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[0].SetActive(false);
                     Marker3[0].SetActive(false);
                     Marker4[0].SetActive(true);
+                    if (A1 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B1 = false;
                     XB1 = false;
                     Y1 = false;
@@ -723,6 +949,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
+                    if (B2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = true;
                     XB2 = false;
                     Y2 = false;
@@ -734,6 +981,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(true);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(false);
+                    if (XB2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = false;
                     XB2 = true;
                     Y2 = false;
@@ -745,6 +1013,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(true);
                     Marker4[1].SetActive(false);
+                    if (Y2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = false;
                     XB2 = false;
                     Y2 = true;
@@ -756,6 +1045,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                     Marker2[1].SetActive(false);
                     Marker3[1].SetActive(false);
                     Marker4[1].SetActive(true);
+                    if (A2 == false)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     B2 = false;
                     XB2 = false;
                     Y2 = false;
@@ -765,18 +1075,7 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if(DualController && DN_MainMenuMannager.Ps4)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(true);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(false);
-            //}
+
             if (UsbExtender)
             {
                 if (Input.GetAxis("P1 Press Circle") != 0)
@@ -1299,18 +1598,7 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if(ThreeController && DN_MainMenuMannager.Ps4)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(true);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(false);
-            //}
+            
             if (Input.GetAxis("P1 Press Circle") != 0)
             {
                 Marker1[0].SetActive(true);
@@ -1698,25 +1986,34 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if(ThreeController && DN_MainMenuMannager.Xbox)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(false);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(true);
-            //}
+          
             if (Input.GetAxis("Xbox P1 Press B") != 0)
             {
                 Marker1[0].SetActive(true);
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
-                
+                if (B1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = true;
                 XB1 = false;
                 Y1 = false;
@@ -1728,6 +2025,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(true);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
+                if (XB1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = true;
                 Y1 = false;
@@ -1739,6 +2057,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(true);
                 Marker4[0].SetActive(false);
+                if (Y1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = false;
                 Y1 = true;
@@ -1750,6 +2089,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(true);
+                if (A1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = false;
                 Y1 = false;
@@ -1761,6 +2121,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
+                if (B2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = true;
                 XB2 = false;
                 Y2 = false;
@@ -1772,6 +2153,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(true);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
+                if (XB2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = false;
                 XB2 = true;
                 Y2 = false;
@@ -1783,6 +2185,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(true);
                 Marker4[1].SetActive(false);
+                if (Y2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = false;
                 XB2 = false;
                 Y2 = true;
@@ -1794,6 +2217,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(true);
+                if (A2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = false;
                 XB2 = false;
                 Y2 = false;
@@ -1805,6 +2249,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
+                if (B3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = true;
                 XB3 = false;
                 Y3 = false;
@@ -1816,6 +2281,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(true);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
+                if (XB3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = false;
                 XB3 = true;
                 Y3 = false;
@@ -1827,6 +2313,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(true);
                 Marker4[2].SetActive(false);
+                if (Y3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = false;
                 XB3 = false;
                 Y3 = true;
@@ -1838,6 +2345,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(true);
+                if (A3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = false;
                 XB3 = false;
                 Y3 = false;
@@ -1846,18 +2374,7 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if (FourController && DN_MainMenuMannager.Ps4)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(true);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(false);
-            //}
+           
             if (Input.GetAxis("P1 Press Circle") != 0)
             {
                 Marker1[0].SetActive(true);
@@ -2373,24 +2890,34 @@ public class DN_PlayerMovement : MonoBehaviour {
         }
         if (FourController && DN_MainMenuMannager.Xbox)
         {
-            //for (int i = 0; i < KeyboardKey.Length; i++)
-            //{
-            //    KeyboardKey[i].SetActive(false);
-            //}
-            //for (int i = 0; i < PS4Buttons.Length; i++)
-            //{
-            //    PS4Buttons[i].SetActive(false);
-            //}
-            //for (int i = 0; i < XboxButtons.Length; i++)
-            //{
-            //    XboxButtons[i].SetActive(true);
-            //}
+            
             if (Input.GetAxis("Xbox P1 Press B") != 0)
             {
                 Marker1[0].SetActive(true);
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
+                if (B1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = true;
                 XB1 = false;
                 Y1 = false;
@@ -2402,6 +2929,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(true);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(false);
+                if (XB1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = true;
                 Y1 = false;
@@ -2413,6 +2961,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(true);
                 Marker4[0].SetActive(false);
+                if (Y1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = false;
                 Y1 = true;
@@ -2424,6 +2993,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[0].SetActive(false);
                 Marker3[0].SetActive(false);
                 Marker4[0].SetActive(true);
+                if (A1 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B1 = false;
                 XB1 = false;
                 Y1 = false;
@@ -2435,6 +3025,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
+                if (B2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = true;
                 XB2 = false;
                 Y2 = false;
@@ -2446,6 +3057,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(true);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(false);
+                if (XB2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = false;
                 XB2 = true;
                 Y2 = false;
@@ -2457,6 +3089,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(true);
                 Marker4[1].SetActive(false);
+                if (Y2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = false;
                 XB2 = false;
                 Y2 = true;
@@ -2468,6 +3121,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[1].SetActive(false);
                 Marker3[1].SetActive(false);
                 Marker4[1].SetActive(true);
+                if (A2 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B2 = false;
                 XB2 = false;
                 Y2 = false;
@@ -2479,6 +3153,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
+                if (B3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = true;
                 XB3 = false;
                 Y3 = false;
@@ -2490,6 +3185,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(true);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(false);
+                if (XB3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = false;
                 XB3 = true;
                 Y3 = false;
@@ -2501,6 +3217,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(true);
                 Marker4[2].SetActive(false);
+                if (Y3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = false;
                 XB3 = false;
                 Y3 = true;
@@ -2512,6 +3249,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[2].SetActive(false);
                 Marker3[2].SetActive(false);
                 Marker4[2].SetActive(true);
+                if (A3 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B3 = false;
                 XB3 = false;
                 Y3 = false;
@@ -2523,6 +3281,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(false);
                 Marker3[3].SetActive(false);
                 Marker4[3].SetActive(false);
+                if (B4 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B4 = true;
                 XB4 = false;
                 Y4 = false;
@@ -2534,6 +3313,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(true);
                 Marker3[3].SetActive(false);
                 Marker4[3].SetActive(false);
+                if (XB4 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B4 = false;
                 XB4 = true;
                 Y4 = false;
@@ -2545,6 +3345,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(false);
                 Marker3[3].SetActive(true);
                 Marker4[3].SetActive(false);
+                if (Y4 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B4 = false;
                 XB4 = false;
                 Y4 = true;
@@ -2556,6 +3377,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                 Marker2[3].SetActive(false);
                 Marker3[3].SetActive(false);
                 Marker4[3].SetActive(true);
+                if (A4 == false)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 B4 = false;
                 XB4 = false;
                 Y4 = false;
@@ -3059,6 +3901,29 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && XB1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+
+
+                }
                 if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && XB1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -3068,6 +3933,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3082,6 +3953,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3096,6 +3973,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3110,7 +3993,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3140,6 +4028,29 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Left.SetActive(false);
                         Trapped.SetActive(true);
                     }
+
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+
 
                 }
                 if (Input.GetAxis("Solo P1 Press Up Arrow") > 0 && StopTop == false && O1 && DN_MainMenuMannager.Ps4)
@@ -3172,7 +4083,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3208,6 +4124,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3244,6 +4166,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3280,7 +4208,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3310,6 +4243,29 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Left.SetActive(false);
                         Trapped.SetActive(true);
                     }
+
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && Y1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+
 
                 }
                 if (Input.GetAxis("Solo P1 Press Up Arrow") > 0 && StopTop == false && Triangle1 && DN_MainMenuMannager.Ps4)
@@ -3342,6 +4298,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3378,6 +4340,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3413,6 +4381,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3449,7 +4423,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3479,6 +4458,29 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Left.SetActive(false);
                         Trapped.SetActive(true);
                     }
+
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+
 
                 }
                 //if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0)
@@ -3526,7 +4528,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3567,6 +4574,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -3608,6 +4621,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -3650,7 +4669,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -3687,6 +4711,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                             Right.SetActive(false);
                             Left.SetActive(false);
                             Trapped.SetActive(true);
+                        }
+                    }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
                         }
                     }
                     if (Input.GetAxis("P1 Press Left Arrow") > 0 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
@@ -3858,6 +4903,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                             Trapped.SetActive(true);
                         }
                     }
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     if (Input.GetAxis("Solo P1 Press Left Arrow") > 0 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
                     {
                        
@@ -3953,6 +5019,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(true);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -3971,6 +5043,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(true);
+                            XboxTrapped.SetActive(false);
                         }
 
                     }
@@ -3983,6 +5061,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(true);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -3997,7 +5081,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(true);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -4038,6 +5127,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                             Trapped.SetActive(true);
                         }
                     }
+                   
                     if (Input.GetAxis("P1 Press Left Arrow") >0 && StopLeft == false && O1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -4124,6 +5214,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                         }
                     }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && B2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.UP)
@@ -4133,6 +5244,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(true);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -4148,6 +5265,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(true);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -4163,6 +5286,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(true);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -4177,7 +5306,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(true);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -4208,6 +5342,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                             Trapped.SetActive(true);
                         }
                     }
+         
                     if (Input.GetAxis("Solo P1 Press Left Arrow") >0 && StopLeft == false && O1 && DN_MainMenuMannager.Ps4)
                     {
 
@@ -4294,6 +5429,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                         }
                     }
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && B2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.UP)
@@ -4303,6 +5459,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(true);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -4318,6 +5480,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(true);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -4333,6 +5501,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(true);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -4347,7 +5521,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(true);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -4473,6 +5652,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                         }
                     }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Y1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && Y1 && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.UP)
@@ -4482,6 +5682,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(true);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -4496,6 +5702,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(true);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -4511,6 +5723,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(true);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -4525,7 +5743,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(true);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -4642,6 +5865,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                         }
                     }
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Y1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && Y1 && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.UP)
@@ -4651,6 +5895,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(true);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -4665,6 +5915,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(true);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -4680,6 +5936,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(true);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -4694,7 +5956,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(true);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -4820,6 +6087,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                         }
                     }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && A2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
+                        }
+                    }
                     if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && A1 && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.UP)
@@ -4829,6 +6117,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(true);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -4843,6 +6137,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(true);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.left;
@@ -4858,6 +6158,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(true);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -4872,7 +6178,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                         }
                         else
                         {
-
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(true);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
                             canMove = false;
                             moving = true;
                             pos += Vector3.right;
@@ -4987,6 +6298,27 @@ public class DN_PlayerMovement : MonoBehaviour {
                             moving = true;
                             pos += Vector3.right;
 
+                        }
+                    }
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && A2 && DN_MainMenuMannager.Xbox)
+                    {
+                        if (Imprision == false)
+                        {
+                            XboxIdle.SetActive(true);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(false);
+                        }
+                        else
+                        {
+                            XboxIdle.SetActive(false);
+                            XboxUp.SetActive(false);
+                            XboxDown.SetActive(false);
+                            XboxRight.SetActive(false);
+                            XboxLeft.SetActive(false);
+                            XboxTrapped.SetActive(true);
                         }
                     }
                     if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && A1 && DN_MainMenuMannager.Xbox)
@@ -5164,6 +6496,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox && Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && XB1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -5173,6 +6526,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -5187,6 +6546,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -5202,6 +6567,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -5216,7 +6587,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -5338,6 +6714,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && B2 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && B3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -5347,6 +6744,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -5361,6 +6764,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -5376,6 +6785,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -5390,7 +6805,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -5427,6 +6847,7 @@ public class DN_PlayerMovement : MonoBehaviour {
                         Trapped.SetActive(true);
                     }
                 }
+
                 if (Input.GetAxis("P1 Press Left Arrow") >0 && StopLeft == false && Triangle1)
                 {
 
@@ -5512,6 +6933,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Y1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Y3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && Y1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -5521,6 +6963,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -5535,6 +6983,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -5550,6 +7004,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -5564,7 +7024,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -5686,6 +7151,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && A2 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && A3 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && A1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -5695,6 +7181,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -5709,6 +7201,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -5724,6 +7222,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -5738,7 +7242,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -5861,6 +7370,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && XB1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -5870,7 +7400,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -5886,6 +7421,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -5900,7 +7441,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -5916,6 +7462,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -6040,6 +7592,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && XB4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -6049,6 +7622,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -6064,6 +7643,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -6078,7 +7663,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -6094,6 +7684,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -6217,6 +7813,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Y1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Y3 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Y4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && Y1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -6226,6 +7843,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -6241,6 +7864,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -6255,7 +7884,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -6271,6 +7905,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;
@@ -6394,6 +8034,27 @@ public class DN_PlayerMovement : MonoBehaviour {
 
                     }
                 }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && A2 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && A3 && DN_MainMenuMannager.Xbox || Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && A4 && DN_MainMenuMannager.Xbox)
+                {
+                    if (Imprision == false)
+                    {
+                        XboxIdle.SetActive(true);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
+                    }
+                    else
+                    {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(true);
+                    }
+                }
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && A1 && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -6403,6 +8064,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(true);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -6418,6 +8085,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(true);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -6432,7 +8105,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
-
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(true);
+                        XboxLeft.SetActive(false);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.right;
@@ -6448,6 +8126,12 @@ public class DN_PlayerMovement : MonoBehaviour {
                     }
                     else
                     {
+                        XboxIdle.SetActive(false);
+                        XboxUp.SetActive(false);
+                        XboxDown.SetActive(false);
+                        XboxRight.SetActive(false);
+                        XboxLeft.SetActive(true);
+                        XboxTrapped.SetActive(false);
                         canMove = false;
                         moving = true;
                         pos += Vector3.left;

@@ -373,7 +373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &44175568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10863,15 +10863,15 @@ RectTransform:
   m_GameObject: {fileID: 1312838547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.093590096, y: 0.093590096, z: 0.093590096}
+  m_LocalScale: {x: 0.09359015, y: 0.09359012, z: 0.09359012}
   m_Children: []
   m_Father: {fileID: 273249953}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0}
-  m_SizeDelta: {x: 1068.5, y: 1068.5}
+  m_AnchoredPosition: {x: 0.45, y: 0}
+  m_SizeDelta: {x: 983.28, y: 984.86}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1312838549
 MonoBehaviour:
@@ -10885,7 +10885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -10893,11 +10893,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 16
+    m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
+    m_FontSize: 84
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 0
+    m_MinSize: 8
     m_MaxSize: 110
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -10905,13 +10905,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level ?: Spaceship
+  m_Text: 'Level 1: Mothership
 
 
-    Objective: Survive
+    Objective: Destroy the enemy space ship.
 
 
-    by: Dang Nguyen'
+    avoid: hostile projectile.
+
+'
 --- !u!222 &1312838550
 CanvasRenderer:
   m_ObjectHideFlags: 0

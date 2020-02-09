@@ -330,7 +330,7 @@ public class DN_DoorTransition : MonoBehaviour {
       
         if (MenuScript.XboxBeginNow)
         {
-
+            DN_MainMenuMannager.Xbox = true;
             MenuScript.KeyBoard.SetActive(false);
             MenuScript.Ps4Controller.SetActive(false);
             MenuScript.XboxController.SetActive(false);

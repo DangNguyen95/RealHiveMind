@@ -17257,9 +17257,9 @@ MonoBehaviour:
   backButton: {fileID: 972042549}
   KeyBoard: {fileID: 1769036815}
   Ps4Controller: {fileID: 1769036815}
-  XboxController: {fileID: 1769036815}
+  XboxController: {fileID: 1329440509}
   Ps4ControllerSolo: {fileID: 1769036815}
-  XboxControllerSolo: {fileID: 1769036815}
+  XboxControllerSolo: {fileID: 1329440509}
   StartNow: 0
   CreditNow: 0
   HowToPlayNow: 0
@@ -23211,7 +23211,7 @@ Prefab:
     - target: {fileID: 114959951859390468, guid: 35181d93901a49145a26e1093e193be0,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 71
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 114959951859390468, guid: 35181d93901a49145a26e1093e193be0,
         type: 2}
@@ -23316,6 +23316,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1329440506}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1 &1329440509 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384438253149118, guid: 35181d93901a49145a26e1093e193be0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1329440506}
 --- !u!1 &1329974216
 GameObject:
   m_ObjectHideFlags: 0
@@ -29592,7 +29597,7 @@ Prefab:
     - target: {fileID: 224164731515398684, guid: 35181d93901a49145a26e1093e193be0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 63.99994
+      value: -66.00003
       objectReference: {fileID: 0}
     - target: {fileID: 224164731515398684, guid: 35181d93901a49145a26e1093e193be0,
         type: 2}
@@ -29696,7 +29701,7 @@ Prefab:
     - target: {fileID: 114959951859390468, guid: 35181d93901a49145a26e1093e193be0,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 71
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 114959951859390468, guid: 35181d93901a49145a26e1093e193be0,
         type: 2}

@@ -98,6 +98,7 @@ public class DN_Mech : MonoBehaviour {
     public DN_BotOut OBotOut;
     public DN_BotOut TriangleBotOut;
     public DN_BotOut SquareBotOut;
+   
     // Use this for initialization
     void Start()
     {
@@ -146,6 +147,7 @@ public class DN_Mech : MonoBehaviour {
         Debug.Log(SoloController);
         if (TopRight)
         {
+        
             if (StopActivating)
             {
                 TopRightCube2.SetActive(true);
@@ -162,6 +164,7 @@ public class DN_Mech : MonoBehaviour {
         }
         if(TopLeft)
         {
+            
             if (StopActivating)
             {
                 TopLeftCube2.SetActive(true);
@@ -179,7 +182,8 @@ public class DN_Mech : MonoBehaviour {
         }
         if(BotRight)
         {
-            if(StopActivating)
+            
+            if (StopActivating)
             {
                 BotRightCube2.SetActive(true);
                
@@ -195,7 +199,8 @@ public class DN_Mech : MonoBehaviour {
         }
         if(BotLeft)
         {
-            if(StopActivating)
+           
+            if (StopActivating)
             {
                 BotLeftCube2.SetActive(true);
             
@@ -298,7 +303,7 @@ public class DN_Mech : MonoBehaviour {
                 }
             }
         }
-        if (SoloController && DN_MainMenuMannager.Xbox)
+        if (SoloController && DN_MainMenuMannager.Xbox && TopLeft && TopRight && BotLeft && BotRight)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -422,7 +427,7 @@ public class DN_Mech : MonoBehaviour {
                 }
             }
         }
-        if (DualController && DN_MainMenuMannager.Xbox)
+        if (DualController && DN_MainMenuMannager.Xbox && TopLeft && TopRight && BotLeft && BotRight)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -964,7 +969,7 @@ public class DN_Mech : MonoBehaviour {
                 X3 = true;
             }
         }
-        if (ThreeController && DN_MainMenuMannager.Xbox)
+        if (ThreeController && DN_MainMenuMannager.Xbox && TopLeft && TopRight && BotLeft && BotRight)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -1302,7 +1307,7 @@ public class DN_Mech : MonoBehaviour {
                 X4 = true;
             }
         }
-        if (FourController && DN_MainMenuMannager.Xbox)
+        if (FourController && DN_MainMenuMannager.Xbox && TopLeft && TopRight && BotLeft && BotRight)
         {
             for (int i = 0; i < KeyboardKey.Length; i++)
             {
@@ -1954,20 +1959,7 @@ public class DN_Mech : MonoBehaviour {
 
                 //    }
                 //}
-                //if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && XB1 && DN_MainMenuMannager.Xbox)
-                //{
-                //    if (dir != DIRECTION.UP)
-                //    {
-                //        dir = DIRECTION.UP;
-                //        buttonCooldown = cooldownforbutton;
-                //    }
-                //    else
-                //    {
-                //        canMove = false;
-                //        moving = true;
-                //        pos += Vector3.forward;
-                //    }
-                //}
+              
                 //if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 1 && StopBot == false && XB1 && DN_MainMenuMannager.Xbox)
                 //{
                 //    if (dir != DIRECTION.DOWN)
@@ -2012,6 +2004,32 @@ public class DN_Mech : MonoBehaviour {
 
                 //    }
                 //}
+            }
+            if(P1 && B1)
+            {
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false  && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(true);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
             }
             if (P2 && Square1)
             {
@@ -2145,6 +2163,32 @@ public class DN_Mech : MonoBehaviour {
 
                 //        }
                 //    }
+            }
+            if (P2 && XB1)
+            {
+                if (Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 1 && StopRight == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        dir = DIRECTION.RIGHT;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(true);
+                        MechMoveUND.SetActive(false);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
+                    }
+                }
             }
             if (P3 && X1)
                 {
@@ -2280,6 +2324,32 @@ public class DN_Mech : MonoBehaviour {
                     //    }
                     //}
                 }
+            if (P3 && A1)
+            {
+                if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 1 && StopLeft == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        dir = DIRECTION.LEFT;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(true);
+                        MechMoveUND.SetActive(false);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
+                }
+            }
             if (P4 && Triangle1)
             {
                 //if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && X1 && DN_MainMenuMannager.Ps4)
@@ -2412,18 +2482,44 @@ public class DN_Mech : MonoBehaviour {
 
                     //    }
                 }
+            if (P4 && Y1)
+            {
+                if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 1 && StopBot == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        dir = DIRECTION.DOWN;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(true);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
             }
+        }
             }
             //}
     private void TwoPlayerMove1()
     {
-        if (P1 && O1)
+        if (P1)
         {
             if (buttonCooldown <= 0)
             {
                 if (UsbExtender)
                 {
-                    if (Input.GetAxis("P1 Press Up Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -2446,7 +2542,7 @@ public class DN_Mech : MonoBehaviour {
 
                         //}
 
-                        if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false /*&& Square1*/ && DN_MainMenuMannager.Ps4)
+                        if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && O1 && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.UP)
@@ -2465,6 +2561,31 @@ public class DN_Mech : MonoBehaviour {
                             pos += Vector3.forward;
                         }
                     }
+                  
+                        if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
+                        {
+                            MechIdle.SetActive(true);
+                            MechMoveRNL.SetActive(false);
+                            MechMoveUND.SetActive(false);
+                        }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.UP)
+                        {
+                            dir = DIRECTION.UP;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(false);
+                            MechMoveUND.SetActive(true);
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.forward;
+                        }
+                    }
+     
                     //else if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false && Square2 && DN_MainMenuMannager.Ps4)
                     //{
 
@@ -2575,13 +2696,13 @@ public class DN_Mech : MonoBehaviour {
                     //    }
 
                     //}
-                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                         MechMoveUND.SetActive(false);
                     }
-                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false /*&& Square1*/ && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && O1/*&& Square1*/ && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.UP)
@@ -2595,6 +2716,29 @@ public class DN_Mech : MonoBehaviour {
                         else
                         {
                           
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.forward;
+                        }
+                    }
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.UP)
+                        {
+                            dir = DIRECTION.UP;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(false);
+                            MechMoveUND.SetActive(true);
                             canMove = false;
                             moving = true;
                             pos += Vector3.forward;
@@ -2699,7 +2843,7 @@ public class DN_Mech : MonoBehaviour {
     }
     private void TwoPlayerMove2()
     {
-        if (P2 && Square2)
+        if (P2 )
         {
             if (buttonCooldown <= 0)
             {
@@ -2751,13 +2895,13 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.back;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Right Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                         MechMoveUND.SetActive(false);
                     }
-                    if (Input.GetAxis("P2 Press Right Arrow") == 1 && StopRight == false  /*&& O2*/ && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Right Arrow") == 1 && StopRight == false && Square2  /*&& O2*/ && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.RIGHT)
@@ -2777,6 +2921,30 @@ public class DN_Mech : MonoBehaviour {
 
                         }
                     }
+                    if (Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P2 Press Right Dpad") == 1 && XB2 && StopRight == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.RIGHT)
+                        {
+                            dir = DIRECTION.RIGHT;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(true);
+                            MechMoveUND.SetActive(false);
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.right;
+                        }
+                    }
+
                     //if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
                     //{
                     //    if (dir != DIRECTION.UP)
@@ -2886,13 +3054,13 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.back;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Right Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                         MechMoveUND.SetActive(false);
                     }
-                    if (Input.GetAxis("P2 Press Right Arrow") == 1 && StopRight == false /*&& O2*/ && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Right Arrow") == 1 && StopRight == false && Square2 /*&& O2*/ && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.RIGHT)
@@ -2910,6 +3078,29 @@ public class DN_Mech : MonoBehaviour {
                             moving = true;
                             pos += Vector3.right;
 
+                        }
+                    }
+                    if (Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P2 Press Right Dpad") == 1 && XB2 && StopRight == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.RIGHT)
+                        {
+                            dir = DIRECTION.RIGHT;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(true);
+                            MechMoveUND.SetActive(false);
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.right;
                         }
                     }
                     //if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
@@ -2978,20 +3169,20 @@ public class DN_Mech : MonoBehaviour {
     }
     private void TwoPlayerMove3()
     {
-        if (P3 && X1)
+        if (P3)
         {
             if (buttonCooldown <= 0)
             {
                 if (UsbExtender)
                 {
-                    if (Input.GetAxis("P1 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Left Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                         MechMoveUND.SetActive(false);
                     }
 
-                    if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false /*&& Triangle1*/ && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && X1 /*&& Triangle1*/ && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.LEFT)
@@ -3010,6 +3201,29 @@ public class DN_Mech : MonoBehaviour {
                             pos += Vector3.left;
                         }
 
+                    }
+                    if (Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && A1 && StopLeft == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.LEFT)
+                        {
+                            dir = DIRECTION.LEFT;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(true);
+                            MechMoveUND.SetActive(false);
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.left;
+                        }
                     }
                     //else if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && Triangle1 && DN_MainMenuMannager.Ps4)
                     //{
@@ -3119,13 +3333,13 @@ public class DN_Mech : MonoBehaviour {
                 }
                 else
                 {
-                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                         MechMoveUND.SetActive(false);
                     }
-                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false  /*&& Triangle1 */&& DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 1 && StopLeft == false && X1 /*&& Triangle1 */&& DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.LEFT)
@@ -3144,6 +3358,29 @@ public class DN_Mech : MonoBehaviour {
                             pos += Vector3.left;
                         }
 
+                    }
+                    if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 1 && A1 && StopLeft == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.LEFT)
+                        {
+                            dir = DIRECTION.LEFT;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(true);
+                            MechMoveUND.SetActive(false);
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.left;
+                        }
                     }
                     //else if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false && Triangle1 && DN_MainMenuMannager.Ps4)
                     //{
@@ -3258,7 +3495,7 @@ public class DN_Mech : MonoBehaviour {
 
     private void TwoPlayerMove4()
     {
-        if (P4 && Triangle2)
+        if (P4 )
         {
             if (buttonCooldown <= 0)
             {
@@ -3294,13 +3531,13 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.forward;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                         MechMoveUND.SetActive(false);
                     }
-                    if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false /*&& X2*/ && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false &&Triangle2 /*&& X2*/ && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.DOWN)
@@ -3314,6 +3551,29 @@ public class DN_Mech : MonoBehaviour {
                         else
                         {
                           
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.back;
+                        }
+                    }
+                    if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.DOWN)
+                        {
+                            dir = DIRECTION.DOWN;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(false);
+                            MechMoveUND.SetActive(true);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -3429,13 +3689,13 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.forward;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                         MechMoveUND.SetActive(false);
                     }
-                    if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false /*&& X2*/ && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false && Triangle2 /*&& X2*/ && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.DOWN)
@@ -3449,6 +3709,29 @@ public class DN_Mech : MonoBehaviour {
                         else
                         {
                           
+                            canMove = false;
+                            moving = true;
+                            pos += Vector3.back;
+                        }
+                    }
+                    if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
+                    {
+                        if (dir != DIRECTION.DOWN)
+                        {
+                            dir = DIRECTION.DOWN;
+                            buttonCooldown = cooldownforbutton;
+                        }
+                        else
+                        {
+                            MechIdle.SetActive(false);
+                            MechMoveRNL.SetActive(false);
+                            MechMoveUND.SetActive(true);
                             canMove = false;
                             moving = true;
                             pos += Vector3.back;
@@ -3536,7 +3819,7 @@ public class DN_Mech : MonoBehaviour {
     }
     private void ThreePlayerMove1()
     {
-        if (P1 && O1)
+        if (P1)
         {
             if (buttonCooldown <= 0)
             {
@@ -3556,14 +3839,14 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P1 Press Up Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
 
-                if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false /*&& Square1 &&*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && O1 /*&& Square1 &&*/ && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
                     {
@@ -3576,6 +3859,29 @@ public class DN_Mech : MonoBehaviour {
                     else
                     {
                       
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(true);
                         canMove = false;
                         moving = true;
                         pos += Vector3.forward;
@@ -3677,7 +3983,7 @@ public class DN_Mech : MonoBehaviour {
     }
     private void ThreePlayerMove2()
     {
-        if (P2 && Square3)
+        if (P2 )
         {
             if (buttonCooldown <= 0)
             {
@@ -3726,13 +4032,13 @@ public class DN_Mech : MonoBehaviour {
                 //        pos += Vector3.back;
                 //    }
                 //}
-                if (Input.GetAxis("P3 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P3 Press Right Arrow") == 0 && Square3 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
-                if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false /*&& O3*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false && Square3 /*&& O3*/ && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.RIGHT)
@@ -3750,6 +4056,29 @@ public class DN_Mech : MonoBehaviour {
                         moving = true;
                         pos += Vector3.right;
 
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && XB3 && StopRight == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        dir = DIRECTION.RIGHT;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(true);
+                        MechMoveUND.SetActive(false);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
                     }
                 }
                 //if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
@@ -3816,17 +4145,17 @@ public class DN_Mech : MonoBehaviour {
     }
     private void ThreePlayerMove3()
     {
-        if (P3 && X1)
+        if (P3)
         {
             if (buttonCooldown <= 0)
             {
-                if (Input.GetAxis("P1 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Left Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
-                if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false /*&& Triangle1*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && X1 /*&& Triangle1*/ && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.LEFT)
@@ -3845,6 +4174,29 @@ public class DN_Mech : MonoBehaviour {
                         pos += Vector3.left;
                     }
 
+                }
+                if (Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && A1 && StopLeft == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        dir = DIRECTION.LEFT;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(true);
+                        MechMoveUND.SetActive(false);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
                 }
                 //else if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && Triangle1)
                 //{
@@ -3956,7 +4308,7 @@ public class DN_Mech : MonoBehaviour {
     }
     private void ThreePlayerMove4()
     {
-        if (P4 && Triangle2)
+        if (P4 )
         {
             if (buttonCooldown <= 0)
             {
@@ -3990,13 +4342,13 @@ public class DN_Mech : MonoBehaviour {
                 //        pos += Vector3.forward;
                 //    }
                 //}
-                if (Input.GetAxis("P2 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
-                if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false /*&& X2*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false && Triangle2  /*&& X2*/ && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.DOWN)
@@ -4010,6 +4362,29 @@ public class DN_Mech : MonoBehaviour {
                     else
                     {
                       
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        dir = DIRECTION.DOWN;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(true);
                         canMove = false;
                         moving = true;
                         pos += Vector3.back;
@@ -4096,17 +4471,17 @@ public class DN_Mech : MonoBehaviour {
     }
     private void FourPlayerMove1()
     {
-        if (P1 && O1)
+        if (P1)
         {
             if (buttonCooldown <= 0)
             {
-                if (Input.GetAxis("P1 Press Up Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
-                if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false /*&& Square1*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && O1/*&& Square1*/ && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
                     {
@@ -4124,6 +4499,29 @@ public class DN_Mech : MonoBehaviour {
                         pos += Vector3.forward;
                     }
 
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.UP)
+                    {
+                        dir = DIRECTION.UP;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(true);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.forward;
+                    }
                 }
                 //else if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false && Square2)
                 //{
@@ -4239,7 +4637,7 @@ public class DN_Mech : MonoBehaviour {
     }
     private void FourPlayerMove2()
     {
-        if (P2 && Square3)
+        if (P2)
         {
             if (buttonCooldown <= 0)
             {
@@ -4290,13 +4688,13 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P3 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P3 Press Right Arrow") == 0 && Square3 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
-                if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false /*&& O3*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false && Square3 && /*&& O3*/ DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.RIGHT)
@@ -4314,6 +4712,29 @@ public class DN_Mech : MonoBehaviour {
                         moving = true;
                         pos += Vector3.right;
 
+                    }
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && XB3 && StopRight == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.RIGHT)
+                    {
+                        dir = DIRECTION.RIGHT;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(true);
+                        MechMoveUND.SetActive(false);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.right;
                     }
                 }
                 //if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && StopTop == false && B1 && DN_MainMenuMannager.Xbox)
@@ -4381,7 +4802,7 @@ public class DN_Mech : MonoBehaviour {
     }
     private void FourPlayerMove3()
     {
-        if (P3 && X4)
+        if (P3)
         {
             if (buttonCooldown <= 0)
             {
@@ -4416,13 +4837,13 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P4 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P4 Press Left Arrow") == 0 && X4 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
-                if (Input.GetAxis("P4 Press Left Arrow") == 1 && StopLeft == false /*&& Triangle4*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P4 Press Left Arrow") == 1 && StopLeft == false && X4 /*&& Triangle4*/ && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.LEFT)
@@ -4441,6 +4862,29 @@ public class DN_Mech : MonoBehaviour {
                         pos += Vector3.left;
                     }
 
+                }
+                if (Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && A4 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P4 Press Left Dpad") == 1 && A4 && StopLeft == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.LEFT)
+                    {
+                        dir = DIRECTION.LEFT;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(true);
+                        MechMoveUND.SetActive(false);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.left;
+                    }
                 }
                 //else if (Input.GetAxis("P3 Press Right Arrow") == 1 && StopRight == false && Triangle3)
                 //{
@@ -4524,7 +4968,7 @@ public class DN_Mech : MonoBehaviour {
     }
     private void FourPlayerMove4()
     {
-        if (P4 && Triangle2)
+        if (P4 )
         {
             if (buttonCooldown <= 0)
             {
@@ -4543,13 +4987,13 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P2 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
                     MechMoveUND.SetActive(false);
                 }
-                if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false /*&& X2*/ && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P2 Press Down Arrow") == 1 && StopBot == false && Triangle2 /*&& X2*/ && DN_MainMenuMannager.Ps4)
                 {
 
                     if (dir != DIRECTION.DOWN)
@@ -4568,6 +5012,29 @@ public class DN_Mech : MonoBehaviour {
                         pos += Vector3.back;
                     }
 
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
+                {
+                    if (dir != DIRECTION.DOWN)
+                    {
+                        dir = DIRECTION.DOWN;
+                        buttonCooldown = cooldownforbutton;
+                    }
+                    else
+                    {
+                        MechIdle.SetActive(false);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(true);
+                        canMove = false;
+                        moving = true;
+                        pos += Vector3.back;
+                    }
                 }
                 //else if (Input.GetAxis("P4 Press Left Arrow") == 1 && StopLeft == false && X4)
                 //{
