@@ -36,6 +36,7 @@ public class DN_BossShip : MonoBehaviour {
     public GameObject BossCore;
     public GameObject[] IndiTurret;
     public GameObject[] Camera;
+    public bool DoitOnce;
     // Use this for initialization
     void Start () {
         PhaseOne = true;
@@ -54,11 +55,15 @@ public class DN_BossShip : MonoBehaviour {
         MoveTimer -= Time.deltaTime;
         if (BossCurrenthealth <= 0)
         {
-            DN_GameManager.XHome = true;
-            DN_GameManager.SquareHome = true;
-            DN_GameManager.OHome = true;
-            DN_GameManager.TriangleHome = true;
-            BossCurrenthealth = 0;
+            if (DoitOnce == false)
+            {
+                DN_GameManager.XHome = true;
+                DN_GameManager.SquareHome = true;
+                DN_GameManager.OHome = true;
+                DN_GameManager.TriangleHome = true;
+                BossCurrenthealth = 0;
+                DoitOnce = true;
+            }
         }
         if (MoveTimer <= 0)
         {

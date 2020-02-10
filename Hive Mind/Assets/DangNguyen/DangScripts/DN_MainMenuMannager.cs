@@ -786,6 +786,10 @@ public class DN_MainMenuMannager : MonoBehaviour {
             {
                 sceneIndex = 9;
             }
+            if (LevelsIndicator == 9)
+            {
+                sceneIndex = 10;
+            }
             //if (LevelsIndicator == 9)
             //{
             //    sceneIndex = 10;

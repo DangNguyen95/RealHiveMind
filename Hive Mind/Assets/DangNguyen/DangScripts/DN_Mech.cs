@@ -1885,13 +1885,13 @@ public class DN_Mech : MonoBehaviour {
         {
             if (P1 && O1)
             {
-                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0  && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
                        MechMoveUND.SetActive(false);
                 }
-
+               
                 if (Input.GetAxis("Solo P1 Press Up Arrow") == 1 && StopTop == false /*&& Square1*/ && DN_MainMenuMannager.Ps4)
                 {
                     if (dir != DIRECTION.UP)
@@ -2007,7 +2007,8 @@ public class DN_Mech : MonoBehaviour {
             }
             if(P1 && B1)
             {
-                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && DN_MainMenuMannager.Xbox)
+         
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -2121,7 +2122,7 @@ public class DN_Mech : MonoBehaviour {
                 //        pos += Vector3.left;
                 //    }
                 //}
-                if (Input.GetAxis("Solo P1 Press Right Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -2166,7 +2167,7 @@ public class DN_Mech : MonoBehaviour {
             }
             if (P2 && XB1)
             {
-                if (Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && DN_MainMenuMannager.Xbox)
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -2251,7 +2252,7 @@ public class DN_Mech : MonoBehaviour {
                 //        pos += Vector3.back;
                 //    }
                 //}
-                if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -2326,7 +2327,7 @@ public class DN_Mech : MonoBehaviour {
                 }
             if (P3 && A1)
             {
-                if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && DN_MainMenuMannager.Xbox)
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -2381,7 +2382,7 @@ public class DN_Mech : MonoBehaviour {
                 //        pos += Vector3.forward;
                 //    }
                 //}
-                if (Input.GetAxis("Solo P1 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("Solo P1 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("Solo P1 Press Down Arrow") == 0 && DN_MainMenuMannager.Ps4)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -2484,7 +2485,7 @@ public class DN_Mech : MonoBehaviour {
                 }
             if (P4 && Y1)
             {
-                if (Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && DN_MainMenuMannager.Xbox)
+                if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Down Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -2519,7 +2520,13 @@ public class DN_Mech : MonoBehaviour {
             {
                 if (UsbExtender)
                 {
-                    if (Input.GetAxis("P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -2528,21 +2535,21 @@ public class DN_Mech : MonoBehaviour {
                     //if (Input.GetAxis("P1 Press Left Arrow") == 1 && StopLeft == false && Square1 && DN_MainMenuMannager.Ps4)
                     //{
 
-                        //    if (dir != DIRECTION.LEFT)
-                        //    {
-                        //        buttonCooldown = cooldownforbutton;
-                        //        dir = DIRECTION.LEFT;
-                        //    }
-                        //    else
-                        //    {
-                        //        canMove = false;
-                        //        moving = true;
-                        //        pos += Vector3.left;
-                        //    }
+                    //    if (dir != DIRECTION.LEFT)
+                    //    {
+                    //        buttonCooldown = cooldownforbutton;
+                    //        dir = DIRECTION.LEFT;
+                    //    }
+                    //    else
+                    //    {
+                    //        canMove = false;
+                    //        moving = true;
+                    //        pos += Vector3.left;
+                    //    }
 
-                        //}
+                    //}
 
-                        if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && O1 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Up Arrow") == 1 && StopTop == false && O1 && DN_MainMenuMannager.Ps4)
                     {
 
                         if (dir != DIRECTION.UP)
@@ -2562,12 +2569,7 @@ public class DN_Mech : MonoBehaviour {
                         }
                     }
                   
-                        if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
-                        {
-                            MechIdle.SetActive(true);
-                            MechMoveRNL.SetActive(false);
-                            MechMoveUND.SetActive(false);
-                        }
+                        
                     if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.UP)
@@ -2696,7 +2698,14 @@ public class DN_Mech : MonoBehaviour {
                     //    }
 
                     //}
-                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -2721,12 +2730,7 @@ public class DN_Mech : MonoBehaviour {
                             pos += Vector3.forward;
                         }
                     }
-                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
-                    {
-                        MechIdle.SetActive(true);
-                        MechMoveRNL.SetActive(false);
-                        MechMoveUND.SetActive(false);
-                    }
+                   
                     if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.UP)
@@ -2895,7 +2899,13 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.back;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Right Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -2921,12 +2931,7 @@ public class DN_Mech : MonoBehaviour {
 
                         }
                     }
-                    if (Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
-                    {
-                        MechIdle.SetActive(true);
-                        MechMoveRNL.SetActive(false);
-                        MechMoveUND.SetActive(false);
-                    }
+               
                     if (Input.GetAxis("Xbox P2 Press Right Dpad") == 1 && XB2 && StopRight == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.RIGHT)
@@ -3054,7 +3059,14 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.back;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Right Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Square2 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -3080,12 +3092,7 @@ public class DN_Mech : MonoBehaviour {
 
                         }
                     }
-                    if (Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && XB2 && DN_MainMenuMannager.Xbox)
-                    {
-                        MechIdle.SetActive(true);
-                        MechMoveRNL.SetActive(false);
-                        MechMoveUND.SetActive(false);
-                    }
+                   
                     if (Input.GetAxis("Xbox P2 Press Right Dpad") == 1 && XB2 && StopRight == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.RIGHT)
@@ -3175,7 +3182,13 @@ public class DN_Mech : MonoBehaviour {
             {
                 if (UsbExtender)
                 {
-                    if (Input.GetAxis("P1 Press Left Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -3202,12 +3215,7 @@ public class DN_Mech : MonoBehaviour {
                         }
 
                     }
-                    if (Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
-                    {
-                        MechIdle.SetActive(true);
-                        MechMoveRNL.SetActive(false);
-                        MechMoveUND.SetActive(false);
-                    }
+                  
                     if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && A1 && StopLeft == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.LEFT)
@@ -3333,7 +3341,14 @@ public class DN_Mech : MonoBehaviour {
                 }
                 else
                 {
-                    if (Input.GetAxis("Solo P1 Press Left Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -3359,12 +3374,7 @@ public class DN_Mech : MonoBehaviour {
                         }
 
                     }
-                    if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
-                    {
-                        MechIdle.SetActive(true);
-                        MechMoveRNL.SetActive(false);
-                        MechMoveUND.SetActive(false);
-                    }
+                   
                     if (Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 1 && A1 && StopLeft == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.LEFT)
@@ -3531,7 +3541,13 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.forward;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+                    if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -3556,12 +3572,7 @@ public class DN_Mech : MonoBehaviour {
                             pos += Vector3.back;
                         }
                     }
-                    if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
-                    {
-                        MechIdle.SetActive(true);
-                        MechMoveRNL.SetActive(false);
-                        MechMoveUND.SetActive(false);
-                    }
+                 
                     if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.DOWN)
@@ -3689,7 +3700,14 @@ public class DN_Mech : MonoBehaviour {
                     //        pos += Vector3.forward;
                     //    }
                     //}
-                    if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                    if (Input.GetAxis("Solo P1 Press Up Arrow") == 0 && Input.GetAxis("P2 Press Right Arrow") == 0 && Input.GetAxis("Solo P1 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                    {
+                        MechIdle.SetActive(true);
+                        MechMoveRNL.SetActive(false);
+                        MechMoveUND.SetActive(false);
+                    }
+
+                    if (Input.GetAxis("Xbox Solo P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P2 Press Right Dpad") == 0 && Input.GetAxis("Xbox Solo P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
                     {
                         MechIdle.SetActive(true);
                         MechMoveRNL.SetActive(false);
@@ -3714,12 +3732,7 @@ public class DN_Mech : MonoBehaviour {
                             pos += Vector3.back;
                         }
                     }
-                    if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
-                    {
-                        MechIdle.SetActive(true);
-                        MechMoveRNL.SetActive(false);
-                        MechMoveUND.SetActive(false);
-                    }
+                   
                     if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
                     {
                         if (dir != DIRECTION.DOWN)
@@ -3839,7 +3852,13 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -3864,12 +3883,7 @@ public class DN_Mech : MonoBehaviour {
                         pos += Vector3.forward;
                     }
                 }
-                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+              
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -4032,7 +4046,13 @@ public class DN_Mech : MonoBehaviour {
                 //        pos += Vector3.back;
                 //    }
                 //}
-                if (Input.GetAxis("P3 Press Right Arrow") == 0 && Square3 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Square3 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -4058,12 +4078,7 @@ public class DN_Mech : MonoBehaviour {
 
                     }
                 }
-                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+               
                 if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && XB3 && StopRight == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.RIGHT)
@@ -4149,7 +4164,13 @@ public class DN_Mech : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
-                if (Input.GetAxis("P1 Press Left Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && X1 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -4175,12 +4196,7 @@ public class DN_Mech : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && A1 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+                
                 if (Input.GetAxis("Xbox P1 Press Left Dpad") == 1 && A1 && StopLeft == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.LEFT)
@@ -4342,7 +4358,13 @@ public class DN_Mech : MonoBehaviour {
                 //        pos += Vector3.forward;
                 //    }
                 //}
-                if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P1 Press Left Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P1 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -4367,12 +4389,7 @@ public class DN_Mech : MonoBehaviour {
                         pos += Vector3.back;
                     }
                 }
-                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+              
                 if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.DOWN)
@@ -4475,7 +4492,13 @@ public class DN_Mech : MonoBehaviour {
         {
             if (buttonCooldown <= 0)
             {
-                if (Input.GetAxis("P1 Press Up Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && O1 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -4500,12 +4523,7 @@ public class DN_Mech : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && B1 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+                
                 if (Input.GetAxis("Xbox P1 Press Up Dpad") == 1 && B1 && StopTop == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.UP)
@@ -4688,7 +4706,13 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P3 Press Right Arrow") == 0 && Square3 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Square3 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -4714,12 +4738,7 @@ public class DN_Mech : MonoBehaviour {
 
                     }
                 }
-                if (Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && XB3 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+               
                 if (Input.GetAxis("Xbox P3 Press Right Dpad") == 1 && XB3 && StopRight == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.RIGHT)
@@ -4837,7 +4856,13 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P4 Press Left Arrow") == 0 && X4 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && X4 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && A4 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -4863,12 +4888,7 @@ public class DN_Mech : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && A4 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+               
                 if (Input.GetAxis("Xbox P4 Press Left Dpad") == 1 && A4 && StopLeft == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.LEFT)
@@ -4987,7 +5007,13 @@ public class DN_Mech : MonoBehaviour {
                 //    }
 
                 //}
-                if (Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                if (Input.GetAxis("P1 Press Up Arrow") == 0 && Input.GetAxis("P3 Press Right Arrow") == 0 && Input.GetAxis("P4 Press Left Arrow") == 0 && Input.GetAxis("P2 Press Down Arrow") == 0 && Triangle2 && DN_MainMenuMannager.Ps4)
+                {
+                    MechIdle.SetActive(true);
+                    MechMoveRNL.SetActive(false);
+                    MechMoveUND.SetActive(false);
+                }
+                if (Input.GetAxis("Xbox P1 Press Up Dpad") == 0 && Input.GetAxis("Xbox P3 Press Right Dpad") == 0 && Input.GetAxis("Xbox P4 Press Left Dpad") == 0 && Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
                 {
                     MechIdle.SetActive(true);
                     MechMoveRNL.SetActive(false);
@@ -5013,12 +5039,7 @@ public class DN_Mech : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetAxis("Xbox P2 Press Down Dpad") == 0 && Y2 && DN_MainMenuMannager.Xbox)
-                {
-                    MechIdle.SetActive(true);
-                    MechMoveRNL.SetActive(false);
-                    MechMoveUND.SetActive(false);
-                }
+    
                 if (Input.GetAxis("Xbox P2 Press Down Dpad") == 1 && Y2 && StopBot == false && DN_MainMenuMannager.Xbox)
                 {
                     if (dir != DIRECTION.DOWN)

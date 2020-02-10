@@ -453,6 +453,7 @@ public class DN_GameManager : MonoBehaviour {
         }
         if(timescripts.Timer <= 0)
         {
+            DefeatSound.Play();
             DefeatScreen.SetActive(true);
             VictoryScreen.SetActive(false);
             Time.timeScale = 0;
